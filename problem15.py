@@ -1,4 +1,4 @@
-#30 DAYS OF CODE [DAY 02]
+#30 DAYS OF CODE [DAY 01]
 #Read an integer, a double, and a string, then add or concatenate them with provided base variables, printing the results with specific formatting.
 
 i = 4
