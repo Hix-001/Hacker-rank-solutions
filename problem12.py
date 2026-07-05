@@ -1,4 +1,4 @@
-#Runner-Up Score: Given a list of participant scores, identify the second-highest unique value.
+# HackerRank: Runner-Up Score: Given a list of participant scores, identify the second-highest unique value.
 if __name__ == '__main__':
     n = int(input())
     arr = list(set(map(int, input().split())))

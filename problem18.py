@@ -1,4 +1,4 @@
-#Given the dimensions of an array as space-separated integers, utilize NumPy to generate and print an integer array of zeros followed by an integer array of ones of the specified shape.
+# HackerRank: Given the dimensions of an array as space-separated integers, utilize NumPy to generate and print an integer array of zeros followed by an integer array of ones of the specified shape.
 import numpy as np
 
 if __name__ == '__main__':

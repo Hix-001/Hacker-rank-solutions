@@ -1,4 +1,4 @@
-#Read four integers a, b, c, d and print a^b + c^d.
+# HackerRank: Read four integers a, b, c, d and print a^b + c^d.
 if __name__ == '__main__':
     a = int(input())
     b = int(input())

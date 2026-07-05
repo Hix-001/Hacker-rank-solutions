@@ -1,4 +1,4 @@
-#Student Grades: From a list of students and their grades, output the names of those who achieved the second-lowest grade, ordered alphabetically.
+# HackerRank: Student Grades: From a list of students and their grades, output the names of those who achieved the second-lowest grade, ordered alphabetically.
 if __name__ == '__main__':
     students = []
     for _ in range(int(input())):
