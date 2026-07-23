@@ -1,5 +1,5 @@
 //22/07/26
-//30 DAY OF CODE IN PYTHON [DAY 21]
+//30 DAY OF CODE IN C++ [DAY 21]
 //GENERICS
 // HackerRank: Implement a generic printArray function using C++ Templates.
 
