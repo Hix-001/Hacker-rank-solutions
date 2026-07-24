@@ -48,8 +48,7 @@ int getHeight(Node* root) {
 
     return 1 + max(getHeight(root->left), getHeight(root->right));
 }
-}; //End of Solution
-
+};
 int main() {
     Solution myTree;
     Node* root = NULL;
