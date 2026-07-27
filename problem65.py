@@ -2,6 +2,7 @@
 #Medium
 #30 DAY OF CODE IN PYTHON [DAY 25]
 #Running Time and Complexity
+# HackerRank: Determine if a given number is prime using an optimized O(sqrt(n)) algorithm.
 
 import math
 def is_prime(n):
