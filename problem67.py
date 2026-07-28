@@ -1,7 +1,7 @@
 #26/07/2026
 #Easy
 #DefaultDict Tutorial
-# HackerRank: Use defaultdict to track 1-based indices of words from one group and search for them with another.
+#HackerRank: Use defaultdict to track 1-based indices of words from one group and search for them with another.
 from collections import defaultdict
 n, m = map(int, input().split())
 d = defaultdict(list)
