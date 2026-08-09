@@ -2,13 +2,21 @@
 #Easy
 #Set .discard(), .remove() & .pop()
 # HackerRank: Execute dynamic set removal operations and calculate the remaining sum.
-n = int(input())
-s = set(map(int, input().split()))
-num_commands = int(input())
-for _ in range(num_commands):
-    cmd = input().split()
-    if len(cmd) > 1:
-        getattr(s, cmd[0])(int(cmd[1]))
-    else:
-        getattr(s, cmd[0])()
+import sys
+tokens = sys.stdin.read().split()
+if not tokens:
+    exit()
+n = int(tokens[0])
+s = set(int(x) for x in tokens[1:n+1])
+command_iterator = iter(tokens[n+2:])
+for cmd in command_iterator:
+    if cmd == 'pop':
+        if s:
+            s.pop()
+    elif cmd in ('remove', 'discard'):
+        try:
+            val = int(next(command_iterator))
+            s.discard(val)
+        except StopIteration:
+            break
 print(sum(s))
