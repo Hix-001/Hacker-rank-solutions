@@ -1,6 +1,6 @@
 #20/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 19]
-#INTERFACES
+#Easy
+#Interfaces
 # HackerRank: Implement an interface and calculate divisor sum.
 
 class AdvancedArithmetic(object):
