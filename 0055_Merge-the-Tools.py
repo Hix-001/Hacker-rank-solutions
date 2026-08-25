@@ -1,6 +1,6 @@
 #19/07/2026
 #Medium
-#MERGE THE TOOLS
+#Merge the Tools!
 # HackerRank: Merge the Tools! using basic string slicing and iteration.
 
 def merge_the_tools(string, k):
