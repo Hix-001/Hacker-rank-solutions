@@ -1,4 +1,8 @@
-## HackerRank: Wrap a continuous string into a fixed-width paragraph using the textwrap module.
+#07/07/2026
+#Easy
+#Text Wrap
+# HackerRank: Wrap a continuous string into a fixed-width paragraph using the textwrap module.
+
 import textwrap
 
 def wrap(string, max_width):
