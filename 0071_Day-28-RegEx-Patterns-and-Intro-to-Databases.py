@@ -1,6 +1,5 @@
 #29/07/2026
 #Medium
-#30 DAY OF CODE IN PYTHON [DAY 28]
 #RegEx, Patterns, and Intro to Databases
 # HackerRank: Filter and sort a list of first names based on a regex match for a Gmail domain.
 
