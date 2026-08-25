@@ -2,6 +2,7 @@
 #Easy
 #Check Subset
 # HackerRank: Verify if one set is entirely contained within another.
+
 t = int(input())
 
 for _ in range(t):
