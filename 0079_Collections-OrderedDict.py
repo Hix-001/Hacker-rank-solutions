@@ -2,6 +2,7 @@
 #Easy
 #Collections.OrderedDict
 # HackerRank: Calculate item totals and print them in order of their first appearance using OrderedDict.
+
 from collections import OrderedDict
 n = int(input())
 ordered_dict = OrderedDict()
