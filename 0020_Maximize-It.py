@@ -1,5 +1,8 @@
-#hard question 
-# HackerRank: Find the maximum possible value of $(X_1^2 + X_2^2 + \dots + X_K^2) \pmod{M}$ by picking exactly one element from $K$ given lists, utilizing the Cartesian product.
+#05/07/2026
+#Hard
+#Maximize It!
+# HackerRank: Find the maximum possible value of sum(X_i^2) % M by picking one element from K lists using Cartesian product.
+
 import itertools
 if __name__ == '__main__':
     k, m = map(int, input().split())
