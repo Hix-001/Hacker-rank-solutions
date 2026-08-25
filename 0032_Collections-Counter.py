@@ -1,4 +1,8 @@
+#05/07/2026
+#Easy
+#Collections.Counter()
 # HackerRank: Calculate earnings based on inventory availability using an optimal Hash Map (Counter).
+
 from collections import Counter
 
 if __name__ == '__main__':
