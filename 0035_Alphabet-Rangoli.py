@@ -1,4 +1,8 @@
+#07/07/2026
+#Easy
+#Alphabet Rangoli
 # HackerRank: Generate an alphabetical rangoli pattern using symmetrical array slicing and string centering.
+
 def print_rangoli(size):
     alpha = 'abcdefghijklmnopqrstuvwxyz'
     width = 4 * size - 3
