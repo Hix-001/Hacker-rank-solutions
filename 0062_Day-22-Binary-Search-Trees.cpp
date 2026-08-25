@@ -1,11 +1,7 @@
-// 23/07/2026
-// 30 DAY OF CODE IN C++ [DAY 22]
-// BINARY SEARCH TREE
-/*HACKERRANK : Given a pointer to the root of a binary search tree, 
-calculate and return the height of the tree, defined as the number of edges in the longest root-to-leaf path. */
-
-#include <iostream>
-#include <cstddef>
+//23/07/2026
+//Easy
+//Binary Search Trees
+// HackerRank: Given a pointer to the root of a binary search tree, calculate and return its height.
 
 using namespace std;	
 
