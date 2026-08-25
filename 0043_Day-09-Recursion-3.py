@@ -1,7 +1,8 @@
 #10/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 09]
-# RECURSION 3
+#Easy
+#Recursion 3
 # HackerRank: Calculate the factorial of a number using a strictly recursive algorithm.
+
 import os
 
 def factorial(n):
