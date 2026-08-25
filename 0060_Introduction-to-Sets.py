@@ -1,6 +1,6 @@
 #22/07/2026
 #Easy
-#Introduction To Sets
+#Introduction to Sets
 # HackerRank: Calculate the average of distinct items using Sets.
 
 def average(array):
