@@ -1,4 +1,8 @@
-# HackerRank: Given an integer n, perform conditional actions: if odd print "Weird", if even in range 2-5 print "Not Weird", 6-20 print "Weird", >20 print "Not Weird".
+#05/07/2026
+#Easy
+#Python If-Else
+# HackerRank: Given an integer n, perform conditional actions: if odd print 'Weird', if even in range 2-5 print 'Not Weird', 6-20 print 'Weird', >20 print 'Not Weird'.
+
 if __name__ == '__main__':
     n = int(input().strip())
     
