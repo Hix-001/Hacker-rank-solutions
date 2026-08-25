@@ -1,4 +1,8 @@
-# HackerRank: Calculate the average of a specific student's grades from a dictionary of student records, and format the output to exactly two decimal places.
+#05/07/2026
+#Easy
+#Finding the percentage
+# HackerRank: Calculate the average of a specific student's grades from a dictionary of student records, formatted to two decimal places.
+
 if __name__ == '__main__':
     n = int(input())
     student_marks = {}
