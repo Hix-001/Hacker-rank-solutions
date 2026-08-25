@@ -1,14 +1,8 @@
-// 24/07/2026
-// 30 DAY OF CODE IN C++ [DAY 24]
-// MORE LINKED LISTS
+//24/07/2026
+//Easy
+//More Linked Lists
 // HackerRank: Remove duplicate value nodes from a sorted linked list.
 
-#include <cstddef>
-#include <cmath>
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
 using namespace std;	
 class Node
 {
