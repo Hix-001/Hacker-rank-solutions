@@ -2,6 +2,7 @@
 #Easy
 #Incorrect Regex
 # HackerRank: Validate regex strings using try-except blocks and re.compile.
+
 import re
 t = int(input())
 for _ in range(t):
