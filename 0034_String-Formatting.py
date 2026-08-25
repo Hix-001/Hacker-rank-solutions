@@ -1,4 +1,8 @@
+#07/07/2026
+#Easy
+#String Formatting
 # HackerRank: Print dynamic right-aligned base conversions using nested f-string format specifiers.
+
 def print_formatted(number):
     width = len(bin(number)) - 2
     for i in range(1, number + 1):
