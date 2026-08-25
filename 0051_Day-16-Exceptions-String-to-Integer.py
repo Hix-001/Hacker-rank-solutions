@@ -1,6 +1,6 @@
 #17/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 16]
-#EXCEPTIONS - STRINGS TO INTEGER 
+#Easy
+#Exceptions - String to Integer
 # HackerRank: Parse an integer from a string and handle errors using try/except blocks.
 
 try:
