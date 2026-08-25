@@ -1,6 +1,6 @@
 #13/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 12]
-#INHERITANCE 
+#Easy
+#Inheritance
 # HackerRank: Implement a Student class using basic Python inheritance and conditional logic.
 
 class Person:
