@@ -1,4 +1,8 @@
+#05/07/2026
+#Easy
+#Arithmetic Operators
 # HackerRank: Read two integers and print their sum, difference, and product.
+
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
