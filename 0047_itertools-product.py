@@ -1,4 +1,6 @@
 #13/07/2026
+#Easy
+#itertools.product()
 # HackerRank: Compute the Cartesian product of two lists using basic nested loops.
 
 string_line_A = input().split()
