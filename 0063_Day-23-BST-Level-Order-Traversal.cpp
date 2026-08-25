@@ -1,13 +1,7 @@
-// 24/07/2026
-// 30 DAY OF CODE IN C++ [DAY 23]
-// BINARY SEARCH TREE LEVEL ORDER TRAVERSAL
+//24/07/2026
+//Easy
+//BST Level-Order Traversal
 // HackerRank: Perform a level-order traversal on a Binary Search Tree using a queue.
-
-#include <iostream>
-#include <cstddef>
-#include <queue>
-#include <string>
-#include <cstdlib>
 
 using namespace std;	
 class Node{
