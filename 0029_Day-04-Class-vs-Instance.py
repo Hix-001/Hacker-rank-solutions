@@ -1,6 +1,8 @@
-#30 DAYS OF CODE IN PYTHON [DAY 04]
-#CLASS VS INSTANCE
-## HackerRank: Implement a basic OOP class with state validation, categorization, and mutation methods.
+#05/07/2026
+#Easy
+#Class vs. Instance
+# HackerRank: Implement a basic OOP class with state validation, categorization, and mutation methods.
+
 class Person:
     def __init__(self, initialAge):
         if initialAge < 0:
