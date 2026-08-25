@@ -1,4 +1,8 @@
-# HackerRank: Implement a command-driven interface to perform dynamic list operations, including insertion, deletion, sorting, and reversal, based on sequential input commands.
+#05/07/2026
+#Easy
+#Lists
+# HackerRank: Implement a command-driven interface to perform dynamic list operations based on sequential input commands.
+
 if __name__ == '__main__':
     N = int(input())
     my_list = []
