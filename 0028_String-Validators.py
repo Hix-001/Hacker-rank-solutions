@@ -1,4 +1,8 @@
-## HackerRank: Validate string character properties using short-circuiting generator expressions.
+#05/07/2026
+#Easy
+#String Validators
+# HackerRank: Validate string character properties using short-circuiting generator expressions.
+
 if __name__ == '__main__':
     s = input()
     print(any(c.isalnum() for c in s))
