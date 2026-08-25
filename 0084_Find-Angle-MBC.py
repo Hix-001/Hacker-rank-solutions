@@ -2,6 +2,7 @@
 #Medium
 #Find Angle MBC
 # HackerRank: Calculate the angle of a right triangle's median using trigonometry and math.atan2.
+
 import math
 
 ab = int(input())
