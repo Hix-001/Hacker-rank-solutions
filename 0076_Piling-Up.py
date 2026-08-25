@@ -2,6 +2,7 @@
 #Medium
 #Piling Up!
 # HackerRank: Determine if cubes can be stacked by greedily picking from the ends of a deque.
+
 from collections import deque
 T = int(input())
 for _ in range(T):
