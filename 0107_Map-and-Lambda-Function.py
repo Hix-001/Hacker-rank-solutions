@@ -2,7 +2,7 @@
 #Easy
 #Map and Lambda Function
 # HackerRank: Generate a sequence and transform it using functional programming tools.
- 
+
 cube = lambda x: x ** 3
 
 def fibonacci(n):
