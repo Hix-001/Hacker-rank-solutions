@@ -2,6 +2,7 @@
 #Easy
 #Set .discard(), .remove() & .pop()
 # HackerRank: Execute dynamic set removal operations and calculate the remaining sum.
+
 import sys
 tokens = sys.stdin.read().split()
 if not tokens:
