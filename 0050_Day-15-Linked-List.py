@@ -1,7 +1,8 @@
 #16/07/2026
-#30 DAY OF CODE IN PYTHON [DAY 15]
-#LINKED LIST 
+#Easy
+#Linked List
 # HackerRank: Insert a node at the tail of a linked list using basic traversal.
+
 class Node:
     def __init__(self,data):
         self.data = data
