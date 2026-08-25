@@ -1,7 +1,7 @@
 #21/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 20]
-#SORTING
-#Hackerrank : Given an array of integers, sort it in ascending order using the Bubble Sort algorithm and print the total number of swaps required, along with the first and last elements of the sorted array.
+#Easy
+#Sorting
+# HackerRank: Given an array of integers, sort it in ascending order using Bubble Sort and print swap count.
 
 import math
 import os
