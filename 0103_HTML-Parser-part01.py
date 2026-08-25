@@ -2,6 +2,7 @@
 #Easy
 #HTML Parser - Part 1
 # HackerRank: Subclass HTMLParser to extract tags and attributes.
+
 from html.parser import HTMLParser
 
 class MyHTMLParser(HTMLParser):
