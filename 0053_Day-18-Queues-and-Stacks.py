@@ -1,7 +1,8 @@
 #19/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 18]
-#QUERIES AND STACKS
+#Easy
+#Queues and Stacks
 # HackerRank: Determine if a string is a palindrome using Stacks and Queues.
+
 import sys
 
 class Solution:
