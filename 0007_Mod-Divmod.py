@@ -1,4 +1,8 @@
+#05/07/2026
+#Easy
+#Mod Divmod
 # HackerRank: Read two integers and print integer division, modulo, and divmod result.
+
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
