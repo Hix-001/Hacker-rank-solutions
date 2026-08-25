@@ -1,4 +1,7 @@
-# HackerRank: Coordinates Grid: Generate a list of all 3D coordinates (i, j, k) within a defined cuboid that do not sum to n.
+#05/07/2026
+#Easy
+#List Comprehensions
+# HackerRank: Generate a list of all 3D coordinates (i, j, k) within a defined cuboid that do not sum to n.
 
 if __name__ == '__main__':
     x = int(input())
