@@ -1,7 +1,8 @@
 #14/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 13]
-#ABSTRACT CLASSES 
-# HackerRank: Implement MyBook class inheriting from Book with no comments
+#Easy
+#Abstract Classes
+# HackerRank: Implement MyBook class inheriting from Book with no comments.
+
 from abc import ABCMeta, abstractmethod
 class Book(object, metaclass=ABCMeta):
     def __init__(self,title,author):
