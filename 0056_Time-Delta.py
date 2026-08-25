@@ -1,6 +1,6 @@
 #19/07/2026
 #Medium
-#TIME DELTA
+#Time Delta
 # HackerRank: Calculate the absolute difference between two timestamps using the datetime module.
 
 import math
