@@ -1,7 +1,8 @@
 #09/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 08]
-#DICTIONARIES AND MAPS
+#Easy
+#Dictionaries and Maps
 # HackerRank: Build a dictionary and process an unknown number of queries handling EOF safely.
+
 import sys
 
 if __name__ == '__main__':
