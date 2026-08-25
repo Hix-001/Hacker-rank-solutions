@@ -1,6 +1,5 @@
 #27/07/2026
 #Easy
-#30 DAYS OF CODE IN PYTHON [DAY 26]
 #Nested Logic
 # HackerRank: Calculate library fine based on nested conditional logic comparing return dates.
 
