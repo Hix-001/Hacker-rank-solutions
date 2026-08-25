@@ -1,7 +1,8 @@
 #15/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 14]
-#SCOPE
+#Easy
+#Scope
 # HackerRank: Calculate the maximum absolute difference using class scope.
+
 class Difference:
     def __init__(self, a):
         self.__elements = a
