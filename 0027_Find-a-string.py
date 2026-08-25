@@ -1,4 +1,8 @@
+#05/07/2026
+#Easy
+#Find a string
 # HackerRank: Count occurrences of an overlapping substring using an optimal sliding window.
+
 def count_substring(string, sub_string):
     return sum(1 for i in range(len(string) - len(sub_string) + 1) if string.startswith(sub_string, i))
 if __name__ == '__main__':
