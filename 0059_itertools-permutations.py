@@ -1,5 +1,6 @@
 #21/07/2026
 #Easy
+#itertools.permutations()
 # HackerRank: Generate lexicographically sorted permutations using itertools.
 
 from itertools import permutations
