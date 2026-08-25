@@ -2,7 +2,7 @@
 #Medium
 #Minion Game
 # HackerRank: Solve the Minion Game using O(N) mathematical index calculation.
-    
+
 def minion_game(string):
     vowels = "AEIOU"
     kevin_score = 0
