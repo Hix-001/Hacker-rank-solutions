@@ -2,6 +2,7 @@
 #Medium
 #Company Logo
 # HackerRank: Find the top 3 most common characters in a string and sort them by frequency and alphabetical order.
+
 import math
 import os
 import random
