@@ -1,6 +1,6 @@
 #12/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 11]
-# 2D ARRAYS
+#Easy
+#2D Arrays
 # HackerRank: Calculate the maximum hourglass sum in a 6x6 2D array using a sliding window.
 
 import math
