@@ -1,8 +1,8 @@
 #28/07/2026
 #Easy
-#30 DAYS OF CODE IN PYTHON [DAY 27]
 #Unit Testing
 # HackerRank: Implement test data classes to validate a minimum index search function.
+
 def minimum_index(seq):
     if len(seq) == 0:
         raise ValueError("Cannot get the minimum value index from an empty sequence")
