@@ -2,6 +2,7 @@
 #Easy
 #itertools.combinations()
 # HackerRank: Generate all combinations of a string up to size k in lexicographic order.
+
 from itertools import combinations
 s, k = input().split()
 k = int(k)
