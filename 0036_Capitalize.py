@@ -1,4 +1,8 @@
+#08/07/2026
+#Easy
+#Capitalize!
 # HackerRank: Capitalize the first letter of each word in a string while preserving exact whitespace.
+
 import os
 
 def solve(s):
