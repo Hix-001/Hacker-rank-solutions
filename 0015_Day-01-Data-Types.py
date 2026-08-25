@@ -1,5 +1,7 @@
-#30 DAYS OF CODE IN PYTHON [DAY 01]
-# HackerRank: Read an integer, a double, and a string, then add or concatenate them with provided base variables, printing the results with specific formatting.
+#05/07/2026
+#Easy
+#Data Types
+# HackerRank: Read an integer, a double, and a string, then add or concatenate them with provided base variables.
 
 i = 4
 d = 4.0
