@@ -1,6 +1,5 @@
 #30/07/2026
 #Medium
-#30 DAY OF CODE IN PYTHON [DAY 29]
 #Bitwise AND
 # HackerRank: Find the maximum bitwise AND value of two integers less than a given limit K.
 
