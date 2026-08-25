@@ -1,11 +1,7 @@
-//22/07/26
-//30 DAY OF CODE IN C++ [DAY 21]
-//GENERICS
+//22/07/2026
+//Easy
+//Generics
 // HackerRank: Implement a generic printArray function using C++ Templates.
-
-#include <iostream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
