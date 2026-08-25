@@ -1,7 +1,7 @@
 #18/07/2026
-#30 DAYS OF CODE IN PYTHON [DAY 17]
-#MORE EXCEPTIONS
-# HackerRank: Throw exceptions in a Calculator class. 
+#Easy
+#More Exceptions
+# HackerRank: Throw exceptions in a Calculator class.
 
 class Calculator:
     def power(self, n, p):
