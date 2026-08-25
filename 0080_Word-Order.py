@@ -2,6 +2,7 @@
 #Medium
 #Word Order
 # HackerRank: Count distinct words and print their frequencies in order of appearance.
+
 n = int(input())
 word_counts = {}
 for _ in range(n):
