@@ -1,4 +1,7 @@
-## HackerRank: Generate an aligned ASCII logo dynamically using string justification methods.
+#07/07/2026
+#Easy
+#Text Alignment
+# HackerRank: Generate an aligned ASCII logo dynamically using string justification methods.
 
 thickness = int(input())
 c = 'H'
