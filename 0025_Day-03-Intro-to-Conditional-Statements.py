@@ -1,5 +1,7 @@
-#30 DAYS OF CODE IN PYTHON [DAY 03]
-# HackerRank: Evaluate a given integer to determine if it is "Weird" or "Not Weird" based on its parity (odd/even) and specific inclusive number ranges.
+#05/07/2026
+#Easy
+#Intro to Conditional Statements
+# HackerRank: Evaluate a given integer to determine if it is 'Weird' or 'Not Weird' based on its parity and ranges.
 
 import math
 import os
