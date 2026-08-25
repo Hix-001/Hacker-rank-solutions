@@ -1,4 +1,8 @@
-# HackerRank: Given a string of space separated words, replace all space delimiters with hyphens to join the string together.
+#23/08/2026
+#Easy
+#String Split and Join
+# HackerRank: Given a string of space separated words, replace all space delimiters with hyphens.
+
 def split_and_join(line):
     return line.replace(" ", "-")
 if __name__ == '__main__':
