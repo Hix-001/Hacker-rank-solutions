@@ -1,5 +1,8 @@
-#30 DAY OF CODE IN PYTHON [DAY 05]
+#08/07/2026
+#Easy
+#Loops
 # HackerRank: Print the first 10 multiples of an integer using an iterative loop and f-string formatting.
+
 if __name__ == '__main__':
     n = int(input().strip())
     
