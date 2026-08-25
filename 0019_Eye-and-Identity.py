@@ -1,4 +1,8 @@
-# HackerRank: Read space-separated dimensions N and M, and utilize NumPy to generate and print an N times M 2D array with ones on the main diagonal and zeros elsewhere.
+#05/07/2026
+#Easy
+#Eye and Identity
+# HackerRank: Utilize NumPy to generate and print an N x M 2D array with ones on the main diagonal and zeros elsewhere.
+
 import numpy as np
 np.set_printoptions(legacy='1.13')
 if __name__ == '__main__':
