@@ -1,5 +1,6 @@
 #16/07/2026
 #Easy
+#Q50
 #Linked List
 # HackerRank: Insert a node at the tail of a linked list using basic traversal.
 
