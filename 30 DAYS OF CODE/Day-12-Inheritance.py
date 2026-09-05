@@ -1,5 +1,6 @@
 #13/07/2026
 #Easy
+#Q46
 #Inheritance
 # HackerRank: Implement a Student class using basic Python inheritance and conditional logic.
 
