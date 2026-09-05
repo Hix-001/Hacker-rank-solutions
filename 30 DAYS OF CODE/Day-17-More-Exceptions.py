@@ -1,5 +1,6 @@
 #18/07/2026
 #Easy
+#Q52
 #More Exceptions
 # HackerRank: Throw exceptions in a Calculator class.
 
