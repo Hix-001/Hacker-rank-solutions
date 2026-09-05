@@ -1,5 +1,6 @@
 #15/07/2026
 #Easy
+#Q49
 #Scope
 # HackerRank: Calculate the maximum absolute difference using class scope.
 
