@@ -1,5 +1,6 @@
 #14/07/2026
 #Easy
+#Q48
 #Abstract Classes
 # HackerRank: Implement MyBook class inheriting from Book with no comments.
 
