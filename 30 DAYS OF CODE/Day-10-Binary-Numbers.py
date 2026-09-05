@@ -1,5 +1,6 @@
 #11/07/2026
 #Easy
+#Q44
 #Binary Numbers
 # HackerRank: Find the maximum consecutive 1s in a binary string using optimal string splitting.
 
