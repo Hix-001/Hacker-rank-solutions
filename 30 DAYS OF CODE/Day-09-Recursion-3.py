@@ -1,5 +1,6 @@
 #10/07/2026
 #Easy
+#Q43
 #Recursion 3
 # HackerRank: Calculate the factorial of a number using a strictly recursive algorithm.
 
