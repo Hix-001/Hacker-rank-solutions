@@ -1,5 +1,6 @@
 //24/07/2026
 //Easy
+//Q64
 //More Linked Lists
 // HackerRank: Remove duplicate value nodes from a sorted linked list.
 
