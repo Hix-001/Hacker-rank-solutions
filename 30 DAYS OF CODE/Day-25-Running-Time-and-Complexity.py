@@ -1,5 +1,6 @@
 #26/07/2026
 #Medium
+#Q65
 #Running Time and Complexity
 # HackerRank: Determine if a given number is prime using an optimized O(sqrt(n)) algorithm.
 
