@@ -1,5 +1,6 @@
 #09/07/2026
 #Easy
+#Q42
 #Dictionaries and Maps
 # HackerRank: Build a dictionary and process an unknown number of queries handling EOF safely.
 
