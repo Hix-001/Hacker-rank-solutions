@@ -1,5 +1,6 @@
 #05/07/2026
 #Easy
+#Q29
 #Class vs. Instance
 # HackerRank: Implement a basic OOP class with state validation, categorization, and mutation methods.
 
