@@ -1,5 +1,6 @@
 #07/07/2026
 #Easy
+#Q39
 #Let's Review
 # HackerRank: Separate a string into even and odd indexed characters using optimal string slicing.
 
