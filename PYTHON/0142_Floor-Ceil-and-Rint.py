@@ -1,0 +1,11 @@
+#09/09/2026
+#Easy
+#Floor, Ceil and Rint
+# HackerRank: Apply element-wise rounding functions to a NumPy array with legacy print formatting.
+
+import numpy
+numpy.set_printoptions(legacy='1.13')
+a = numpy.array(input().split(), float)
+print(numpy.floor(a))
+print(numpy.ceil(a))
+print(numpy.rint(a))
