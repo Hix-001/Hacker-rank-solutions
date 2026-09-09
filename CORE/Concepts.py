@@ -699,4 +699,4 @@ if __name__ == '__main__':
     assert any_or_all_check([12, 9, 61, 5, 14]) is True
     assert any_or_all_check([12, -9, 5]) is False
 
-    print("ALL 000_Concepts.py tests passed successfully!")
+    print("ALL Concepts.py tests passed successfully!")

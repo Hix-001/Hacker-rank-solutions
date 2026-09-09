@@ -905,4 +905,4 @@ if __name__ == '__main__':
     assert modular_pow(3, 4, 5) == 1
     assert reduce_fraction_product([1, 2], [2, 4]) == (1, 4)
 
-    print("ALL 000_Algorithms.py tests passed successfully!")
+    print("ALL Algorithms.py tests passed successfully!")
