@@ -1,0 +1,1528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" height="260" style="background-color: transparent; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+  <defs>
+    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#ff3b30"/><stop offset="45%" stop-color="#ff9500"/><stop offset="100%" stop-color="#ffd60a"/></linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.5" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+  </defs>
+  <rect x="0.5" y="0.5" width="879" height="259" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="32" y="38" fill="#f0f6fc" font-size="16" font-weight="600">HackerRank Contribution Activity</text>
+  <text x="32" y="56" fill="#8b949e" font-size="12">Contributions &amp; Problem Solving Calendar • 2026</text>
+  <g transform="translate(755.0, 24)"><rect width="93.0" height="24" rx="12" fill="#221a08" stroke="#9e6a03" stroke-width="0.8"/><text x="46.5" y="16" text-anchor="middle" fill="#d29922" font-size="11" font-weight="600">Max 27/Day</text></g>
+  <g transform="translate(631.5, 24)"><rect width="115.5" height="24" rx="12" fill="#2c1012" stroke="#da3633" stroke-width="0.8"/><text x="57.75" y="16" text-anchor="middle" fill="#ff7b72" font-size="11" font-weight="600">🔥 5 Fire Days</text></g>
+  <g transform="translate(500.5, 24)"><rect width="123.0" height="24" rx="12" fill="#0c2114" stroke="#238636" stroke-width="0.8"/><text x="61.5" y="16" text-anchor="middle" fill="#3fb950" font-size="11" font-weight="600">79 Active Days</text></g>
+  <g transform="translate(399.5, 24)"><rect width="93.0" height="24" rx="12" fill="#0d1d30" stroke="#1f6feb" stroke-width="0.8"/><text x="46.5" y="16" text-anchor="middle" fill="#388bfd" font-size="11" font-weight="600">159 Solved</text></g>
+  <text x="60" y="82" fill="#8b949e" font-size="11" font-weight="500">Jan</text>
+  <text x="135" y="82" fill="#8b949e" font-size="11" font-weight="500">Feb</text>
+  <text x="195" y="82" fill="#8b949e" font-size="11" font-weight="500">Mar</text>
+  <text x="255" y="82" fill="#8b949e" font-size="11" font-weight="500">Apr</text>
+  <text x="315" y="82" fill="#8b949e" font-size="11" font-weight="500">May</text>
+  <text x="390" y="82" fill="#8b949e" font-size="11" font-weight="500">Jun</text>
+  <text x="450" y="82" fill="#8b949e" font-size="11" font-weight="500">Jul</text>
+  <text x="510" y="82" fill="#8b949e" font-size="11" font-weight="500">Aug</text>
+  <text x="585" y="82" fill="#8b949e" font-size="11" font-weight="500">Sep</text>
+  <text x="645" y="82" fill="#8b949e" font-size="11" font-weight="500">Oct</text>
+  <text x="720" y="82" fill="#8b949e" font-size="11" font-weight="500">Nov</text>
+  <text x="780" y="82" fill="#8b949e" font-size="11" font-weight="500">Dec</text>
+  <text x="48" y="117" text-anchor="end" fill="#484f58" font-size="10" font-weight="400">Mon</text>
+  <text x="48" y="147" text-anchor="end" fill="#484f58" font-size="10" font-weight="400">Wed</text>
+  <text x="48" y="177" text-anchor="end" fill="#484f58" font-size="10" font-weight="400">Fri</text>
+  <g tabindex="0">
+    <title>Dec 28, 2025: No activity</title>
+    <rect x="60" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 29, 2025: No activity</title>
+    <rect x="60" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 30, 2025: No activity</title>
+    <rect x="60" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 31, 2025: No activity</title>
+    <rect x="60" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 01, 2026: No activity</title>
+    <rect x="60" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 02, 2026: No activity</title>
+    <rect x="60" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 03, 2026: No activity</title>
+    <rect x="60" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 04, 2026: No activity</title>
+    <rect x="75" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 05, 2026: No activity</title>
+    <rect x="75" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 06, 2026: No activity</title>
+    <rect x="75" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 07, 2026: No activity</title>
+    <rect x="75" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 08, 2026: No activity</title>
+    <rect x="75" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 09, 2026: No activity</title>
+    <rect x="75" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 10, 2026: No activity</title>
+    <rect x="75" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 11, 2026: No activity</title>
+    <rect x="90" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 12, 2026: No activity</title>
+    <rect x="90" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 13, 2026: No activity</title>
+    <rect x="90" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 14, 2026: No activity</title>
+    <rect x="90" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 15, 2026: No activity</title>
+    <rect x="90" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 16, 2026: No activity</title>
+    <rect x="90" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 17, 2026: No activity</title>
+    <rect x="90" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 18, 2026: No activity</title>
+    <rect x="105" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 19, 2026: No activity</title>
+    <rect x="105" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 20, 2026: No activity</title>
+    <rect x="105" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 21, 2026: No activity</title>
+    <rect x="105" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 22, 2026: No activity</title>
+    <rect x="105" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 23, 2026: No activity</title>
+    <rect x="105" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 24, 2026: No activity</title>
+    <rect x="105" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 25, 2026: No activity</title>
+    <rect x="120" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 26, 2026: No activity</title>
+    <rect x="120" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 27, 2026: No activity</title>
+    <rect x="120" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 28, 2026: No activity</title>
+    <rect x="120" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 29, 2026: No activity</title>
+    <rect x="120" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 30, 2026: No activity</title>
+    <rect x="120" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 31, 2026: No activity</title>
+    <rect x="120" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 01, 2026: No activity</title>
+    <rect x="135" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 02, 2026: No activity</title>
+    <rect x="135" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 03, 2026: No activity</title>
+    <rect x="135" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 04, 2026: No activity</title>
+    <rect x="135" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 05, 2026: No activity</title>
+    <rect x="135" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 06, 2026: No activity</title>
+    <rect x="135" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 07, 2026: No activity</title>
+    <rect x="135" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 08, 2026: No activity</title>
+    <rect x="150" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 09, 2026: No activity</title>
+    <rect x="150" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 10, 2026: No activity</title>
+    <rect x="150" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 11, 2026: No activity</title>
+    <rect x="150" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 12, 2026: No activity</title>
+    <rect x="150" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 13, 2026: No activity</title>
+    <rect x="150" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 14, 2026: No activity</title>
+    <rect x="150" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 15, 2026: No activity</title>
+    <rect x="165" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 16, 2026: No activity</title>
+    <rect x="165" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 17, 2026: No activity</title>
+    <rect x="165" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 18, 2026: No activity</title>
+    <rect x="165" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 19, 2026: No activity</title>
+    <rect x="165" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 20, 2026: No activity</title>
+    <rect x="165" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 21, 2026: No activity</title>
+    <rect x="165" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 22, 2026: No activity</title>
+    <rect x="180" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 23, 2026: No activity</title>
+    <rect x="180" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 24, 2026: No activity</title>
+    <rect x="180" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 25, 2026: No activity</title>
+    <rect x="180" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 26, 2026: No activity</title>
+    <rect x="180" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 27, 2026: No activity</title>
+    <rect x="180" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Feb 28, 2026: No activity</title>
+    <rect x="180" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 01, 2026: No activity</title>
+    <rect x="195" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 02, 2026: No activity</title>
+    <rect x="195" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 03, 2026: No activity</title>
+    <rect x="195" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 04, 2026: No activity</title>
+    <rect x="195" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 05, 2026: No activity</title>
+    <rect x="195" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 06, 2026: No activity</title>
+    <rect x="195" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 07, 2026: No activity</title>
+    <rect x="195" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 08, 2026: No activity</title>
+    <rect x="210" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 09, 2026: No activity</title>
+    <rect x="210" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 10, 2026: No activity</title>
+    <rect x="210" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 11, 2026: No activity</title>
+    <rect x="210" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 12, 2026: No activity</title>
+    <rect x="210" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 13, 2026: No activity</title>
+    <rect x="210" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 14, 2026: No activity</title>
+    <rect x="210" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 15, 2026: No activity</title>
+    <rect x="225" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 16, 2026: No activity</title>
+    <rect x="225" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 17, 2026: No activity</title>
+    <rect x="225" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 18, 2026: No activity</title>
+    <rect x="225" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 19, 2026: No activity</title>
+    <rect x="225" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 20, 2026: No activity</title>
+    <rect x="225" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 21, 2026: No activity</title>
+    <rect x="225" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 22, 2026: No activity</title>
+    <rect x="240" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 23, 2026: No activity</title>
+    <rect x="240" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 24, 2026: No activity</title>
+    <rect x="240" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 25, 2026: No activity</title>
+    <rect x="240" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 26, 2026: No activity</title>
+    <rect x="240" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 27, 2026: No activity</title>
+    <rect x="240" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 28, 2026: No activity</title>
+    <rect x="240" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 29, 2026: No activity</title>
+    <rect x="255" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 30, 2026: No activity</title>
+    <rect x="255" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Mar 31, 2026: No activity</title>
+    <rect x="255" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 01, 2026: No activity</title>
+    <rect x="255" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 02, 2026: No activity</title>
+    <rect x="255" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 03, 2026: No activity</title>
+    <rect x="255" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 04, 2026: No activity</title>
+    <rect x="255" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 05, 2026: No activity</title>
+    <rect x="270" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 06, 2026: No activity</title>
+    <rect x="270" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 07, 2026: No activity</title>
+    <rect x="270" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 08, 2026: No activity</title>
+    <rect x="270" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 09, 2026: No activity</title>
+    <rect x="270" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 10, 2026: No activity</title>
+    <rect x="270" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 11, 2026: No activity</title>
+    <rect x="270" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 12, 2026: No activity</title>
+    <rect x="285" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 13, 2026: No activity</title>
+    <rect x="285" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 14, 2026: No activity</title>
+    <rect x="285" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 15, 2026: No activity</title>
+    <rect x="285" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 16, 2026: No activity</title>
+    <rect x="285" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 17, 2026: No activity</title>
+    <rect x="285" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 18, 2026: No activity</title>
+    <rect x="285" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 19, 2026: No activity</title>
+    <rect x="300" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 20, 2026: No activity</title>
+    <rect x="300" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 21, 2026: No activity</title>
+    <rect x="300" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 22, 2026: No activity</title>
+    <rect x="300" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 23, 2026: No activity</title>
+    <rect x="300" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 24, 2026: No activity</title>
+    <rect x="300" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 25, 2026: No activity</title>
+    <rect x="300" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 26, 2026: No activity</title>
+    <rect x="315" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 27, 2026: No activity</title>
+    <rect x="315" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 28, 2026: No activity</title>
+    <rect x="315" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 29, 2026: No activity</title>
+    <rect x="315" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Apr 30, 2026: No activity</title>
+    <rect x="315" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 01, 2026: No activity</title>
+    <rect x="315" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 02, 2026: No activity</title>
+    <rect x="315" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 03, 2026: No activity</title>
+    <rect x="330" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 04, 2026: No activity</title>
+    <rect x="330" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 05, 2026: No activity</title>
+    <rect x="330" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 06, 2026: No activity</title>
+    <rect x="330" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 07, 2026: No activity</title>
+    <rect x="330" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 08, 2026: No activity</title>
+    <rect x="330" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 09, 2026: No activity</title>
+    <rect x="330" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 10, 2026: No activity</title>
+    <rect x="345" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 11, 2026: No activity</title>
+    <rect x="345" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 12, 2026: No activity</title>
+    <rect x="345" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 13, 2026: No activity</title>
+    <rect x="345" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 14, 2026: No activity</title>
+    <rect x="345" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 15, 2026: No activity</title>
+    <rect x="345" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 16, 2026: No activity</title>
+    <rect x="345" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 17, 2026: No activity</title>
+    <rect x="360" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 18, 2026: No activity</title>
+    <rect x="360" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 19, 2026: No activity</title>
+    <rect x="360" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 20, 2026: No activity</title>
+    <rect x="360" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 21, 2026: No activity</title>
+    <rect x="360" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 22, 2026: No activity</title>
+    <rect x="360" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 23, 2026: No activity</title>
+    <rect x="360" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 24, 2026: No activity</title>
+    <rect x="375" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 25, 2026: No activity</title>
+    <rect x="375" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 26, 2026: No activity</title>
+    <rect x="375" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 27, 2026: No activity</title>
+    <rect x="375" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 28, 2026: No activity</title>
+    <rect x="375" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 29, 2026: No activity</title>
+    <rect x="375" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 30, 2026: No activity</title>
+    <rect x="375" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>May 31, 2026: No activity</title>
+    <rect x="390" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 01, 2026: No activity</title>
+    <rect x="390" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 02, 2026: No activity</title>
+    <rect x="390" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 03, 2026: No activity</title>
+    <rect x="390" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 04, 2026: No activity</title>
+    <rect x="390" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 05, 2026: No activity</title>
+    <rect x="390" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 06, 2026: No activity</title>
+    <rect x="390" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 07, 2026: No activity</title>
+    <rect x="405" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 08, 2026: No activity</title>
+    <rect x="405" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 09, 2026: No activity</title>
+    <rect x="405" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 10, 2026: No activity</title>
+    <rect x="405" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 11, 2026: No activity</title>
+    <rect x="405" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 12, 2026: No activity</title>
+    <rect x="405" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 13, 2026: No activity</title>
+    <rect x="405" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 14, 2026: No activity</title>
+    <rect x="420" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 15, 2026: No activity</title>
+    <rect x="420" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 16, 2026: No activity</title>
+    <rect x="420" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 17, 2026: No activity</title>
+    <rect x="420" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 18, 2026: No activity</title>
+    <rect x="420" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 19, 2026: No activity</title>
+    <rect x="420" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 20, 2026: No activity</title>
+    <rect x="420" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 21, 2026: No activity</title>
+    <rect x="435" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 22, 2026: No activity</title>
+    <rect x="435" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 23, 2026: No activity</title>
+    <rect x="435" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 24, 2026: No activity</title>
+    <rect x="435" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 25, 2026: No activity</title>
+    <rect x="435" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 26, 2026: No activity</title>
+    <rect x="435" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 27, 2026: No activity</title>
+    <rect x="435" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 28, 2026: No activity</title>
+    <rect x="450" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 29, 2026: No activity</title>
+    <rect x="450" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jun 30, 2026: No activity</title>
+    <rect x="450" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 01, 2026: No activity</title>
+    <rect x="450" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 02, 2026: 1 problem solved</title>
+    <rect x="450" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 03, 2026: No activity</title>
+    <rect x="450" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 04, 2026: 1 problem solved</title>
+    <rect x="450" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 05, 2026: 27 problems solved 🔥 (Fire Day! More than 5 solved)</title>
+    <rect x="465" y="92" width="12" height="12" rx="2.5" fill="#4a1212" stroke="#f85149" stroke-width="0.9"/>
+    <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(464.10, 92.40) scale(1.15)"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 06, 2026: 1 problem solved</title>
+    <rect x="465" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 07, 2026: 7 problems solved 🔥 (Fire Day! More than 5 solved)</title>
+    <rect x="465" y="122" width="12" height="12" rx="2.5" fill="#4a1212" stroke="#f85149" stroke-width="0.9"/>
+    <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(464.10, 122.40) scale(1.15)"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 08, 2026: 3 problems solved</title>
+    <rect x="465" y="137" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 09, 2026: 1 problem solved</title>
+    <rect x="465" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 10, 2026: 1 problem solved</title>
+    <rect x="465" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 11, 2026: 1 problem solved</title>
+    <rect x="465" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 12, 2026: 1 problem solved</title>
+    <rect x="480" y="92" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 13, 2026: 2 problems solved</title>
+    <rect x="480" y="107" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 14, 2026: 1 problem solved</title>
+    <rect x="480" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 15, 2026: 1 problem solved</title>
+    <rect x="480" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 16, 2026: 1 problem solved</title>
+    <rect x="480" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 17, 2026: 1 problem solved</title>
+    <rect x="480" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 18, 2026: 1 problem solved</title>
+    <rect x="480" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 19, 2026: 4 problems solved</title>
+    <rect x="495" y="92" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 20, 2026: 1 problem solved</title>
+    <rect x="495" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 21, 2026: 2 problems solved</title>
+    <rect x="495" y="122" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 22, 2026: 2 problems solved</title>
+    <rect x="495" y="137" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 23, 2026: 2 problems solved</title>
+    <rect x="495" y="152" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 24, 2026: 2 problems solved</title>
+    <rect x="495" y="167" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 25, 2026: No activity</title>
+    <rect x="495" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 26, 2026: 3 problems solved</title>
+    <rect x="510" y="92" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 27, 2026: 1 problem solved</title>
+    <rect x="510" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 28, 2026: 2 problems solved</title>
+    <rect x="510" y="122" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 29, 2026: 1 problem solved</title>
+    <rect x="510" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 30, 2026: 1 problem solved</title>
+    <rect x="510" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jul 31, 2026: 1 problem solved</title>
+    <rect x="510" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 01, 2026: 1 problem solved</title>
+    <rect x="510" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 02, 2026: 6 problems solved 🔥 (Fire Day! More than 5 solved)</title>
+    <rect x="525" y="92" width="12" height="12" rx="2.5" fill="#4a1212" stroke="#f85149" stroke-width="0.9"/>
+    <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(524.10, 92.40) scale(1.15)"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 03, 2026: 1 problem solved</title>
+    <rect x="525" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 04, 2026: 1 problem solved</title>
+    <rect x="525" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 05, 2026: 1 problem solved</title>
+    <rect x="525" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 06, 2026: 1 problem solved</title>
+    <rect x="525" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 07, 2026: 1 problem solved</title>
+    <rect x="525" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 08, 2026: 1 problem solved</title>
+    <rect x="525" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 09, 2026: 3 problems solved</title>
+    <rect x="540" y="92" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 10, 2026: 1 problem solved</title>
+    <rect x="540" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 11, 2026: 1 problem solved</title>
+    <rect x="540" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 12, 2026: 1 problem solved</title>
+    <rect x="540" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 13, 2026: 1 problem solved</title>
+    <rect x="540" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 14, 2026: 1 problem solved</title>
+    <rect x="540" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 15, 2026: 2 problems solved</title>
+    <rect x="540" y="182" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 16, 2026: 1 problem solved</title>
+    <rect x="555" y="92" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 17, 2026: No activity</title>
+    <rect x="555" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 18, 2026: 2 problems solved</title>
+    <rect x="555" y="122" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 19, 2026: 1 problem solved</title>
+    <rect x="555" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 20, 2026: 1 problem solved</title>
+    <rect x="555" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 21, 2026: 1 problem solved</title>
+    <rect x="555" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 22, 2026: 2 problems solved</title>
+    <rect x="555" y="182" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 23, 2026: 3 problems solved</title>
+    <rect x="570" y="92" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 24, 2026: 1 problem solved</title>
+    <rect x="570" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 25, 2026: 1 problem solved</title>
+    <rect x="570" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 26, 2026: 1 problem solved</title>
+    <rect x="570" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 27, 2026: 1 problem solved</title>
+    <rect x="570" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 28, 2026: 1 problem solved</title>
+    <rect x="570" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 29, 2026: 1 problem solved</title>
+    <rect x="570" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 30, 2026: 2 problems solved</title>
+    <rect x="585" y="92" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Aug 31, 2026: 1 problem solved</title>
+    <rect x="585" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 01, 2026: 1 problem solved</title>
+    <rect x="585" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 02, 2026: 1 problem solved</title>
+    <rect x="585" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 03, 2026: 1 problem solved</title>
+    <rect x="585" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 04, 2026: 1 problem solved</title>
+    <rect x="585" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 05, 2026: 3 problems solved</title>
+    <rect x="585" y="182" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 06, 2026: 2 problems solved</title>
+    <rect x="600" y="92" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 07, 2026: 1 problem solved</title>
+    <rect x="600" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 08, 2026: 6 problems solved 🔥 (Fire Day! More than 5 solved)</title>
+    <rect x="600" y="122" width="12" height="12" rx="2.5" fill="#4a1212" stroke="#f85149" stroke-width="0.9"/>
+    <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(599.10, 122.40) scale(1.15)"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 09, 2026: 11 problems solved 🔥 (Fire Day! More than 5 solved)</title>
+    <rect x="600" y="137" width="12" height="12" rx="2.5" fill="#4a1212" stroke="#f85149" stroke-width="0.9"/>
+    <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(599.10, 137.40) scale(1.15)"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 10, 2026: 4 problems solved</title>
+    <rect x="600" y="152" width="12" height="12" rx="2.5" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 11, 2026: 2 problems solved</title>
+    <rect x="600" y="167" width="12" height="12" rx="2.5" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 12, 2026: 1 problem solved</title>
+    <rect x="600" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 13, 2026: 1 problem solved</title>
+    <rect x="615" y="92" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 14, 2026: 1 problem solved</title>
+    <rect x="615" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 15, 2026: 1 problem solved</title>
+    <rect x="615" y="122" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 16, 2026: 1 problem solved</title>
+    <rect x="615" y="137" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 17, 2026: 1 problem solved</title>
+    <rect x="615" y="152" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 18, 2026: 1 problem solved</title>
+    <rect x="615" y="167" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 19, 2026: 1 problem solved</title>
+    <rect x="615" y="182" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 20, 2026: 1 problem solved</title>
+    <rect x="630" y="92" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 21, 2026: 1 problem solved</title>
+    <rect x="630" y="107" width="12" height="12" rx="2.5" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 22, 2026: No activity</title>
+    <rect x="630" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 23, 2026: No activity</title>
+    <rect x="630" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 24, 2026: No activity</title>
+    <rect x="630" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 25, 2026: No activity</title>
+    <rect x="630" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 26, 2026: No activity</title>
+    <rect x="630" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 27, 2026: No activity</title>
+    <rect x="645" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 28, 2026: No activity</title>
+    <rect x="645" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 29, 2026: No activity</title>
+    <rect x="645" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Sep 30, 2026: No activity</title>
+    <rect x="645" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 01, 2026: No activity</title>
+    <rect x="645" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 02, 2026: No activity</title>
+    <rect x="645" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 03, 2026: No activity</title>
+    <rect x="645" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 04, 2026: No activity</title>
+    <rect x="660" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 05, 2026: No activity</title>
+    <rect x="660" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 06, 2026: No activity</title>
+    <rect x="660" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 07, 2026: No activity</title>
+    <rect x="660" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 08, 2026: No activity</title>
+    <rect x="660" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 09, 2026: No activity</title>
+    <rect x="660" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 10, 2026: No activity</title>
+    <rect x="660" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 11, 2026: No activity</title>
+    <rect x="675" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 12, 2026: No activity</title>
+    <rect x="675" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 13, 2026: No activity</title>
+    <rect x="675" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 14, 2026: No activity</title>
+    <rect x="675" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 15, 2026: No activity</title>
+    <rect x="675" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 16, 2026: No activity</title>
+    <rect x="675" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 17, 2026: No activity</title>
+    <rect x="675" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 18, 2026: No activity</title>
+    <rect x="690" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 19, 2026: No activity</title>
+    <rect x="690" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 20, 2026: No activity</title>
+    <rect x="690" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 21, 2026: No activity</title>
+    <rect x="690" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 22, 2026: No activity</title>
+    <rect x="690" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 23, 2026: No activity</title>
+    <rect x="690" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 24, 2026: No activity</title>
+    <rect x="690" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 25, 2026: No activity</title>
+    <rect x="705" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 26, 2026: No activity</title>
+    <rect x="705" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 27, 2026: No activity</title>
+    <rect x="705" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 28, 2026: No activity</title>
+    <rect x="705" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 29, 2026: No activity</title>
+    <rect x="705" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 30, 2026: No activity</title>
+    <rect x="705" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Oct 31, 2026: No activity</title>
+    <rect x="705" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 01, 2026: No activity</title>
+    <rect x="720" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 02, 2026: No activity</title>
+    <rect x="720" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 03, 2026: No activity</title>
+    <rect x="720" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 04, 2026: No activity</title>
+    <rect x="720" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 05, 2026: No activity</title>
+    <rect x="720" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 06, 2026: No activity</title>
+    <rect x="720" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 07, 2026: No activity</title>
+    <rect x="720" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 08, 2026: No activity</title>
+    <rect x="735" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 09, 2026: No activity</title>
+    <rect x="735" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 10, 2026: No activity</title>
+    <rect x="735" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 11, 2026: No activity</title>
+    <rect x="735" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 12, 2026: No activity</title>
+    <rect x="735" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 13, 2026: No activity</title>
+    <rect x="735" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 14, 2026: No activity</title>
+    <rect x="735" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 15, 2026: No activity</title>
+    <rect x="750" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 16, 2026: No activity</title>
+    <rect x="750" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 17, 2026: No activity</title>
+    <rect x="750" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 18, 2026: No activity</title>
+    <rect x="750" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 19, 2026: No activity</title>
+    <rect x="750" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 20, 2026: No activity</title>
+    <rect x="750" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 21, 2026: No activity</title>
+    <rect x="750" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 22, 2026: No activity</title>
+    <rect x="765" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 23, 2026: No activity</title>
+    <rect x="765" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 24, 2026: No activity</title>
+    <rect x="765" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 25, 2026: No activity</title>
+    <rect x="765" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 26, 2026: No activity</title>
+    <rect x="765" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 27, 2026: No activity</title>
+    <rect x="765" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 28, 2026: No activity</title>
+    <rect x="765" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 29, 2026: No activity</title>
+    <rect x="780" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Nov 30, 2026: No activity</title>
+    <rect x="780" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 01, 2026: No activity</title>
+    <rect x="780" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 02, 2026: No activity</title>
+    <rect x="780" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 03, 2026: No activity</title>
+    <rect x="780" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 04, 2026: No activity</title>
+    <rect x="780" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 05, 2026: No activity</title>
+    <rect x="780" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 06, 2026: No activity</title>
+    <rect x="795" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 07, 2026: No activity</title>
+    <rect x="795" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 08, 2026: No activity</title>
+    <rect x="795" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 09, 2026: No activity</title>
+    <rect x="795" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 10, 2026: No activity</title>
+    <rect x="795" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 11, 2026: No activity</title>
+    <rect x="795" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 12, 2026: No activity</title>
+    <rect x="795" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 13, 2026: No activity</title>
+    <rect x="810" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 14, 2026: No activity</title>
+    <rect x="810" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 15, 2026: No activity</title>
+    <rect x="810" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 16, 2026: No activity</title>
+    <rect x="810" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 17, 2026: No activity</title>
+    <rect x="810" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 18, 2026: No activity</title>
+    <rect x="810" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 19, 2026: No activity</title>
+    <rect x="810" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 20, 2026: No activity</title>
+    <rect x="825" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 21, 2026: No activity</title>
+    <rect x="825" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 22, 2026: No activity</title>
+    <rect x="825" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 23, 2026: No activity</title>
+    <rect x="825" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 24, 2026: No activity</title>
+    <rect x="825" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 25, 2026: No activity</title>
+    <rect x="825" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 26, 2026: No activity</title>
+    <rect x="825" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 27, 2026: No activity</title>
+    <rect x="840" y="92" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 28, 2026: No activity</title>
+    <rect x="840" y="107" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 29, 2026: No activity</title>
+    <rect x="840" y="122" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 30, 2026: No activity</title>
+    <rect x="840" y="137" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Dec 31, 2026: No activity</title>
+    <rect x="840" y="152" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 01, 2027: No activity</title>
+    <rect x="840" y="167" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <g tabindex="0">
+    <title>Jan 02, 2027: No activity</title>
+    <rect x="840" y="182" width="12" height="12" rx="2.5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  </g>
+  <text x="32" y="225" fill="#8b949e" font-size="11"><tspan fill="#ff7b72" font-weight="600">🔥 Fire Day</tspan>: Days with &gt; 5 problems solved (Personal Record: 27 in one day)</text>
+  <text x="615" y="225" fill="#484f58" font-size="11" text-anchor="end">Less</text>
+  <rect x="623" y="215" width="11" height="11" rx="2" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+  <rect x="638" y="215" width="11" height="11" rx="2" fill="#0e4429" stroke="#006d32" stroke-width="0.5"/>
+  <rect x="653" y="215" width="11" height="11" rx="2" fill="#006d32" stroke="#26a641" stroke-width="0.5"/>
+  <rect x="668" y="215" width="11" height="11" rx="2" fill="#26a641" stroke="#39d353" stroke-width="0.5"/>
+  <rect x="683" y="215" width="11" height="11" rx="2" fill="#39d353" stroke="#56ff77" stroke-width="0.5"/>
+  <rect x="698" y="215" width="11" height="11" rx="2" fill="#4a1212" stroke="#f85149" stroke-width="0.8"/>
+  <path d="M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z" fill="url(#fireGrad)" transform="translate(697.20, 215.40) scale(1.05)"/>
+  <text x="714" y="225" fill="#484f58" font-size="11">More</text>
+</svg>
