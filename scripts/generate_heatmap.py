@@ -227,28 +227,19 @@ def generate_svg(data, output_path):
     fire_days = [d for d, c in date_counts.items() if c > 5]
     total_fire_days = len(fire_days)
 
-    # Determine calendar grid bounds
-    # Show the complete 2026 calendar (or the year containing the activity)
-    min_date = min(date_counts.keys()) if date_counts else date(2026, 1, 1)
-    max_date = max(date_counts.keys()) if date_counts else date(2026, 12, 31)
-    year = min_date.year
-
-    # Start calendar on the Sunday of or before Jan 1 of that year
-    jan1 = date(year, 1, 1)
-    # weekday(): Mon=0, Sun=6. Days to back up to reach previous Sunday: (jan1.weekday() + 1) % 7
-    days_to_prev_sunday = (jan1.weekday() + 1) % 7
-    cal_start = jan1 - timedelta(days=days_to_prev_sunday)
+    # Determine calendar grid bounds: July 2026 through July 2027 (57 weeks)
+    # The week containing July 1, 2026 starts on Sunday, June 28, 2026.
+    cal_start = date(2026, 6, 28)
+    num_weeks = 57  # 57 weeks spans from June 28, 2026 through July 31, 2027
 
     # Grid parameters
-    cell_size = 12
+    cell_size = 11
     cell_gap = 3
-    cell_step = cell_size + cell_gap  # 15px
+    cell_step = cell_size + cell_gap  # 14px
     corner_radius = 2.5
 
-    grid_x = 60
+    grid_x = 52
     grid_y = 92
-
-    num_weeks = 53  # 53 columns covers the full year 2026 and surrounding days
 
     width = 880
     height = 260
@@ -292,9 +283,10 @@ def generate_svg(data, output_path):
     )
     svg.append(
         f'  <text x="32" y="56" fill="{COLOR_TEXT_MUTED}" font-size="12">'
-        f"Contributions &amp; Problem Solving Calendar • {year}"
+        "Contributions &amp; Problem Solving Calendar • July 2026 – July 2027"
         "</text>"
     )
+
 
     # Stats Badges / Pills on top right
     badges = [
@@ -326,8 +318,9 @@ def generate_svg(data, output_path):
         # Check if 1st of any month falls in this week
         for d_offset in range(7):
             cur_d = week_start + timedelta(days=d_offset)
-            if cur_d.year == year and cur_d.day == 1 and cur_d.month not in rendered_months:
-                rendered_months.add(cur_d.month)
+            m_key = (cur_d.year, cur_d.month)
+            if cur_d.day == 1 and m_key not in rendered_months:
+                rendered_months.add(m_key)
                 m_label = month_names[cur_d.month - 1]
                 label_x = grid_x + col * cell_step
                 svg.append(
@@ -368,7 +361,7 @@ def generate_svg(data, output_path):
                     f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
                     f'fill="{FIRE_BG}" stroke="{FIRE_BORDER}" stroke-width="0.9"/>'
                 )
-                # Flame vector icon centered in 12x12 cell
+                # Flame vector icon centered in 11x11 cell
                 flame_path = (
                     "M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9"
                     "C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1"
@@ -376,9 +369,10 @@ def generate_svg(data, output_path):
                 )
                 svg.append(
                     f'    <path d="{flame_path}" fill="url(#fireGrad)" '
-                    f'transform="translate({x - 0.9:.2f}, {y + 0.4:.2f}) scale(1.15)"/>'
+                    f'transform="translate({x - 0.8:.2f}, {y + 0.4:.2f}) scale(1.05)"/>'
                 )
                 svg.append("  </g>")
+
 
             else:
                 fill_col, stroke_col = LEVEL_COLORS[lvl]
