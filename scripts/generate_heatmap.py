@@ -249,8 +249,9 @@ def generate_svg(data, output_path):
     svg.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
         f'width="100%" height="{height}" '
-        'style="background-color: transparent; font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Helvetica, Arial, sans-serif;">'
+        'style="background-color: transparent; font-family: \'Helvetica\', Arial, sans-serif;">'
     )
+
 
     # SVG Definitions & Gradients
     svg.append("  <defs>")
@@ -266,6 +267,14 @@ def generate_svg(data, output_path):
         '<feGaussianBlur stdDeviation="1.5" result="blur"/>'
         '<feComposite in="SourceGraphic" in2="blur" operator="over"/>'
         "</filter>"
+    )
+    svg.append(
+        "    <style>"
+        "      * { font-family: 'Helvetica', Arial, sans-serif; }"
+        "      text { font-family: 'Helvetica', Arial, sans-serif; }"
+        "      .cell { cursor: pointer; }"
+        "      .cell:hover rect { stroke: #f0f6fc !important; stroke-width: 1.2px !important; }"
+        "    </style>"
     )
     svg.append("  </defs>")
 
@@ -348,13 +357,18 @@ def generate_svg(data, output_path):
             x = grid_x + col * cell_step
             y = grid_y + row * cell_step
 
-            date_str = cell_date.strftime("%Y-%m-%d")
-            formatted_date = cell_date.strftime("%b %d, %Y")
+            # Tooltip format: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY"
+            short_date = cell_date.strftime("%d/%m/%y")
+            if cnt == 0:
+                tooltip = short_date
+            elif cnt == 1:
+                tooltip = f"{short_date} : 1 commit"
+            else:
+                tooltip = f"{short_date} : {cnt} commits"
+            safe_tooltip = saxutils.escape(tooltip)
 
             if lvl == "FIRE":
-                tooltip = f"{formatted_date}: {cnt} problems solved 🔥 (Fire Day! More than 5 solved)"
-                safe_tooltip = saxutils.escape(tooltip)
-                svg.append(f'  <g tabindex="0">')
+                svg.append(f'  <g class="cell" tabindex="0">')
                 svg.append(f"    <title>{safe_tooltip}</title>")
                 # Background cell with ember red fill
                 svg.append(
@@ -373,24 +387,16 @@ def generate_svg(data, output_path):
                 )
                 svg.append("  </g>")
 
-
             else:
                 fill_col, stroke_col = LEVEL_COLORS[lvl]
-                if cnt == 0:
-                    tooltip = f"{formatted_date}: No activity"
-                elif cnt == 1:
-                    tooltip = f"{formatted_date}: 1 problem solved"
-                else:
-                    tooltip = f"{formatted_date}: {cnt} problems solved"
-                safe_tooltip = saxutils.escape(tooltip)
-
-                svg.append(f'  <g tabindex="0">')
+                svg.append(f'  <g class="cell" tabindex="0">')
                 svg.append(f"    <title>{safe_tooltip}</title>")
                 svg.append(
                     f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
                     f'fill="{fill_col}" stroke="{stroke_col}" stroke-width="0.5"/>'
                 )
                 svg.append("  </g>")
+
 
     # Legend at bottom
     legend_y = grid_y + 7 * cell_step + 18
