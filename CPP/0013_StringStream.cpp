@@ -3,11 +3,12 @@
 // StringStream
 // HackerRank: Parse a comma-separated string of integers into a vector using stringstream.
 
-#include <cstdio>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <vector>
+#include <iostream>
+
 using namespace std;
+
 vector<int> parseInts(string str) {
     stringstream ss(str);
     vector<int> result;
@@ -16,15 +17,17 @@ vector<int> parseInts(string str) {
     while (ss >> num) {
         result.push_back(num);
         ss >> ch;
-    }    
+    }
     return result;
 }
+
 int main() {
-    char buffer[800005];
-    scanf("%s", buffer);
-    vector<int> integers = parseInts(buffer);
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
     for (size_t i = 0; i < integers.size(); i++) {
-        printf("%d\n", integers[i]);
+        cout << integers[i] << "\n";
     }
+    
     return 0;
 }
