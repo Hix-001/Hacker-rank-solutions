@@ -38,8 +38,9 @@ if hasattr(sys.stdout, "reconfigure"):
 # Base paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
-ASSETS_DIR = os.path.join(REPO_ROOT, "assets")
-OUTPUT_SVG = os.path.join(ASSETS_DIR, "contribution_heatmap.svg")
+HEATMAP_DIR = SCRIPT_DIR
+OUTPUT_SVG = os.path.join(HEATMAP_DIR, "contribution_heatmap.svg")
+
 
 SOLUTION_DIRS = ["PYTHON", "CPP", "30 DAYS OF CODE"]
 VALID_EXTENSIONS = {".py", ".cpp"}
