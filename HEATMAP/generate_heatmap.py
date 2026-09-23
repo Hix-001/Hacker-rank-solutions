@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-scripts/generate_heatmap.py
+HEATMAP/generate_heatmap.py
 ===========================
-Generates a GitHub-compatible contribution heatmap SVG inspired by GitHub and LeetCode,
-based on the exact date metadata embedded in all HackerRank solution files.
+Generates a Samsung One UI 8 inspired contribution heatmap SVG with LeetCode-style
+green intensity levels, based on the exact date metadata embedded in all HackerRank solution files.
 
 Features:
 - Pure Python 3 standard library (no external dependencies).
 - Scans PYTHON/, CPP/, and '30 DAYS OF CODE/' directories.
 - Strictly parses dates from source comments (e.g. #DD/MM/YYYY or //DD/MM/YYYY).
 - Never guesses dates or relies on filesystem timestamps.
-- Renders an elegant GitHub-Dark themed SVG with green intensity levels.
-- Renders an aesthetic fire indicator (🔥) on days with > 5 solved problems.
-- Embeds native SVG <title> tooltips for interactive date inspection on GitHub.
-- Produces assets/contribution_heatmap.svg ready for README.md.
+- Samsung One UI 8 aesthetic: squircle geometry, elevated glassmorphic card, and subtle ambient glow.
+- Normal LeetCode green intensity levels: days with > 4 problems use Level 4 (brightest green).
+- Typography: Helvetica font family applied across all elements and tooltips.
+- Exact hover tooltips: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY".
+- Generates HEATMAP/contribution_heatmap.svg ready for README.md.
 
 Usage:
-    python scripts/generate_heatmap.py
+    python HEATMAP/generate_heatmap.py
 """
 
 import os
@@ -41,28 +42,23 @@ REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 HEATMAP_DIR = SCRIPT_DIR
 OUTPUT_SVG = os.path.join(HEATMAP_DIR, "contribution_heatmap.svg")
 
-
 SOLUTION_DIRS = ["PYTHON", "CPP", "30 DAYS OF CODE"]
 VALID_EXTENSIONS = {".py", ".cpp"}
 
-# Color palette (GitHub Dark theme)
-COLOR_BG = "#0d1117"
-COLOR_BORDER = "#30363d"
+# Color palette (Samsung One UI 8 + LeetCode Green theme)
+COLOR_BORDER = "#252b3b"
 COLOR_TEXT_PRIMARY = "#f0f6fc"
 COLOR_TEXT_MUTED = "#8b949e"
 COLOR_TEXT_DIM = "#484f58"
 
-# Shading levels: 0, 1, 2, 3-4, 5
+# Shading levels: 0, 1, 2, 3 (3-4 problems), 4 (> 4 problems: brightest LeetCode green)
 LEVEL_COLORS = {
-    0: ("#161b22", "#21262d"),       # 0 problems (empty cell, border)
-    1: ("#0e4429", "#006d32"),       # 1 problem
-    2: ("#006d32", "#26a641"),       # 2 problems
-    3: ("#26a641", "#39d353"),       # 3-4 problems
-    4: ("#39d353", "#56ff77"),       # 5 problems
+    0: ("#161b24", "#222836"),  # 0 problems (One UI squircle dark tile)
+    1: ("#0e4429", "#16653a"),  # 1 problem (subtle emerald)
+    2: ("#006d32", "#1f8c47"),  # 2 problems (medium forest green)
+    3: ("#26a641", "#32c957"),  # 3-4 problems (vibrant green)
+    4: ("#39d353", "#5eff7f"),  # >4 problems (brightest LeetCode green highlight!)
 }
-
-FIRE_BG = "#4a1212"
-FIRE_BORDER = "#f85149"
 
 
 def parse_solution_file(filepath):
@@ -199,8 +195,8 @@ def compute_streaks(date_counts):
 
 def get_level(count):
     """
-    Maps daily solved problem count to a heatmap intensity level (0 to 4),
-    or returns 'FIRE' if count > 5.
+    Maps daily solved problem count to a LeetCode green intensity level (0 to 4).
+    Days with > 4 problems use Level 4 (brightest green).
     """
     if count == 0:
         return 0
@@ -210,34 +206,30 @@ def get_level(count):
         return 2
     elif 3 <= count <= 4:
         return 3
-    elif count == 5:
-        return 4
     else:
-        return "FIRE"
+        return 4
 
 
 def generate_svg(data, output_path):
     """
-    Builds the high-resolution, responsive GitHub-compatible SVG heatmap card.
+    Builds the Samsung One UI 8 inspired, LeetCode-styled SVG heatmap card.
     """
     date_counts = data["date_counts"]
     total_solved = data["total_files"]
     active_days = len(date_counts)
 
     curr_streak, longest_streak, max_in_day = compute_streaks(date_counts)
-    fire_days = [d for d, c in date_counts.items() if c > 5]
-    total_fire_days = len(fire_days)
 
     # Determine calendar grid bounds: July 2026 through July 2027 (57 weeks)
     # The week containing July 1, 2026 starts on Sunday, June 28, 2026.
     cal_start = date(2026, 6, 28)
     num_weeks = 57  # 57 weeks spans from June 28, 2026 through July 31, 2027
 
-    # Grid parameters
+    # Grid parameters (Samsung One UI 8 squircle tiles)
     cell_size = 11
     cell_gap = 3
     cell_step = cell_size + cell_gap  # 14px
-    corner_radius = 2.5
+    corner_radius = 3.2
 
     grid_x = 52
     grid_y = 92
@@ -253,20 +245,17 @@ def generate_svg(data, output_path):
         'style="background-color: transparent; font-family: \'Helvetica\', Arial, sans-serif;">'
     )
 
-
-    # SVG Definitions & Gradients
+    # SVG Definitions: One UI 8 Card Gradient, Ambient Glow, & Helvetica Typography
     svg.append("  <defs>")
     svg.append(
-        '    <linearGradient id="fireGrad" x1="0%" y1="100%" x2="0%" y2="0%">'
-        '<stop offset="0%" stop-color="#ff3b30"/>'
-        '<stop offset="45%" stop-color="#ff9500"/>'
-        '<stop offset="100%" stop-color="#ffd60a"/>'
+        '    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
+        '<stop offset="0%" stop-color="#0c0f17"/>'
+        '<stop offset="100%" stop-color="#141824"/>'
         "</linearGradient>"
     )
     svg.append(
-        '    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">'
-        '<feGaussianBlur stdDeviation="1.5" result="blur"/>'
-        '<feComposite in="SourceGraphic" in2="blur" operator="over"/>'
+        '    <filter id="tileGlow" x="-20%" y="-20%" width="140%" height="140%">'
+        '<feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#39d353" flood-opacity="0.45"/>'
         "</filter>"
     )
     svg.append(
@@ -274,15 +263,20 @@ def generate_svg(data, output_path):
         "      * { font-family: 'Helvetica', Arial, sans-serif; }"
         "      text { font-family: 'Helvetica', Arial, sans-serif; }"
         "      .cell { cursor: pointer; }"
-        "      .cell:hover rect { stroke: #f0f6fc !important; stroke-width: 1.2px !important; }"
+        "      .cell rect { transition: all 0.15s ease-in-out; }"
+        "      .cell:hover rect { stroke: #ffffff !important; stroke-width: 1.4px !important; filter: drop-shadow(0 0 3px rgba(255,255,255,0.6)); }"
         "    </style>"
     )
     svg.append("  </defs>")
 
-    # Background Card
+    # Background Card (Samsung One UI 8 Squircle Container with Soft Ambient Stroke)
     svg.append(
-        f'  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="12" '
-        f'fill="{COLOR_BG}" stroke="{COLOR_BORDER}" stroke-width="1"/>'
+        f'  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="20" '
+        f'fill="url(#cardGrad)" stroke="{COLOR_BORDER}" stroke-width="1"/>'
+    )
+    svg.append(
+        f'  <rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="19" '
+        'fill="none" stroke="#171c28" stroke-width="1"/>'
     )
 
     # Header Title
@@ -297,18 +291,16 @@ def generate_svg(data, output_path):
         "</text>"
     )
 
-
-    # Stats Badges / Pills on top right
+    # Samsung One UI 8 Capsule Badges
     badges = [
-        (f"{total_solved} Solved", "#388bfd", "#1f6feb", "#0d1d30"),
-        (f"{active_days} Active Days", "#3fb950", "#238636", "#0c2114"),
-        (f"🔥 {total_fire_days} Fire Days", "#ff7b72", "#da3633", "#2c1012"),
-        (f"Max {max_in_day}/Day", "#d29922", "#9e6a03", "#221a08"),
+        (f"{total_solved} Solved", "#4da3ff", "#1f6feb", "#0d1d30"),
+        (f"{active_days} Active Days", "#3ddc84", "#238636", "#0c2114"),
+        (f"{curr_streak} Day Streak", "#c084fc", "#9333ea", "#221238"),
+        (f"Max {max_in_day}/Day", "#fbbf24", "#d97706", "#261a08"),
     ]
 
     badge_x = width - 32
     for label, text_color, stroke_color, bg_color in reversed(badges):
-        # Approximate width based on character count
         b_width = len(label) * 7.5 + 18
         badge_x -= b_width
         svg.append(
@@ -348,7 +340,7 @@ def generate_svg(data, output_path):
             f'fill="{COLOR_TEXT_DIM}" font-size="10" font-weight="400">{label}</text>'
         )
 
-    # Calendar Cells
+    # Calendar Cells (LeetCode Green intensity with One UI 8 squircles)
     for col in range(num_weeks):
         for row in range(7):
             cell_date = cal_start + timedelta(days=col * 7 + row)
@@ -358,7 +350,7 @@ def generate_svg(data, output_path):
             x = grid_x + col * cell_step
             y = grid_y + row * cell_step
 
-            # Tooltip format: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY"
+            # Exact tooltip format: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY"
             short_date = cell_date.strftime("%d/%m/%y")
             if cnt == 0:
                 tooltip = short_date
@@ -368,75 +360,53 @@ def generate_svg(data, output_path):
                 tooltip = f"{short_date} : {cnt} commits"
             safe_tooltip = saxutils.escape(tooltip)
 
-            if lvl == "FIRE":
-                svg.append(f'  <g class="cell" tabindex="0">')
-                svg.append(f"    <title>{safe_tooltip}</title>")
-                # Background cell with ember red fill
+            fill_col, stroke_col = LEVEL_COLORS[lvl]
+            svg.append(f'  <g class="cell" tabindex="0">')
+            svg.append(f"    <title>{safe_tooltip}</title>")
+            if lvl == 4:
+                # Level 4 (>4 problems): Brightest LeetCode green with subtle luminous glow
                 svg.append(
                     f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
-                    f'fill="{FIRE_BG}" stroke="{FIRE_BORDER}" stroke-width="0.9"/>'
+                    f'fill="{fill_col}" stroke="{stroke_col}" stroke-width="0.8" filter="url(#tileGlow)"/>'
                 )
-                # Flame vector icon centered in 11x11 cell
-                flame_path = (
-                    "M6 0.8C5.8 1.4 5.3 2.1 4.7 2.7C3.9 3.5 3.1 4.5 3.1 5.9C3.1 7.7 4.4 8.9 6 8.9"
-                    "C7.6 8.9 8.9 7.7 8.9 5.9C8.9 4.3 7.9 3.2 7.3 2.5C7.2 3.4 6.5 4.1 5.7 4.1"
-                    "C5.2 4.1 4.9 3.7 5.0 3.1C5.1 2.4 5.7 1.6 6 0.8Z"
-                )
-                svg.append(
-                    f'    <path d="{flame_path}" fill="url(#fireGrad)" '
-                    f'transform="translate({x - 0.8:.2f}, {y + 0.4:.2f}) scale(1.05)"/>'
-                )
-                svg.append("  </g>")
-
             else:
-                fill_col, stroke_col = LEVEL_COLORS[lvl]
-                svg.append(f'  <g class="cell" tabindex="0">')
-                svg.append(f"    <title>{safe_tooltip}</title>")
                 svg.append(
                     f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
                     f'fill="{fill_col}" stroke="{stroke_col}" stroke-width="0.5"/>'
                 )
-                svg.append("  </g>")
-
+            svg.append("  </g>")
 
     # Legend at bottom
     legend_y = grid_y + 7 * cell_step + 18
 
-    # Left legend note: explains fire condition
+    # Left subtitle note
     svg.append(
         f'  <text x="32" y="{legend_y + 10}" fill="{COLOR_TEXT_MUTED}" font-size="11">'
-        f'<tspan fill="#ff7b72" font-weight="600">🔥 Fire Day</tspan>: Days with &gt; 5 problems solved '
-        f'(Personal Record: {max_in_day} in one day)'
+        "Daily problem solving activity • July 2026 – July 2027"
         "</text>"
     )
 
-    # Right legend: Less [0] [1] [2] [3-4] [5] [🔥] More
-    leg_x = width - 265
+    # Right legend: Less [0] [1] [2] [3] [4] More
+    leg_x = width - 215
     svg.append(
         f'  <text x="{leg_x}" y="{legend_y + 10}" fill="{COLOR_TEXT_DIM}" font-size="11" text-anchor="end">Less</text>'
     )
     leg_x += 8
 
-    # Standard levels 0, 1, 2, 3, 4
+    # Standard 5 LeetCode levels: 0, 1, 2, 3, 4
     for lvl_idx in range(5):
         f_c, s_c = LEVEL_COLORS[lvl_idx]
-        svg.append(
-            f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2" '
-            f'fill="{f_c}" stroke="{s_c}" stroke-width="0.5"/>'
-        )
+        if lvl_idx == 4:
+            svg.append(
+                f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2.5" '
+                f'fill="{f_c}" stroke="{s_c}" stroke-width="0.8" filter="url(#tileGlow)"/>'
+            )
+        else:
+            svg.append(
+                f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2.5" '
+                f'fill="{f_c}" stroke="{s_c}" stroke-width="0.5"/>'
+            )
         leg_x += 15
-
-    # Fire level in legend
-    svg.append(
-        f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2" '
-        f'fill="{FIRE_BG}" stroke="{FIRE_BORDER}" stroke-width="0.8"/>'
-    )
-    svg.append(
-        f'  <path d="{flame_path}" fill="url(#fireGrad)" '
-        f'transform="translate({leg_x - 0.8:.2f}, {legend_y + 0.4:.2f}) scale(1.05)"/>'
-    )
-    leg_x += 16
-
 
     svg.append(
         f'  <text x="{leg_x}" y="{legend_y + 10}" fill="{COLOR_TEXT_DIM}" font-size="11">More</text>'
@@ -483,17 +453,11 @@ def main():
         print("[+] 0 malformed date files. (100% parse success)")
 
     curr_streak, longest_streak, max_in_day = compute_streaks(data["date_counts"])
-    fire_days = sorted([d for d, c in data["date_counts"].items() if c > 5])
 
     print(f"\n[+] Streak Statistics:")
     print(f"    - Current Streak : {curr_streak} days")
     print(f"    - Longest Streak : {longest_streak} days")
     print(f"    - Max in One Day : {max_in_day} problems")
-
-    print(f"\n[+] Fire Days (> 5 solved in a single day): {len(fire_days)}")
-    for fd in fire_days:
-        cnt = data["date_counts"][fd]
-        print(f"    - {fd.strftime('%Y-%m-%d')}: {cnt} problems solved 🔥")
 
     # Generate the SVG
     generate_svg(data, OUTPUT_SVG)
