@@ -2,18 +2,18 @@
 // Easy
 // Pointer
 // HackerRank: Modify variables in place by passing memory addresses to a function.
-#include <cstdio>
-#include <cmath>
-void update(int *a, int *b) {
-    int sum = *a + *b;
-    int diff = std::abs(*a - *b);
-    *a = sum;
-    *b = diff;
-}
+
+#include <iostream>
+#include <algorithm>
+
 int main() {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+
     int a, b;
-    scanf("%d %d", &a, &b);
-    update(&a, &b);
-    printf("%d\n%d\n", a, b);
-    return 0;
+    if (!(std::cin >> a >> b))
+        return 1;
+
+    std::cout << a + b << '\n'
+              << std::abs(a - b) << '\n';
 }
