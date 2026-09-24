@@ -1,7 +1,8 @@
 #!/bin/sh
 # Automatically regenerate and stage the contribution heatmap on every commit
-if [ -f "HEATMAP/generate_heatmap.py" ]; then
-    python HEATMAP/generate_heatmap.py
-    git add HEATMAP/contribution_heatmap.svg
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+if [ -f "$REPO_ROOT/HEATMAP/generate_heatmap.py" ]; then
+    python "$REPO_ROOT/HEATMAP/generate_heatmap.py"
+    git add "$REPO_ROOT/HEATMAP/contribution_heatmap.svg"
 fi
 exit 0
