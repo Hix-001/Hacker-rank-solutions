@@ -210,7 +210,7 @@ def get_level(count):
         return 4
 
 
-def generate_svg(data, output_path):
+def generate_svg(data, output_path, quiet=False):
     """
     Builds the Samsung One UI 8 inspired, LeetCode-styled SVG heatmap card.
     """
@@ -419,51 +419,59 @@ def generate_svg(data, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("\n".join(svg))
 
-    print(f"[+] Successfully generated heatmap SVG: {os.path.relpath(output_path, REPO_ROOT)}")
+    if not quiet:
+        print(f"[+] Successfully generated heatmap SVG: {os.path.relpath(output_path, REPO_ROOT)}")
 
 
 def main():
-    print("=" * 60)
-    print(" HackerRank Solutions Activity Heatmap Generator")
-    print("=" * 60)
-    print(f"[*] Scanning repository: {REPO_ROOT}")
-    print(f"[*] Target directories: {', '.join(SOLUTION_DIRS)}")
+    quiet = "-q" in sys.argv or "--quiet" in sys.argv
+
+    if not quiet:
+        print("=" * 60)
+        print(" HackerRank Solutions Activity Heatmap Generator")
+        print("=" * 60)
+        print(f"[*] Scanning repository: {REPO_ROOT}")
+        print(f"[*] Target directories: {', '.join(SOLUTION_DIRS)}")
 
     data = collect_repository_data(REPO_ROOT)
 
-    print(f"\n[+] Total Solution Files: {data['total_files']}")
-    for lang, count in data["language_counts"].items():
-        print(f"    - {lang}: {count} files")
+    if not quiet:
+        print(f"\n[+] Total Solution Files: {data['total_files']}")
+        for lang, count in data["language_counts"].items():
+            print(f"    - {lang}: {count} files")
 
-    print(f"[+] Unique Active Solving Days: {len(data['date_counts'])}")
+        print(f"[+] Unique Active Solving Days: {len(data['date_counts'])}")
 
-    # Report metadata discrepancies if any
-    if data["missing_date_files"]:
-        print(f"\n[!] WARNING: {len(data['missing_date_files'])} files missing solving date metadata:")
-        for f, reason in data["missing_date_files"]:
-            print(f"    - {f}: {reason}")
-    else:
-        print("[+] 0 missing date files. (100% metadata coverage)")
+        # Report metadata discrepancies if any
+        if data["missing_date_files"]:
+            print(f"\n[!] WARNING: {len(data['missing_date_files'])} files missing solving date metadata:")
+            for f, reason in data["missing_date_files"]:
+                print(f"    - {f}: {reason}")
+        else:
+            print("[+] 0 missing date files. (100% metadata coverage)")
 
-    if data["malformed_date_files"]:
-        print(f"\n[!] WARNING: {len(data['malformed_date_files'])} files with malformed date strings:")
-        for f, reason in data["malformed_date_files"]:
-            print(f"    - {f}: {reason}")
-    else:
-        print("[+] 0 malformed date files. (100% parse success)")
+        if data["malformed_date_files"]:
+            print(f"\n[!] WARNING: {len(data['malformed_date_files'])} files with malformed date strings:")
+            for f, reason in data["malformed_date_files"]:
+                print(f"    - {f}: {reason}")
+        else:
+            print("[+] 0 malformed date files. (100% parse success)")
 
     curr_streak, longest_streak, max_in_day = compute_streaks(data["date_counts"])
 
-    print(f"\n[+] Streak Statistics:")
-    print(f"    - Current Streak : {curr_streak} days")
-    print(f"    - Longest Streak : {longest_streak} days")
-    print(f"    - Max in One Day : {max_in_day} problems")
+    if not quiet:
+        print(f"\n[+] Streak Statistics:")
+        print(f"    - Current Streak : {curr_streak} days")
+        print(f"    - Longest Streak : {longest_streak} days")
+        print(f"    - Max in One Day : {max_in_day} problems")
 
     # Generate the SVG
-    generate_svg(data, OUTPUT_SVG)
-    print("=" * 60)
-    print(" Heatmap generation complete!")
-    print("=" * 60)
+    generate_svg(data, OUTPUT_SVG, quiet=quiet)
+
+    if not quiet:
+        print("=" * 60)
+        print(" Heatmap generation complete!")
+        print("=" * 60)
 
 
 if __name__ == "__main__":
