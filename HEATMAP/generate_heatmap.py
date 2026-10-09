@@ -1,76 +1,40 @@
 #!/usr/bin/env python3
-"""
-HEATMAP/generate_heatmap.py
-===========================
-Generates a Samsung One UI 8 inspired contribution heatmap SVG with LeetCode-style
-green intensity levels, based on the exact date metadata embedded in all HackerRank solution files.
-
-Features:
-- Pure Python 3 standard library (no external dependencies).
-- Scans PYTHON/, CPP/, and '30 DAYS OF CODE/' directories.
-- Strictly parses dates from source comments (e.g. #DD/MM/YYYY or //DD/MM/YYYY).
-- Never guesses dates or relies on filesystem timestamps.
-- Samsung One UI 8 aesthetic: squircle geometry, elevated glassmorphic card, and subtle ambient glow.
-- Normal LeetCode green intensity levels: days with > 4 problems use Level 4 (brightest green).
-- Typography: Helvetica font family applied across all elements and tooltips.
-- Exact hover tooltips: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY".
-- Generates HEATMAP/contribution_heatmap.svg ready for README.md.
-
-Usage:
-    python HEATMAP/generate_heatmap.py
-"""
+"""Generate an SVG contribution heatmap from dated HackerRank solution files."""
 
 import os
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import date, datetime, timedelta
-import xml.sax.saxutils as saxutils
+from xml.sax.saxutils import escape
 
-# Reconfigure stdout/stderr for Windows UTF-8 compatibility
-if hasattr(sys.stdout, "reconfigure"):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
-        pass
-
-
-# Base paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
-HEATMAP_DIR = SCRIPT_DIR
-OUTPUT_SVG = os.path.join(HEATMAP_DIR, "contribution_heatmap.svg")
-
-SOLUTION_DIRS = ["PYTHON", "CPP", "30 DAYS OF CODE"]
+OUTPUT_SVG = os.path.join(SCRIPT_DIR, "contribution_heatmap.svg")
+SOLUTION_DIRS = ("PYTHON", "CPP", "30 DAYS OF CODE")
 VALID_EXTENSIONS = {".py", ".cpp"}
 
-# Color palette (Samsung One UI 8 + LeetCode Green theme)
-COLOR_BORDER = "#252b3b"
-COLOR_TEXT_PRIMARY = "#f0f6fc"
-COLOR_TEXT_MUTED = "#8b949e"
-COLOR_TEXT_DIM = "#484f58"
+CALENDAR_START = date(2026, 6, 28)  # Sunday before July 2026
+CALENDAR_WEEKS = 57
 
-# Shading levels: 0, 1, 2, 3 (3-4 problems), 4 (> 4 problems: brightest LeetCode green)
-LEVEL_COLORS = {
-    0: ("#161b24", "#222836"),  # 0 problems (One UI squircle dark tile)
-    1: ("#0e4429", "#16653a"),  # 1 problem (subtle emerald)
-    2: ("#006d32", "#1f8c47"),  # 2 problems (medium forest green)
-    3: ("#26a641", "#32c957"),  # 3-4 problems (vibrant green)
-    4: ("#39d353", "#5eff7f"),  # >4 problems (brightest LeetCode green highlight!)
+PALETTE = {
+    0: ("#171d27", "#242d3a"),
+    1: ("#123b2b", "#1b5138"),
+    2: ("#12643a", "#1b7946"),
+    3: ("#20a34a", "#2dbd59"),
+    4: ("#39d353", "#69ed7d"),
 }
+FUTURE_FILL = "#101722"
+FUTURE_STROKE = "#1b2431"
 
 
 def parse_solution_file(filepath):
-    """
-    Extracts the solving date string from the top 10 lines of a solution file.
-    Matches #DD/MM/YYYY, //DD/MM/YYYY, # DATE: DD/MM/YYYY, etc.
-    Returns (parsed_date_iso, raw_date_str) or (None, error_reason).
-    """
-    with open(filepath, "r", encoding="utf-8", errors="replace") as f:
-        lines = [f.readline() for _ in range(10)]
+    with open(filepath, "r", encoding="utf-8", errors="replace") as source:
+        lines = [source.readline() for _ in range(10)]
 
-    found_str = None
+    date_pattern = re.compile(r"^(\d{1,4}[-/. ]\d{1,2}[-/. ]\d{2,4})")
+    formats = ("%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y", "%Y-%m-%d", "%Y/%m/%d")
+
     for line in lines:
         raw = line.strip()
         if raw.startswith("//"):
@@ -80,458 +44,241 @@ def parse_solution_file(filepath):
         else:
             continue
 
-        # Check for DATE: or DATE prefix
-        if raw.upper().startswith("DATE:"):
-            raw = raw[5:].strip()
-        elif raw.upper().startswith("DATE"):
-            raw = raw[4:].strip()
+        raw = re.sub(r"^DATE\s*:?\s*", "", raw, flags=re.IGNORECASE)
+        match = date_pattern.match(raw)
+        if not match:
+            continue
 
-        m = re.match(r"^(\d{1,4}[-/. ]\d{1,2}[-/. ]\d{2,4})", raw)
-        if m:
-            found_str = m.group(1).strip()
-            break
+        value = match.group(1).strip()
+        for fmt in formats:
+            try:
+                return datetime.strptime(value, fmt).date(), None
+            except ValueError:
+                continue
+        return None, f"Malformed date: {value}"
 
-    if not found_str:
-        return None, "No date header found"
-
-    # Attempt parsing with standard formats
-    for fmt in ["%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%d", "%Y/%m/%d"]:
-        try:
-            dt = datetime.strptime(found_str, fmt).date()
-            return dt, found_str
-        except ValueError:
-            pass
-
-    return None, f"Malformed date string: '{found_str}'"
+    return None, "No date header found in first 10 lines"
 
 
 def collect_repository_data(root_dir):
-    """
-    Scans all solution files across target directories and compiles metrics.
-    """
     date_counts = Counter()
-    files_by_date = defaultdict(list)
-    missing_date_files = []
-    malformed_date_files = []
+    language_counts = Counter()
+    missing_dates = []
+    malformed_dates = []
     total_files = 0
 
-    language_counts = Counter()
-
-    for d in SOLUTION_DIRS:
-        target_dir = os.path.join(root_dir, d)
-        if not os.path.isdir(target_dir):
+    for directory in SOLUTION_DIRS:
+        folder = os.path.join(root_dir, directory)
+        if not os.path.isdir(folder):
             continue
 
-        for fname in sorted(os.listdir(target_dir)):
-            ext = os.path.splitext(fname)[1].lower()
-            if ext not in VALID_EXTENSIONS:
+        for filename in sorted(os.listdir(folder)):
+            extension = os.path.splitext(filename)[1].lower()
+            if extension not in VALID_EXTENSIONS:
                 continue
 
             total_files += 1
-            fpath = os.path.join(target_dir, fname)
-            rel_path = os.path.relpath(fpath, root_dir)
+            relative_path = os.path.relpath(os.path.join(folder, filename), root_dir)
+            language_counts["Python" if extension == ".py" else "C++"] += 1
+            solved_date, error = parse_solution_file(os.path.join(folder, filename))
 
-            if ext == ".py":
-                language_counts["Python"] += 1
-            elif ext == ".cpp":
-                language_counts["C++"] += 1
-
-            dt, raw_val = parse_solution_file(fpath)
-            if dt is None:
-                if "Malformed" in raw_val:
-                    malformed_date_files.append((rel_path, raw_val))
-                else:
-                    missing_date_files.append((rel_path, raw_val))
+            if solved_date is None:
+                record = (relative_path, error)
+                (malformed_dates if error.startswith("Malformed") else missing_dates).append(record)
             else:
-                date_counts[dt] += 1
-                files_by_date[dt].append(rel_path)
+                date_counts[solved_date] += 1
 
     return {
         "total_files": total_files,
         "date_counts": date_counts,
-        "files_by_date": files_by_date,
-        "missing_date_files": missing_date_files,
-        "malformed_date_files": malformed_date_files,
         "language_counts": language_counts,
+        "missing_dates": missing_dates,
+        "malformed_dates": malformed_dates,
     }
 
 
-def compute_streaks(date_counts):
-    """
-    Computes current streak, longest streak, and max daily solved.
-    """
+def compute_streaks(date_counts, today=None):
     if not date_counts:
         return 0, 0, 0
 
-    sorted_dates = sorted(date_counts.keys())
-    date_set = set(sorted_dates)
+    today = today or date.today()
+    active_dates = set(date_counts)
+    latest_date = max(active_dates)
+    max_daily = max(date_counts.values())
 
-    # Max single-day solve count
-    max_in_day = max(date_counts.values())
+    longest = run = 0
+    previous = None
+    for solved_date in sorted(active_dates):
+        run = run + 1 if previous and solved_date == previous + timedelta(days=1) else 1
+        longest = max(longest, run)
+        previous = solved_date
 
-    # Longest streak
-    longest_streak = 0
-    curr_streak = 0
-    prev_date = None
+    current = 0
+    check_date = today if today in active_dates else today - timedelta(days=1)
+    if latest_date <= today and check_date in active_dates:
+        while check_date in active_dates:
+            current += 1
+            check_date -= timedelta(days=1)
 
-    for d in sorted_dates:
-        if prev_date is None or d == prev_date + timedelta(days=1):
-            curr_streak += 1
-        else:
-            curr_streak = 1
-        longest_streak = max(longest_streak, curr_streak)
-        prev_date = d
-
-    # Active streak up to latest activity date
-    latest_date = sorted_dates[-1]
-    streak_tail = 0
-    check_date = latest_date
-    while check_date in date_set:
-        streak_tail += 1
-        check_date -= timedelta(days=1)
-
-    return streak_tail, longest_streak, max_in_day
+    return current, longest, max_daily
 
 
 def get_level(count):
-    """
-    Maps daily solved problem count to a LeetCode green intensity level (0 to 4).
-    Days with > 4 problems use Level 4 (brightest green).
-    """
-    if count == 0:
+    if count <= 0:
         return 0
-    elif count == 1:
+    if count == 1:
         return 1
-    elif count == 2:
+    if count == 2:
         return 2
-    elif 3 <= count <= 4:
+    if count <= 4:
         return 3
-    else:
-        return 4
+    return 4
 
 
 def generate_svg(data, output_path, quiet=False):
-    date_counts = data["date_counts"]
+    counts = data["date_counts"]
     total_solved = data["total_files"]
-    active_days = len(date_counts)
+    active_days = len(counts)
+    current_streak, longest_streak, max_daily = compute_streaks(counts)
+    today = date.today()
 
-    curr_streak, longest_streak, max_in_day = compute_streaks(date_counts)
-
-    # Determine calendar grid bounds: July 2026 through July 2027 (57 weeks)
-    # The week containing July 1, 2026 starts on Sunday, June 28, 2026.
-    cal_start = date(2026, 6, 28)
-    num_weeks = 57  # 57 weeks spans from June 28, 2026 through July 31, 2027
-
-    # Grid parameters (Samsung One UI 8 squircle tiles)
     cell_size = 11
-    cell_gap = 3
-    cell_step = cell_size + cell_gap  # 14px
-    corner_radius = 3.2
-
+    gap = 3
+    step = cell_size + gap
     grid_x = 52
-    grid_y = 92
-
+    grid_y = 91
     width = 880
     height = 260
+    radius = 3
+    month_names = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
-    FONT_FAMILY = "'Libre Caslon Condensed', 'Times New Roman', Georgia, serif"
-
-    svg = []
-    svg.append('<?xml version="1.0" encoding="UTF-8"?>')
-    svg.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
-        f'width="100%" height="{height}" '
-        f'style="background-color: transparent; font-family: {FONT_FAMILY};">'
-    )
-
-    # SVG Definitions: Google Font (Libre Caslon Condensed), Frosted Glass & Ambient Glow
-    svg.append("  <defs>")
-    svg.append(
-        "    <style>\n"
-        "      @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&amp;display=swap');\n"
-        "      * { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }\n"
-        "      text { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }\n"
-        "      .cell { cursor: pointer; }\n"
-        "      .cell rect { transition: all 0.15s ease-in-out; }\n"
-        "      .cell:hover rect { stroke: #ffffff !important; stroke-width: 1.4px !important; filter: drop-shadow(0 0 4px rgba(255,255,255,0.7)); }\n"
-        "    </style>"
-    )
-
-    # Ambient backlight blur filter for frosted glass diffusion
-    svg.append(
-        '    <filter id="ambientBlur" x="-30%" y="-30%" width="160%" height="160%">'
-        '<feGaussianBlur stdDeviation="45"/>'
-        '</filter>'
-    )
-
-    # Elevation drop shadow for the glass panel
-    svg.append(
-        '    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">'
-        '<feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>'
-        '</filter>'
-    )
-
-    # Luminous glow for Level 4 tiles
-    svg.append(
-        '    <filter id="tileGlow" x="-20%" y="-20%" width="140%" height="140%">'
-        '<feDropShadow dx="0" dy="0" stdDeviation="2.0" flood-color="#39d353" flood-opacity="0.55"/>'
-        '</filter>'
-    )
-
-    # Frosted Glass panel linear gradient
-    svg.append(
-        '    <linearGradient id="glassCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
-        '<stop offset="0%" stop-color="#0e1626" stop-opacity="0.75"/>'
-        '<stop offset="45%" stop-color="#090f1b" stop-opacity="0.82"/>'
-        '<stop offset="100%" stop-color="#050811" stop-opacity="0.88"/>'
-        '</linearGradient>'
-    )
-
-    # Frosted Glass specular bevel border (prismatic highlight)
-    svg.append(
-        '    <linearGradient id="glassBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
-        '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.38"/>'
-        '<stop offset="20%" stop-color="#38bdf8" stop-opacity="0.25"/>'
-        '<stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>'
-        '<stop offset="80%" stop-color="#a78bfa" stop-opacity="0.22"/>'
-        '<stop offset="100%" stop-color="#ffffff" stop-opacity="0.14"/>'
-        '</linearGradient>'
-    )
-
-    # Specular top reflection sheen
-    svg.append(
-        '    <linearGradient id="glassSheenGrad" x1="0%" y1="0%" x2="0%" y2="100%">'
-        '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>'
-        '<stop offset="35%" stop-color="#ffffff" stop-opacity="0.03"/>'
-        '<stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/>'
-        '</linearGradient>'
-    )
-    svg.append("  </defs>")
-
-    # 1. Ambient Glow Backlight Emitters (Diffused behind the frosted glass)
-    svg.append('  <!-- Ambient Glow Backlight Emitters -->')
-    svg.append('  <g id="ambientGlowLayer">')
-    svg.append('    <ellipse cx="140" cy="65" rx="130" ry="60" fill="#0284c7" opacity="0.22" filter="url(#ambientBlur)"/>')
-    svg.append('    <ellipse cx="250" cy="140" rx="150" ry="75" fill="#059669" opacity="0.26" filter="url(#ambientBlur)"/>')
-    svg.append('    <ellipse cx="720" cy="55" rx="140" ry="55" fill="#7c3aed" opacity="0.24" filter="url(#ambientBlur)"/>')
-    svg.append('    <ellipse cx="650" cy="185" rx="160" ry="70" fill="#2563eb" opacity="0.18" filter="url(#ambientBlur)"/>')
-    svg.append('    <ellipse cx="450" cy="220" rx="120" ry="50" fill="#0d9488" opacity="0.16" filter="url(#ambientBlur)"/>')
-    svg.append('  </g>')
-
-    # 2. Frosted Glass Panel Container
-    svg.append('  <!-- Frosted Glass Surface -->')
-    svg.append('  <g filter="url(#cardShadow)">')
-    svg.append(
-        f'    <rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="20" '
-        'fill="url(#glassCardGrad)" stroke="url(#glassBorderGrad)" stroke-width="1.2"/>'
-    )
-    svg.append('  </g>')
-
-    # 3. Specular Surface Sheen & Inset Bevel
-    svg.append(
-        f'  <rect x="2.5" y="2.5" width="{width - 5}" height="95" rx="19" '
-        'fill="url(#glassSheenGrad)" pointer-events="none"/>'
-    )
-    svg.append(
-        f'  <rect x="2.5" y="2.5" width="{width - 5}" height="{height - 5}" rx="19" '
-        'fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" pointer-events="none"/>'
-    )
-
-    # Header Title in Libre Caslon Condensed
-    svg.append(
-        '  <text x="32" y="38" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="0.3px">'
-        "HackerRank Contribution Activity"
-        "</text>"
-    )
-    svg.append(
-        '  <text x="32" y="56" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.2px">'
-        "Contributions &amp; Problem Solving Calendar • July 2026 – July 2027"
-        "</text>"
-    )
-
-    # Frosted Glass Capsule Badges
-    badges = [
-        (f"{total_solved} Solved", "#60a5fa", "rgba(96, 165, 250, 0.50)", "rgba(30, 58, 110, 0.45)"),
-        (f"{active_days} Active Days", "#34d399", "rgba(52, 211, 153, 0.50)", "rgba(16, 68, 42, 0.45)"),
-        (f"{curr_streak} Day Streak", "#c084fc", "rgba(192, 132, 252, 0.50)", "rgba(65, 30, 95, 0.45)"),
-        (f"Max {max_in_day}/Day", "#fbbf24", "rgba(251, 191, 36, 0.50)", "rgba(80, 50, 15, 0.45)"),
+    svg = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" role="img" aria-labelledby="title description">',
+        '<title id="title">HackerRank contribution activity</title>',
+        '<desc id="description">Daily HackerRank solutions from July 2026 through July 2027. Brighter green cells indicate more solutions.</desc>',
+        '<defs>',
+        '<linearGradient id="card" x1="0" y1="0" x2="1" y2="1">',
+        '<stop offset="0%" stop-color="#111722"/><stop offset="100%" stop-color="#0b111a"/>',
+        '</linearGradient>',
+        '<linearGradient id="topSheen" x1="0" y1="0" x2="0" y2="1">',
+        '<stop offset="0%" stop-color="#ffffff" stop-opacity=".045"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>',
+        '</linearGradient>',
+        '<filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">',
+        '<feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity=".28"/>',
+        '</filter>',
+        '<style>',
+        'text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}',
+        '.cell{outline:none}.cell rect{transition:stroke .12s ease,filter .12s ease}',
+        '.cell:hover rect,.cell:focus rect{stroke:#f8fafc;stroke-width:1.2;filter:drop-shadow(0 0 2px #ffffff66)}',
+        '</style>',
+        '</defs>',
+        f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="url(#card)" stroke="#293343" stroke-width="1.2" filter="url(#shadow)"/>',
+        f'<rect x="2" y="2" width="{width-4}" height="85" rx="19" fill="url(#topSheen)"/>',
+        '<text x="32" y="37" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="-.25">HackerRank Contribution Activity</text>',
+        '<text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · July 2026 – July 2027</text>',
     ]
 
-    badge_x = width - 32
-    for label, text_color, stroke_color, bg_color in reversed(badges):
-        b_width = len(label) * 7.8 + 20
-        badge_x -= b_width
-        svg.append(
-            f'  <g transform="translate({badge_x}, 23)">'
-            f'<rect width="{b_width}" height="25" rx="12.5" fill="{bg_color}" stroke="{stroke_color}" stroke-width="0.9"/>'
-            f'<rect x="1" y="1" width="{b_width - 2}" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/>'
-            f'<text x="{b_width / 2}" y="17" text-anchor="middle" fill="{text_color}" font-size="12" font-weight="600" letter-spacing="0.3px">{label}</text>'
-            "</g>"
-        )
-        badge_x -= 8
+    badges = [
+        (f"{total_solved} Solved", "#60a5fa", "#17263b"),
+        (f"{active_days} Active Days", "#34d399", "#132b25"),
+        (f"{current_streak} Day Streak", "#c084fc", "#282036"),
+        (f"Max {max_daily}/Day", "#fbbf24", "#302719"),
+    ]
+    badge_widths = [max(84, len(label) * 6.5 + 22) for label, _, _ in badges]
+    badge_gap = 7
+    badge_x = width - 31 - sum(badge_widths) - badge_gap * (len(badges) - 1)
+    for (label, color, background), badge_width in zip(badges, badge_widths):
+        svg.extend([
+            f'<g transform="translate({badge_x:.1f},23)">',
+            f'<rect width="{badge_width:.1f}" height="25" rx="12.5" fill="{background}" stroke="{color}" stroke-opacity=".48" stroke-width=".8"/>',
+            f'<text x="{badge_width/2:.1f}" y="16.5" text-anchor="middle" fill="{color}" font-size="11.5" font-weight="650">{escape(label)}</text>',
+            '</g>',
+        ])
+        badge_x += badge_width + badge_gap
 
-    # Month Labels across top of grid
-    month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     rendered_months = set()
-
-    for col in range(num_weeks):
-        week_start = cal_start + timedelta(days=col * 7)
-        # Check if 1st of any month falls in this week
-        for d_offset in range(7):
-            cur_d = week_start + timedelta(days=d_offset)
-            m_key = (cur_d.year, cur_d.month)
-            if cur_d.day == 1 and m_key not in rendered_months:
-                rendered_months.add(m_key)
-                m_label = month_names[cur_d.month - 1]
-                label_x = grid_x + col * cell_step
-                svg.append(
-                    f'  <text x="{label_x}" y="{grid_y - 10}" fill="#94a3b8" '
-                    f'font-size="12" font-weight="500" letter-spacing="0.2px">{m_label}</text>'
-                )
+    for col in range(CALENDAR_WEEKS):
+        week_start = CALENDAR_START + timedelta(days=col * 7)
+        for offset in range(7):
+            current_date = week_start + timedelta(days=offset)
+            key = (current_date.year, current_date.month)
+            if current_date.day == 1 and key not in rendered_months:
+                rendered_months.add(key)
+                x = grid_x + col * step
+                svg.append(f'<text x="{x}" y="{grid_y-11}" fill="#9aa8ba" font-size="11.5">{month_names[current_date.month-1]}</text>')
                 break
 
-    # Day-of-week labels (Mon, Wed, Fri) on the left
-    day_labels = [(1, "Mon"), (3, "Wed"), (5, "Fri")]
-    for row_idx, label in day_labels:
-        label_y = grid_y + row_idx * cell_step + 10
-        svg.append(
-            f'  <text x="{grid_x - 12}" y="{label_y}" text-anchor="end" '
-            f'fill="#64748b" font-size="11" font-weight="400">{label}</text>'
-        )
+    for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
+        y = grid_y + row * step + 9
+        svg.append(f'<text x="{grid_x-12}" y="{y}" fill="#748398" font-size="10.5" text-anchor="end">{label}</text>')
 
-    # Calendar Cells (LeetCode Green intensity with One UI 8 squircles)
-    for col in range(num_weeks):
+    for col in range(CALENDAR_WEEKS):
         for row in range(7):
-            cell_date = cal_start + timedelta(days=col * 7 + row)
-            cnt = date_counts.get(cell_date, 0)
-            lvl = get_level(cnt)
-
-            x = grid_x + col * cell_step
-            y = grid_y + row * cell_step
-
-            # Exact tooltip format: "DD/MM/YY : 1 commit" or "DD/MM/YY : X commits", and for 0 commits: "DD/MM/YY"
-            short_date = cell_date.strftime("%d/%m/%y")
-            if cnt == 0:
-                tooltip = short_date
-            elif cnt == 1:
-                tooltip = f"{short_date} : 1 commit"
+            cell_date = CALENDAR_START + timedelta(days=col * 7 + row)
+            count = counts.get(cell_date, 0)
+            x = grid_x + col * step
+            y = grid_y + row * step
+            if cell_date > today:
+                fill, stroke = FUTURE_FILL, FUTURE_STROKE
+                tooltip = f"{cell_date:%d/%m/%y} · Future date"
             else:
-                tooltip = f"{short_date} : {cnt} commits"
-            safe_tooltip = saxutils.escape(tooltip)
+                fill, stroke = PALETTE[get_level(count)]
+                if count == 0:
+                    tooltip = f"{cell_date:%d/%m/%y} · No solutions recorded"
+                else:
+                    unit = "solution" if count == 1 else "solutions"
+                    tooltip = f"{cell_date:%d/%m/%y} · {count} {unit}"
+            svg.extend([
+                f'<g class="cell" tabindex="0" role="img" aria-label="{escape(tooltip)}">',
+                f'<title>{escape(tooltip)}</title>',
+                f'<rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>',
+                '</g>',
+            ])
 
-            fill_col, stroke_col = LEVEL_COLORS[lvl]
-            svg.append(f'  <g class="cell" tabindex="0">')
-            svg.append(f"    <title>{safe_tooltip}</title>")
-            if lvl == 4:
-                # Level 4 (>4 problems): Brightest LeetCode green with subtle luminous glow
-                svg.append(
-                    f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
-                    f'fill="{fill_col}" stroke="{stroke_col}" stroke-width="0.8" filter="url(#tileGlow)"/>'
-                )
-            else:
-                svg.append(
-                    f'    <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{corner_radius}" '
-                    f'fill="{fill_col}" stroke="{stroke_col}" stroke-width="0.5"/>'
-                )
-            svg.append("  </g>")
+    legend_y = grid_y + 7 * step + 17
+    svg.append(f'<text x="32" y="{legend_y+10}" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · July 2026 – July 2027</text>')
+    legend_x = width - 229
+    svg.append(f'<text x="{legend_x}" y="{legend_y+10}" fill="#748398" font-size="11.5" text-anchor="end">Less</text>')
+    legend_x += 10
+    for level in range(5):
+        fill, stroke = PALETTE[level]
+        svg.append(f'<rect x="{legend_x}" y="{legend_y}" width="11" height="11" rx="2.5" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>')
+        legend_x += 15
+    svg.append(f'<text x="{legend_x+1}" y="{legend_y+10}" fill="#748398" font-size="11.5">More</text>')
+    svg.append('</svg>')
 
-    # Legend at bottom
-    legend_y = grid_y + 7 * cell_step + 18
-
-    # Left subtitle note
-    svg.append(
-        f'  <text x="32" y="{legend_y + 10}" fill="#94a3b8" font-size="12" font-weight="400" letter-spacing="0.2px">'
-        "Daily problem solving activity • July 2026 – July 2027"
-        "</text>"
-    )
-
-    # Right legend: Less [0] [1] [2] [3] [4] More
-    leg_x = width - 215
-    svg.append(
-        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="#64748b" font-size="12" font-weight="400" text-anchor="end">Less</text>'
-    )
-    leg_x += 8
-
-    # Standard 5 LeetCode levels: 0, 1, 2, 3, 4
-    for lvl_idx in range(5):
-        f_c, s_c = LEVEL_COLORS[lvl_idx]
-        if lvl_idx == 4:
-            svg.append(
-                f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2.5" '
-                f'fill="{f_c}" stroke="{s_c}" stroke-width="0.8" filter="url(#tileGlow)"/>'
-            )
-        else:
-            svg.append(
-                f'  <rect x="{leg_x}" y="{legend_y}" width="11" height="11" rx="2.5" '
-                f'fill="{f_c}" stroke="{s_c}" stroke-width="0.5"/>'
-            )
-        leg_x += 15
-
-    svg.append(
-        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="#64748b" font-size="12" font-weight="400">More</text>'
-    )
-
-    svg.append("</svg>")
-
-    # Ensure output dir exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(svg))
+    with open(output_path, "w", encoding="utf-8") as output:
+        output.write("\n".join(svg))
 
     if not quiet:
-        print(f"[+] Successfully generated heatmap SVG: {os.path.relpath(output_path, REPO_ROOT)}")
+        print(f"Generated heatmap: {os.path.relpath(output_path, REPO_ROOT)}")
 
 
 def main():
     quiet = "-q" in sys.argv or "--quiet" in sys.argv
-
-    if not quiet:
-        print("=" * 60)
-        print(" HackerRank Solutions Activity Heatmap Generator")
-        print("=" * 60)
-        print(f"[*] Scanning repository: {REPO_ROOT}")
-        print(f"[*] Target directories: {', '.join(SOLUTION_DIRS)}")
-
     data = collect_repository_data(REPO_ROOT)
+    current, longest, max_daily = compute_streaks(data["date_counts"])
 
     if not quiet:
-        print(f"\n[+] Total Solution Files: {data['total_files']}")
-        for lang, count in data["language_counts"].items():
-            print(f"    - {lang}: {count} files")
+        print(f"Scanning repository: {REPO_ROOT}")
+        print(f"Solution files: {data['total_files']}")
+        for language, count in sorted(data["language_counts"].items()):
+            print(f"  {language}: {count}")
+        print(f"Dated active days: {len(data['date_counts'])}")
+        print(f"Current streak: {current} days | Longest streak: {longest} days | Max/day: {max_daily}")
+        for heading, entries in (("Missing date metadata", data["missing_dates"]), ("Malformed dates", data["malformed_dates"])):
+            if entries:
+                print(f"\n{heading} ({len(entries)}):")
+                for path, reason in entries:
+                    print(f"  - {path}: {reason}")
 
-        print(f"[+] Unique Active Solving Days: {len(data['date_counts'])}")
-
-        # Report metadata discrepancies if any
-        if data["missing_date_files"]:
-            print(f"\n[!] WARNING: {len(data['missing_date_files'])} files missing solving date metadata:")
-            for f, reason in data["missing_date_files"]:
-                print(f"    - {f}: {reason}")
-        else:
-            print("[+] 0 missing date files. (100% metadata coverage)")
-
-        if data["malformed_date_files"]:
-            print(f"\n[!] WARNING: {len(data['malformed_date_files'])} files with malformed date strings:")
-            for f, reason in data["malformed_date_files"]:
-                print(f"    - {f}: {reason}")
-        else:
-            print("[+] 0 malformed date files. (100% parse success)")
-
-    curr_streak, longest_streak, max_in_day = compute_streaks(data["date_counts"])
-
-    if not quiet:
-        print(f"\n[+] Streak Statistics:")
-        print(f"    - Current Streak : {curr_streak} days")
-        print(f"    - Longest Streak : {longest_streak} days")
-        print(f"    - Max in One Day : {max_in_day} problems")
-
-    # Generate the SVG
     generate_svg(data, OUTPUT_SVG, quiet=quiet)
-
-    if not quiet:
-        print("=" * 60)
-        print(" Heatmap generation complete!")
-        print("=" * 60)
 
 
 if __name__ == "__main__":
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     main()

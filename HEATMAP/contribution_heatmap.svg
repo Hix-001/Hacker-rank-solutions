@@ -1,1659 +1,1661 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" height="260" style="background-color: transparent; font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif;">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&amp;display=swap');
-      * { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }
-      text { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }
-      .cell { cursor: pointer; }
-      .cell rect { transition: all 0.15s ease-in-out; }
-      .cell:hover rect { stroke: #ffffff !important; stroke-width: 1.4px !important; filter: drop-shadow(0 0 4px rgba(255,255,255,0.7)); }
-    </style>
-    <filter id="ambientBlur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="45"/></filter>
-    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/></filter>
-    <filter id="tileGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="2.0" flood-color="#39d353" flood-opacity="0.55"/></filter>
-    <linearGradient id="glassCardGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0e1626" stop-opacity="0.75"/><stop offset="45%" stop-color="#090f1b" stop-opacity="0.82"/><stop offset="100%" stop-color="#050811" stop-opacity="0.88"/></linearGradient>
-    <linearGradient id="glassBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.38"/><stop offset="20%" stop-color="#38bdf8" stop-opacity="0.25"/><stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/><stop offset="80%" stop-color="#a78bfa" stop-opacity="0.22"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.14"/></linearGradient>
-    <linearGradient id="glassSheenGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="35%" stop-color="#ffffff" stop-opacity="0.03"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/></linearGradient>
-  </defs>
-  <!-- Ambient Glow Backlight Emitters -->
-  <g id="ambientGlowLayer">
-    <ellipse cx="140" cy="65" rx="130" ry="60" fill="#0284c7" opacity="0.22" filter="url(#ambientBlur)"/>
-    <ellipse cx="250" cy="140" rx="150" ry="75" fill="#059669" opacity="0.26" filter="url(#ambientBlur)"/>
-    <ellipse cx="720" cy="55" rx="140" ry="55" fill="#7c3aed" opacity="0.24" filter="url(#ambientBlur)"/>
-    <ellipse cx="650" cy="185" rx="160" ry="70" fill="#2563eb" opacity="0.18" filter="url(#ambientBlur)"/>
-    <ellipse cx="450" cy="220" rx="120" ry="50" fill="#0d9488" opacity="0.16" filter="url(#ambientBlur)"/>
-  </g>
-  <!-- Frosted Glass Surface -->
-  <g filter="url(#cardShadow)">
-    <rect x="1.5" y="1.5" width="877" height="257" rx="20" fill="url(#glassCardGrad)" stroke="url(#glassBorderGrad)" stroke-width="1.2"/>
-  </g>
-  <rect x="2.5" y="2.5" width="875" height="95" rx="19" fill="url(#glassSheenGrad)" pointer-events="none"/>
-  <rect x="2.5" y="2.5" width="875" height="255" rx="19" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" pointer-events="none"/>
-  <text x="32" y="38" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="0.3px">HackerRank Contribution Activity</text>
-  <text x="32" y="56" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.2px">Contributions &amp; Problem Solving Calendar • July 2026 – July 2027</text>
-  <g transform="translate(750.0, 23)"><rect width="98.0" height="25" rx="12.5" fill="rgba(80, 50, 15, 0.45)" stroke="rgba(251, 191, 36, 0.50)" stroke-width="0.9"/><rect x="1" y="1" width="96.0" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/><text x="49.0" y="17" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="600" letter-spacing="0.3px">Max 27/Day</text></g>
-  <g transform="translate(620.6, 23)"><rect width="121.39999999999999" height="25" rx="12.5" fill="rgba(65, 30, 95, 0.45)" stroke="rgba(192, 132, 252, 0.50)" stroke-width="0.9"/><rect x="1" y="1" width="119.39999999999999" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/><text x="60.699999999999996" y="17" text-anchor="middle" fill="#c084fc" font-size="12" font-weight="600" letter-spacing="0.3px">53 Day Streak</text></g>
-  <g transform="translate(483.40000000000003, 23)"><rect width="129.2" height="25" rx="12.5" fill="rgba(16, 68, 42, 0.45)" stroke="rgba(52, 211, 153, 0.50)" stroke-width="0.9"/><rect x="1" y="1" width="127.19999999999999" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/><text x="64.6" y="17" text-anchor="middle" fill="#34d399" font-size="12" font-weight="600" letter-spacing="0.3px">97 Active Days</text></g>
-  <g transform="translate(377.40000000000003, 23)"><rect width="98.0" height="25" rx="12.5" fill="rgba(30, 58, 110, 0.45)" stroke="rgba(96, 165, 250, 0.50)" stroke-width="0.9"/><rect x="1" y="1" width="96.0" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/><text x="49.0" y="17" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="600" letter-spacing="0.3px">178 Solved</text></g>
-  <text x="52" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Jul</text>
-  <text x="108" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Aug</text>
-  <text x="178" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Sep</text>
-  <text x="234" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Oct</text>
-  <text x="304" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Nov</text>
-  <text x="360" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Dec</text>
-  <text x="416" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Jan</text>
-  <text x="486" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Feb</text>
-  <text x="542" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Mar</text>
-  <text x="598" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Apr</text>
-  <text x="654" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">May</text>
-  <text x="724" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Jun</text>
-  <text x="780" y="82" fill="#94a3b8" font-size="12" font-weight="500" letter-spacing="0.2px">Jul</text>
-  <text x="40" y="116" text-anchor="end" fill="#64748b" font-size="11" font-weight="400">Mon</text>
-  <text x="40" y="144" text-anchor="end" fill="#64748b" font-size="11" font-weight="400">Wed</text>
-  <text x="40" y="172" text-anchor="end" fill="#64748b" font-size="11" font-weight="400">Fri</text>
-  <g class="cell" tabindex="0">
-    <title>28/06/26</title>
-    <rect x="52" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/06/26</title>
-    <rect x="52" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/06/26</title>
-    <rect x="52" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/07/26</title>
-    <rect x="52" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/07/26 : 1 commit</title>
-    <rect x="52" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/07/26</title>
-    <rect x="52" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/07/26 : 1 commit</title>
-    <rect x="52" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/07/26 : 27 commits</title>
-    <rect x="66" y="92" width="11" height="11" rx="3.2" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/07/26 : 1 commit</title>
-    <rect x="66" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/07/26 : 7 commits</title>
-    <rect x="66" y="120" width="11" height="11" rx="3.2" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/07/26 : 3 commits</title>
-    <rect x="66" y="134" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/07/26 : 1 commit</title>
-    <rect x="66" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/07/26 : 1 commit</title>
-    <rect x="66" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/07/26 : 1 commit</title>
-    <rect x="66" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/07/26 : 1 commit</title>
-    <rect x="80" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/07/26 : 2 commits</title>
-    <rect x="80" y="106" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/07/26 : 1 commit</title>
-    <rect x="80" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/07/26 : 1 commit</title>
-    <rect x="80" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/07/26 : 1 commit</title>
-    <rect x="80" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/07/26 : 1 commit</title>
-    <rect x="80" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/07/26 : 1 commit</title>
-    <rect x="80" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/07/26 : 4 commits</title>
-    <rect x="94" y="92" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/07/26 : 1 commit</title>
-    <rect x="94" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/07/26 : 2 commits</title>
-    <rect x="94" y="120" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/07/26 : 2 commits</title>
-    <rect x="94" y="134" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/07/26 : 2 commits</title>
-    <rect x="94" y="148" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/07/26 : 2 commits</title>
-    <rect x="94" y="162" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/07/26</title>
-    <rect x="94" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/07/26 : 3 commits</title>
-    <rect x="108" y="92" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/07/26 : 1 commit</title>
-    <rect x="108" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/07/26 : 2 commits</title>
-    <rect x="108" y="120" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/07/26 : 1 commit</title>
-    <rect x="108" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/07/26 : 1 commit</title>
-    <rect x="108" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/07/26 : 1 commit</title>
-    <rect x="108" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/08/26 : 1 commit</title>
-    <rect x="108" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/08/26 : 6 commits</title>
-    <rect x="122" y="92" width="11" height="11" rx="3.2" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/08/26 : 1 commit</title>
-    <rect x="122" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/08/26 : 1 commit</title>
-    <rect x="122" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/08/26 : 1 commit</title>
-    <rect x="122" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/08/26 : 1 commit</title>
-    <rect x="122" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/08/26 : 1 commit</title>
-    <rect x="122" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/08/26 : 1 commit</title>
-    <rect x="122" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/08/26 : 3 commits</title>
-    <rect x="136" y="92" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/08/26 : 1 commit</title>
-    <rect x="136" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/08/26 : 1 commit</title>
-    <rect x="136" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/08/26 : 1 commit</title>
-    <rect x="136" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/08/26 : 1 commit</title>
-    <rect x="136" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/08/26 : 1 commit</title>
-    <rect x="136" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/08/26 : 2 commits</title>
-    <rect x="136" y="176" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/08/26 : 1 commit</title>
-    <rect x="150" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/08/26</title>
-    <rect x="150" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/08/26 : 2 commits</title>
-    <rect x="150" y="120" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/08/26 : 1 commit</title>
-    <rect x="150" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/08/26 : 1 commit</title>
-    <rect x="150" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/08/26 : 1 commit</title>
-    <rect x="150" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/08/26 : 2 commits</title>
-    <rect x="150" y="176" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/08/26 : 3 commits</title>
-    <rect x="164" y="92" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/08/26 : 1 commit</title>
-    <rect x="164" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/08/26 : 1 commit</title>
-    <rect x="164" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/08/26 : 1 commit</title>
-    <rect x="164" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/08/26 : 1 commit</title>
-    <rect x="164" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/08/26 : 1 commit</title>
-    <rect x="164" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/08/26 : 1 commit</title>
-    <rect x="164" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/08/26 : 2 commits</title>
-    <rect x="178" y="92" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/08/26 : 1 commit</title>
-    <rect x="178" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/09/26 : 1 commit</title>
-    <rect x="178" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/09/26 : 1 commit</title>
-    <rect x="178" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/09/26 : 1 commit</title>
-    <rect x="178" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/09/26 : 1 commit</title>
-    <rect x="178" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/09/26 : 3 commits</title>
-    <rect x="178" y="176" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/09/26 : 2 commits</title>
-    <rect x="192" y="92" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/09/26 : 1 commit</title>
-    <rect x="192" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/09/26 : 6 commits</title>
-    <rect x="192" y="120" width="11" height="11" rx="3.2" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/09/26 : 11 commits</title>
-    <rect x="192" y="134" width="11" height="11" rx="3.2" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/09/26 : 4 commits</title>
-    <rect x="192" y="148" width="11" height="11" rx="3.2" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/09/26 : 2 commits</title>
-    <rect x="192" y="162" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/09/26 : 1 commit</title>
-    <rect x="192" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/09/26 : 1 commit</title>
-    <rect x="206" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/09/26 : 1 commit</title>
-    <rect x="206" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/09/26 : 1 commit</title>
-    <rect x="206" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/09/26 : 1 commit</title>
-    <rect x="206" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/09/26 : 1 commit</title>
-    <rect x="206" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/09/26 : 1 commit</title>
-    <rect x="206" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/09/26 : 1 commit</title>
-    <rect x="206" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/09/26 : 1 commit</title>
-    <rect x="220" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/09/26 : 1 commit</title>
-    <rect x="220" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/09/26 : 1 commit</title>
-    <rect x="220" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/09/26 : 1 commit</title>
-    <rect x="220" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/09/26 : 2 commits</title>
-    <rect x="220" y="148" width="11" height="11" rx="3.2" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/09/26 : 1 commit</title>
-    <rect x="220" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/09/26 : 1 commit</title>
-    <rect x="220" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/09/26 : 1 commit</title>
-    <rect x="234" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/09/26 : 1 commit</title>
-    <rect x="234" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/09/26 : 1 commit</title>
-    <rect x="234" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/09/26 : 1 commit</title>
-    <rect x="234" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/10/26 : 1 commit</title>
-    <rect x="234" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/10/26 : 1 commit</title>
-    <rect x="234" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/10/26 : 1 commit</title>
-    <rect x="234" y="176" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/10/26 : 1 commit</title>
-    <rect x="248" y="92" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/10/26 : 1 commit</title>
-    <rect x="248" y="106" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/10/26 : 1 commit</title>
-    <rect x="248" y="120" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/10/26 : 1 commit</title>
-    <rect x="248" y="134" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/10/26 : 1 commit</title>
-    <rect x="248" y="148" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/10/26 : 1 commit</title>
-    <rect x="248" y="162" width="11" height="11" rx="3.2" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/10/26</title>
-    <rect x="248" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/10/26</title>
-    <rect x="262" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/10/26</title>
-    <rect x="262" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/10/26</title>
-    <rect x="262" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/10/26</title>
-    <rect x="262" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/10/26</title>
-    <rect x="262" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/10/26</title>
-    <rect x="262" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/10/26</title>
-    <rect x="262" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/10/26</title>
-    <rect x="276" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/10/26</title>
-    <rect x="276" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/10/26</title>
-    <rect x="276" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/10/26</title>
-    <rect x="276" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/10/26</title>
-    <rect x="276" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/10/26</title>
-    <rect x="276" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/10/26</title>
-    <rect x="276" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/10/26</title>
-    <rect x="290" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/10/26</title>
-    <rect x="290" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/10/26</title>
-    <rect x="290" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/10/26</title>
-    <rect x="290" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/10/26</title>
-    <rect x="290" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/10/26</title>
-    <rect x="290" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/10/26</title>
-    <rect x="290" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/11/26</title>
-    <rect x="304" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/11/26</title>
-    <rect x="304" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/11/26</title>
-    <rect x="304" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/11/26</title>
-    <rect x="304" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/11/26</title>
-    <rect x="304" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/11/26</title>
-    <rect x="304" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/11/26</title>
-    <rect x="304" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/11/26</title>
-    <rect x="318" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/11/26</title>
-    <rect x="318" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/11/26</title>
-    <rect x="318" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/11/26</title>
-    <rect x="318" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/11/26</title>
-    <rect x="318" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/11/26</title>
-    <rect x="318" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/11/26</title>
-    <rect x="318" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/11/26</title>
-    <rect x="332" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/11/26</title>
-    <rect x="332" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/11/26</title>
-    <rect x="332" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/11/26</title>
-    <rect x="332" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/11/26</title>
-    <rect x="332" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/11/26</title>
-    <rect x="332" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/11/26</title>
-    <rect x="332" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/11/26</title>
-    <rect x="346" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/11/26</title>
-    <rect x="346" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/11/26</title>
-    <rect x="346" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/11/26</title>
-    <rect x="346" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/11/26</title>
-    <rect x="346" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/11/26</title>
-    <rect x="346" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/11/26</title>
-    <rect x="346" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/11/26</title>
-    <rect x="360" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/11/26</title>
-    <rect x="360" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/12/26</title>
-    <rect x="360" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/12/26</title>
-    <rect x="360" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/12/26</title>
-    <rect x="360" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/12/26</title>
-    <rect x="360" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/12/26</title>
-    <rect x="360" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/12/26</title>
-    <rect x="374" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/12/26</title>
-    <rect x="374" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/12/26</title>
-    <rect x="374" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/12/26</title>
-    <rect x="374" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/12/26</title>
-    <rect x="374" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/12/26</title>
-    <rect x="374" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/12/26</title>
-    <rect x="374" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/12/26</title>
-    <rect x="388" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/12/26</title>
-    <rect x="388" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/12/26</title>
-    <rect x="388" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/12/26</title>
-    <rect x="388" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/12/26</title>
-    <rect x="388" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/12/26</title>
-    <rect x="388" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/12/26</title>
-    <rect x="388" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/12/26</title>
-    <rect x="402" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/12/26</title>
-    <rect x="402" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/12/26</title>
-    <rect x="402" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/12/26</title>
-    <rect x="402" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/12/26</title>
-    <rect x="402" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/12/26</title>
-    <rect x="402" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/12/26</title>
-    <rect x="402" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/12/26</title>
-    <rect x="416" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/12/26</title>
-    <rect x="416" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/12/26</title>
-    <rect x="416" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/12/26</title>
-    <rect x="416" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/12/26</title>
-    <rect x="416" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/01/27</title>
-    <rect x="416" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/01/27</title>
-    <rect x="416" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/01/27</title>
-    <rect x="430" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/01/27</title>
-    <rect x="430" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/01/27</title>
-    <rect x="430" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/01/27</title>
-    <rect x="430" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/01/27</title>
-    <rect x="430" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/01/27</title>
-    <rect x="430" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/01/27</title>
-    <rect x="430" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/01/27</title>
-    <rect x="444" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/01/27</title>
-    <rect x="444" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/01/27</title>
-    <rect x="444" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/01/27</title>
-    <rect x="444" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/01/27</title>
-    <rect x="444" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/01/27</title>
-    <rect x="444" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/01/27</title>
-    <rect x="444" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/01/27</title>
-    <rect x="458" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/01/27</title>
-    <rect x="458" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/01/27</title>
-    <rect x="458" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/01/27</title>
-    <rect x="458" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/01/27</title>
-    <rect x="458" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/01/27</title>
-    <rect x="458" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/01/27</title>
-    <rect x="458" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/01/27</title>
-    <rect x="472" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/01/27</title>
-    <rect x="472" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/01/27</title>
-    <rect x="472" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/01/27</title>
-    <rect x="472" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/01/27</title>
-    <rect x="472" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/01/27</title>
-    <rect x="472" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/01/27</title>
-    <rect x="472" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/01/27</title>
-    <rect x="486" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/02/27</title>
-    <rect x="486" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/02/27</title>
-    <rect x="486" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/02/27</title>
-    <rect x="486" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/02/27</title>
-    <rect x="486" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/02/27</title>
-    <rect x="486" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/02/27</title>
-    <rect x="486" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/02/27</title>
-    <rect x="500" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/02/27</title>
-    <rect x="500" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/02/27</title>
-    <rect x="500" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/02/27</title>
-    <rect x="500" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/02/27</title>
-    <rect x="500" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/02/27</title>
-    <rect x="500" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/02/27</title>
-    <rect x="500" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/02/27</title>
-    <rect x="514" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/02/27</title>
-    <rect x="514" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/02/27</title>
-    <rect x="514" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/02/27</title>
-    <rect x="514" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/02/27</title>
-    <rect x="514" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/02/27</title>
-    <rect x="514" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/02/27</title>
-    <rect x="514" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/02/27</title>
-    <rect x="528" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/02/27</title>
-    <rect x="528" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/02/27</title>
-    <rect x="528" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/02/27</title>
-    <rect x="528" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/02/27</title>
-    <rect x="528" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/02/27</title>
-    <rect x="528" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/02/27</title>
-    <rect x="528" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/02/27</title>
-    <rect x="542" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/03/27</title>
-    <rect x="542" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/03/27</title>
-    <rect x="542" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/03/27</title>
-    <rect x="542" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/03/27</title>
-    <rect x="542" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/03/27</title>
-    <rect x="542" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/03/27</title>
-    <rect x="542" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/03/27</title>
-    <rect x="556" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/03/27</title>
-    <rect x="556" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/03/27</title>
-    <rect x="556" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/03/27</title>
-    <rect x="556" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/03/27</title>
-    <rect x="556" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/03/27</title>
-    <rect x="556" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/03/27</title>
-    <rect x="556" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/03/27</title>
-    <rect x="570" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/03/27</title>
-    <rect x="570" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/03/27</title>
-    <rect x="570" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/03/27</title>
-    <rect x="570" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/03/27</title>
-    <rect x="570" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/03/27</title>
-    <rect x="570" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/03/27</title>
-    <rect x="570" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/03/27</title>
-    <rect x="584" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/03/27</title>
-    <rect x="584" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/03/27</title>
-    <rect x="584" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/03/27</title>
-    <rect x="584" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/03/27</title>
-    <rect x="584" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/03/27</title>
-    <rect x="584" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/03/27</title>
-    <rect x="584" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/03/27</title>
-    <rect x="598" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/03/27</title>
-    <rect x="598" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/03/27</title>
-    <rect x="598" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/03/27</title>
-    <rect x="598" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/04/27</title>
-    <rect x="598" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/04/27</title>
-    <rect x="598" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/04/27</title>
-    <rect x="598" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/04/27</title>
-    <rect x="612" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/04/27</title>
-    <rect x="612" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/04/27</title>
-    <rect x="612" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/04/27</title>
-    <rect x="612" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/04/27</title>
-    <rect x="612" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/04/27</title>
-    <rect x="612" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/04/27</title>
-    <rect x="612" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/04/27</title>
-    <rect x="626" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/04/27</title>
-    <rect x="626" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/04/27</title>
-    <rect x="626" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/04/27</title>
-    <rect x="626" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/04/27</title>
-    <rect x="626" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/04/27</title>
-    <rect x="626" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/04/27</title>
-    <rect x="626" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/04/27</title>
-    <rect x="640" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/04/27</title>
-    <rect x="640" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/04/27</title>
-    <rect x="640" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/04/27</title>
-    <rect x="640" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/04/27</title>
-    <rect x="640" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/04/27</title>
-    <rect x="640" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/04/27</title>
-    <rect x="640" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/04/27</title>
-    <rect x="654" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/04/27</title>
-    <rect x="654" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/04/27</title>
-    <rect x="654" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/04/27</title>
-    <rect x="654" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/04/27</title>
-    <rect x="654" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/04/27</title>
-    <rect x="654" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/05/27</title>
-    <rect x="654" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/05/27</title>
-    <rect x="668" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/05/27</title>
-    <rect x="668" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/05/27</title>
-    <rect x="668" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/05/27</title>
-    <rect x="668" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/05/27</title>
-    <rect x="668" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/05/27</title>
-    <rect x="668" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/05/27</title>
-    <rect x="668" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/05/27</title>
-    <rect x="682" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/05/27</title>
-    <rect x="682" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/05/27</title>
-    <rect x="682" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/05/27</title>
-    <rect x="682" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/05/27</title>
-    <rect x="682" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/05/27</title>
-    <rect x="682" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/05/27</title>
-    <rect x="682" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/05/27</title>
-    <rect x="696" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/05/27</title>
-    <rect x="696" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/05/27</title>
-    <rect x="696" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/05/27</title>
-    <rect x="696" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/05/27</title>
-    <rect x="696" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/05/27</title>
-    <rect x="696" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/05/27</title>
-    <rect x="696" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/05/27</title>
-    <rect x="710" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/05/27</title>
-    <rect x="710" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/05/27</title>
-    <rect x="710" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/05/27</title>
-    <rect x="710" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/05/27</title>
-    <rect x="710" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/05/27</title>
-    <rect x="710" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/05/27</title>
-    <rect x="710" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/05/27</title>
-    <rect x="724" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/05/27</title>
-    <rect x="724" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/06/27</title>
-    <rect x="724" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/06/27</title>
-    <rect x="724" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/06/27</title>
-    <rect x="724" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/06/27</title>
-    <rect x="724" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/06/27</title>
-    <rect x="724" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/06/27</title>
-    <rect x="738" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/06/27</title>
-    <rect x="738" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/06/27</title>
-    <rect x="738" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/06/27</title>
-    <rect x="738" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/06/27</title>
-    <rect x="738" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/06/27</title>
-    <rect x="738" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/06/27</title>
-    <rect x="738" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/06/27</title>
-    <rect x="752" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/06/27</title>
-    <rect x="752" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/06/27</title>
-    <rect x="752" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/06/27</title>
-    <rect x="752" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/06/27</title>
-    <rect x="752" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/06/27</title>
-    <rect x="752" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/06/27</title>
-    <rect x="752" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/06/27</title>
-    <rect x="766" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/06/27</title>
-    <rect x="766" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/06/27</title>
-    <rect x="766" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/06/27</title>
-    <rect x="766" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/06/27</title>
-    <rect x="766" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/06/27</title>
-    <rect x="766" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/06/27</title>
-    <rect x="766" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/06/27</title>
-    <rect x="780" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/06/27</title>
-    <rect x="780" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/06/27</title>
-    <rect x="780" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/06/27</title>
-    <rect x="780" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>01/07/27</title>
-    <rect x="780" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>02/07/27</title>
-    <rect x="780" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>03/07/27</title>
-    <rect x="780" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>04/07/27</title>
-    <rect x="794" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>05/07/27</title>
-    <rect x="794" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>06/07/27</title>
-    <rect x="794" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>07/07/27</title>
-    <rect x="794" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>08/07/27</title>
-    <rect x="794" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>09/07/27</title>
-    <rect x="794" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>10/07/27</title>
-    <rect x="794" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>11/07/27</title>
-    <rect x="808" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>12/07/27</title>
-    <rect x="808" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>13/07/27</title>
-    <rect x="808" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>14/07/27</title>
-    <rect x="808" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>15/07/27</title>
-    <rect x="808" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>16/07/27</title>
-    <rect x="808" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>17/07/27</title>
-    <rect x="808" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>18/07/27</title>
-    <rect x="822" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>19/07/27</title>
-    <rect x="822" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>20/07/27</title>
-    <rect x="822" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>21/07/27</title>
-    <rect x="822" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>22/07/27</title>
-    <rect x="822" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>23/07/27</title>
-    <rect x="822" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>24/07/27</title>
-    <rect x="822" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>25/07/27</title>
-    <rect x="836" y="92" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>26/07/27</title>
-    <rect x="836" y="106" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>27/07/27</title>
-    <rect x="836" y="120" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>28/07/27</title>
-    <rect x="836" y="134" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>29/07/27</title>
-    <rect x="836" y="148" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>30/07/27</title>
-    <rect x="836" y="162" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <g class="cell" tabindex="0">
-    <title>31/07/27</title>
-    <rect x="836" y="176" width="11" height="11" rx="3.2" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  </g>
-  <text x="32" y="218" fill="#94a3b8" font-size="12" font-weight="400" letter-spacing="0.2px">Daily problem solving activity • July 2026 – July 2027</text>
-  <text x="665" y="218" fill="#64748b" font-size="12" font-weight="400" text-anchor="end">Less</text>
-  <rect x="673" y="208" width="11" height="11" rx="2.5" fill="#161b24" stroke="#222836" stroke-width="0.5"/>
-  <rect x="688" y="208" width="11" height="11" rx="2.5" fill="#0e4429" stroke="#16653a" stroke-width="0.5"/>
-  <rect x="703" y="208" width="11" height="11" rx="2.5" fill="#006d32" stroke="#1f8c47" stroke-width="0.5"/>
-  <rect x="718" y="208" width="11" height="11" rx="2.5" fill="#26a641" stroke="#32c957" stroke-width="0.5"/>
-  <rect x="733" y="208" width="11" height="11" rx="2.5" fill="#39d353" stroke="#5eff7f" stroke-width="0.8" filter="url(#tileGlow)"/>
-  <text x="748" y="218" fill="#64748b" font-size="12" font-weight="400">More</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" role="img" aria-labelledby="title description">
+<title id="title">HackerRank contribution activity</title>
+<desc id="description">Daily HackerRank solutions from July 2026 through July 2027. Brighter green cells indicate more solutions.</desc>
+<defs>
+<linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#111722"/><stop offset="100%" stop-color="#0b111a"/>
+</linearGradient>
+<linearGradient id="topSheen" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ffffff" stop-opacity=".045"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+</linearGradient>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+<feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity=".28"/>
+</filter>
+<style>
+text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.cell{outline:none}.cell rect{transition:stroke .12s ease,filter .12s ease}
+.cell:hover rect,.cell:focus rect{stroke:#f8fafc;stroke-width:1.2;filter:drop-shadow(0 0 2px #ffffff66)}
+</style>
+</defs>
+<rect x="1" y="1" width="878" height="258" rx="20" fill="url(#card)" stroke="#293343" stroke-width="1.2" filter="url(#shadow)"/>
+<rect x="2" y="2" width="876" height="85" rx="19" fill="url(#topSheen)"/>
+<text x="32" y="37" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="-.25">HackerRank Contribution Activity</text>
+<text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · July 2026 – July 2027</text>
+<g transform="translate(434.5,23)">
+<rect width="87.0" height="25" rx="12.5" fill="#17263b" stroke="#60a5fa" stroke-opacity=".48" stroke-width=".8"/>
+<text x="43.5" y="16.5" text-anchor="middle" fill="#60a5fa" font-size="11.5" font-weight="650">178 Solved</text>
+</g>
+<g transform="translate(528.5,23)">
+<rect width="113.0" height="25" rx="12.5" fill="#132b25" stroke="#34d399" stroke-opacity=".48" stroke-width=".8"/>
+<text x="56.5" y="16.5" text-anchor="middle" fill="#34d399" font-size="11.5" font-weight="650">97 Active Days</text>
+</g>
+<g transform="translate(648.5,23)">
+<rect width="106.5" height="25" rx="12.5" fill="#282036" stroke="#c084fc" stroke-opacity=".48" stroke-width=".8"/>
+<text x="53.2" y="16.5" text-anchor="middle" fill="#c084fc" font-size="11.5" font-weight="650">53 Day Streak</text>
+</g>
+<g transform="translate(762.0,23)">
+<rect width="87.0" height="25" rx="12.5" fill="#302719" stroke="#fbbf24" stroke-opacity=".48" stroke-width=".8"/>
+<text x="43.5" y="16.5" text-anchor="middle" fill="#fbbf24" font-size="11.5" font-weight="650">Max 27/Day</text>
+</g>
+<text x="52" y="80" fill="#9aa8ba" font-size="11.5">Jul</text>
+<text x="108" y="80" fill="#9aa8ba" font-size="11.5">Aug</text>
+<text x="178" y="80" fill="#9aa8ba" font-size="11.5">Sep</text>
+<text x="234" y="80" fill="#9aa8ba" font-size="11.5">Oct</text>
+<text x="304" y="80" fill="#9aa8ba" font-size="11.5">Nov</text>
+<text x="360" y="80" fill="#9aa8ba" font-size="11.5">Dec</text>
+<text x="416" y="80" fill="#9aa8ba" font-size="11.5">Jan</text>
+<text x="486" y="80" fill="#9aa8ba" font-size="11.5">Feb</text>
+<text x="542" y="80" fill="#9aa8ba" font-size="11.5">Mar</text>
+<text x="598" y="80" fill="#9aa8ba" font-size="11.5">Apr</text>
+<text x="654" y="80" fill="#9aa8ba" font-size="11.5">May</text>
+<text x="724" y="80" fill="#9aa8ba" font-size="11.5">Jun</text>
+<text x="780" y="80" fill="#9aa8ba" font-size="11.5">Jul</text>
+<text x="40" y="114" fill="#748398" font-size="10.5" text-anchor="end">Mon</text>
+<text x="40" y="142" fill="#748398" font-size="10.5" text-anchor="end">Wed</text>
+<text x="40" y="170" fill="#748398" font-size="10.5" text-anchor="end">Fri</text>
+<g class="cell" tabindex="0" role="img" aria-label="28/06/26 · No solutions recorded">
+<title>28/06/26 · No solutions recorded</title>
+<rect x="52" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/06/26 · No solutions recorded">
+<title>29/06/26 · No solutions recorded</title>
+<rect x="52" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/06/26 · No solutions recorded">
+<title>30/06/26 · No solutions recorded</title>
+<rect x="52" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/07/26 · No solutions recorded">
+<title>01/07/26 · No solutions recorded</title>
+<rect x="52" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/07/26 · 1 solution">
+<title>02/07/26 · 1 solution</title>
+<rect x="52" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/07/26 · No solutions recorded">
+<title>03/07/26 · No solutions recorded</title>
+<rect x="52" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/07/26 · 1 solution">
+<title>04/07/26 · 1 solution</title>
+<rect x="52" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/07/26 · 27 solutions">
+<title>05/07/26 · 27 solutions</title>
+<rect x="66" y="91" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/07/26 · 1 solution">
+<title>06/07/26 · 1 solution</title>
+<rect x="66" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/07/26 · 7 solutions">
+<title>07/07/26 · 7 solutions</title>
+<rect x="66" y="119" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/07/26 · 3 solutions">
+<title>08/07/26 · 3 solutions</title>
+<rect x="66" y="133" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/07/26 · 1 solution">
+<title>09/07/26 · 1 solution</title>
+<rect x="66" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/07/26 · 1 solution">
+<title>10/07/26 · 1 solution</title>
+<rect x="66" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/07/26 · 1 solution">
+<title>11/07/26 · 1 solution</title>
+<rect x="66" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/07/26 · 1 solution">
+<title>12/07/26 · 1 solution</title>
+<rect x="80" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/07/26 · 2 solutions">
+<title>13/07/26 · 2 solutions</title>
+<rect x="80" y="105" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/07/26 · 1 solution">
+<title>14/07/26 · 1 solution</title>
+<rect x="80" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/07/26 · 1 solution">
+<title>15/07/26 · 1 solution</title>
+<rect x="80" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/07/26 · 1 solution">
+<title>16/07/26 · 1 solution</title>
+<rect x="80" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/07/26 · 1 solution">
+<title>17/07/26 · 1 solution</title>
+<rect x="80" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/07/26 · 1 solution">
+<title>18/07/26 · 1 solution</title>
+<rect x="80" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/07/26 · 4 solutions">
+<title>19/07/26 · 4 solutions</title>
+<rect x="94" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/07/26 · 1 solution">
+<title>20/07/26 · 1 solution</title>
+<rect x="94" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/07/26 · 2 solutions">
+<title>21/07/26 · 2 solutions</title>
+<rect x="94" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/07/26 · 2 solutions">
+<title>22/07/26 · 2 solutions</title>
+<rect x="94" y="133" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/07/26 · 2 solutions">
+<title>23/07/26 · 2 solutions</title>
+<rect x="94" y="147" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/07/26 · 2 solutions">
+<title>24/07/26 · 2 solutions</title>
+<rect x="94" y="161" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/07/26 · No solutions recorded">
+<title>25/07/26 · No solutions recorded</title>
+<rect x="94" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/07/26 · 3 solutions">
+<title>26/07/26 · 3 solutions</title>
+<rect x="108" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/07/26 · 1 solution">
+<title>27/07/26 · 1 solution</title>
+<rect x="108" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/07/26 · 2 solutions">
+<title>28/07/26 · 2 solutions</title>
+<rect x="108" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/07/26 · 1 solution">
+<title>29/07/26 · 1 solution</title>
+<rect x="108" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/07/26 · 1 solution">
+<title>30/07/26 · 1 solution</title>
+<rect x="108" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/07/26 · 1 solution">
+<title>31/07/26 · 1 solution</title>
+<rect x="108" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/08/26 · 1 solution">
+<title>01/08/26 · 1 solution</title>
+<rect x="108" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/08/26 · 6 solutions">
+<title>02/08/26 · 6 solutions</title>
+<rect x="122" y="91" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/08/26 · 1 solution">
+<title>03/08/26 · 1 solution</title>
+<rect x="122" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/08/26 · 1 solution">
+<title>04/08/26 · 1 solution</title>
+<rect x="122" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/08/26 · 1 solution">
+<title>05/08/26 · 1 solution</title>
+<rect x="122" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/08/26 · 1 solution">
+<title>06/08/26 · 1 solution</title>
+<rect x="122" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/08/26 · 1 solution">
+<title>07/08/26 · 1 solution</title>
+<rect x="122" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/08/26 · 1 solution">
+<title>08/08/26 · 1 solution</title>
+<rect x="122" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/08/26 · 3 solutions">
+<title>09/08/26 · 3 solutions</title>
+<rect x="136" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/08/26 · 1 solution">
+<title>10/08/26 · 1 solution</title>
+<rect x="136" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/08/26 · 1 solution">
+<title>11/08/26 · 1 solution</title>
+<rect x="136" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/08/26 · 1 solution">
+<title>12/08/26 · 1 solution</title>
+<rect x="136" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/08/26 · 1 solution">
+<title>13/08/26 · 1 solution</title>
+<rect x="136" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/08/26 · 1 solution">
+<title>14/08/26 · 1 solution</title>
+<rect x="136" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/08/26 · 2 solutions">
+<title>15/08/26 · 2 solutions</title>
+<rect x="136" y="175" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/08/26 · 1 solution">
+<title>16/08/26 · 1 solution</title>
+<rect x="150" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/08/26 · No solutions recorded">
+<title>17/08/26 · No solutions recorded</title>
+<rect x="150" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/08/26 · 2 solutions">
+<title>18/08/26 · 2 solutions</title>
+<rect x="150" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/08/26 · 1 solution">
+<title>19/08/26 · 1 solution</title>
+<rect x="150" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/08/26 · 1 solution">
+<title>20/08/26 · 1 solution</title>
+<rect x="150" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/08/26 · 1 solution">
+<title>21/08/26 · 1 solution</title>
+<rect x="150" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/08/26 · 2 solutions">
+<title>22/08/26 · 2 solutions</title>
+<rect x="150" y="175" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/08/26 · 3 solutions">
+<title>23/08/26 · 3 solutions</title>
+<rect x="164" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/08/26 · 1 solution">
+<title>24/08/26 · 1 solution</title>
+<rect x="164" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/08/26 · 1 solution">
+<title>25/08/26 · 1 solution</title>
+<rect x="164" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/08/26 · 1 solution">
+<title>26/08/26 · 1 solution</title>
+<rect x="164" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/08/26 · 1 solution">
+<title>27/08/26 · 1 solution</title>
+<rect x="164" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/08/26 · 1 solution">
+<title>28/08/26 · 1 solution</title>
+<rect x="164" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/08/26 · 1 solution">
+<title>29/08/26 · 1 solution</title>
+<rect x="164" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/08/26 · 2 solutions">
+<title>30/08/26 · 2 solutions</title>
+<rect x="178" y="91" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/08/26 · 1 solution">
+<title>31/08/26 · 1 solution</title>
+<rect x="178" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/09/26 · 1 solution">
+<title>01/09/26 · 1 solution</title>
+<rect x="178" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/09/26 · 1 solution">
+<title>02/09/26 · 1 solution</title>
+<rect x="178" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/09/26 · 1 solution">
+<title>03/09/26 · 1 solution</title>
+<rect x="178" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/09/26 · 1 solution">
+<title>04/09/26 · 1 solution</title>
+<rect x="178" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/09/26 · 3 solutions">
+<title>05/09/26 · 3 solutions</title>
+<rect x="178" y="175" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/09/26 · 2 solutions">
+<title>06/09/26 · 2 solutions</title>
+<rect x="192" y="91" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/09/26 · 1 solution">
+<title>07/09/26 · 1 solution</title>
+<rect x="192" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/09/26 · 6 solutions">
+<title>08/09/26 · 6 solutions</title>
+<rect x="192" y="119" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/09/26 · 11 solutions">
+<title>09/09/26 · 11 solutions</title>
+<rect x="192" y="133" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/09/26 · 4 solutions">
+<title>10/09/26 · 4 solutions</title>
+<rect x="192" y="147" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/09/26 · 2 solutions">
+<title>11/09/26 · 2 solutions</title>
+<rect x="192" y="161" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/09/26 · 1 solution">
+<title>12/09/26 · 1 solution</title>
+<rect x="192" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/09/26 · 1 solution">
+<title>13/09/26 · 1 solution</title>
+<rect x="206" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/09/26 · 1 solution">
+<title>14/09/26 · 1 solution</title>
+<rect x="206" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/09/26 · 1 solution">
+<title>15/09/26 · 1 solution</title>
+<rect x="206" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/09/26 · 1 solution">
+<title>16/09/26 · 1 solution</title>
+<rect x="206" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/09/26 · 1 solution">
+<title>17/09/26 · 1 solution</title>
+<rect x="206" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/09/26 · 1 solution">
+<title>18/09/26 · 1 solution</title>
+<rect x="206" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/09/26 · 1 solution">
+<title>19/09/26 · 1 solution</title>
+<rect x="206" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/09/26 · 1 solution">
+<title>20/09/26 · 1 solution</title>
+<rect x="220" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/09/26 · 1 solution">
+<title>21/09/26 · 1 solution</title>
+<rect x="220" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/09/26 · 1 solution">
+<title>22/09/26 · 1 solution</title>
+<rect x="220" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/09/26 · 1 solution">
+<title>23/09/26 · 1 solution</title>
+<rect x="220" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/09/26 · 2 solutions">
+<title>24/09/26 · 2 solutions</title>
+<rect x="220" y="147" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/09/26 · 1 solution">
+<title>25/09/26 · 1 solution</title>
+<rect x="220" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/09/26 · 1 solution">
+<title>26/09/26 · 1 solution</title>
+<rect x="220" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/09/26 · 1 solution">
+<title>27/09/26 · 1 solution</title>
+<rect x="234" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/09/26 · 1 solution">
+<title>28/09/26 · 1 solution</title>
+<rect x="234" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/09/26 · 1 solution">
+<title>29/09/26 · 1 solution</title>
+<rect x="234" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/09/26 · 1 solution">
+<title>30/09/26 · 1 solution</title>
+<rect x="234" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/10/26 · 1 solution">
+<title>01/10/26 · 1 solution</title>
+<rect x="234" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/10/26 · 1 solution">
+<title>02/10/26 · 1 solution</title>
+<rect x="234" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/10/26 · 1 solution">
+<title>03/10/26 · 1 solution</title>
+<rect x="234" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/10/26 · 1 solution">
+<title>04/10/26 · 1 solution</title>
+<rect x="248" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/10/26 · 1 solution">
+<title>05/10/26 · 1 solution</title>
+<rect x="248" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/10/26 · 1 solution">
+<title>06/10/26 · 1 solution</title>
+<rect x="248" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/10/26 · 1 solution">
+<title>07/10/26 · 1 solution</title>
+<rect x="248" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/10/26 · 1 solution">
+<title>08/10/26 · 1 solution</title>
+<rect x="248" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/10/26 · 1 solution">
+<title>09/10/26 · 1 solution</title>
+<rect x="248" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/10/26 · Future date">
+<title>10/10/26 · Future date</title>
+<rect x="248" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/10/26 · Future date">
+<title>11/10/26 · Future date</title>
+<rect x="262" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/10/26 · Future date">
+<title>12/10/26 · Future date</title>
+<rect x="262" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/10/26 · Future date">
+<title>13/10/26 · Future date</title>
+<rect x="262" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/10/26 · Future date">
+<title>14/10/26 · Future date</title>
+<rect x="262" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/10/26 · Future date">
+<title>15/10/26 · Future date</title>
+<rect x="262" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/10/26 · Future date">
+<title>16/10/26 · Future date</title>
+<rect x="262" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/10/26 · Future date">
+<title>17/10/26 · Future date</title>
+<rect x="262" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/10/26 · Future date">
+<title>18/10/26 · Future date</title>
+<rect x="276" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/10/26 · Future date">
+<title>19/10/26 · Future date</title>
+<rect x="276" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/10/26 · Future date">
+<title>20/10/26 · Future date</title>
+<rect x="276" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/10/26 · Future date">
+<title>21/10/26 · Future date</title>
+<rect x="276" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/10/26 · Future date">
+<title>22/10/26 · Future date</title>
+<rect x="276" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/10/26 · Future date">
+<title>23/10/26 · Future date</title>
+<rect x="276" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/10/26 · Future date">
+<title>24/10/26 · Future date</title>
+<rect x="276" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/10/26 · Future date">
+<title>25/10/26 · Future date</title>
+<rect x="290" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/10/26 · Future date">
+<title>26/10/26 · Future date</title>
+<rect x="290" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/10/26 · Future date">
+<title>27/10/26 · Future date</title>
+<rect x="290" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/10/26 · Future date">
+<title>28/10/26 · Future date</title>
+<rect x="290" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/10/26 · Future date">
+<title>29/10/26 · Future date</title>
+<rect x="290" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/10/26 · Future date">
+<title>30/10/26 · Future date</title>
+<rect x="290" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/10/26 · Future date">
+<title>31/10/26 · Future date</title>
+<rect x="290" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/11/26 · Future date">
+<title>01/11/26 · Future date</title>
+<rect x="304" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/11/26 · Future date">
+<title>02/11/26 · Future date</title>
+<rect x="304" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/11/26 · Future date">
+<title>03/11/26 · Future date</title>
+<rect x="304" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/11/26 · Future date">
+<title>04/11/26 · Future date</title>
+<rect x="304" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/11/26 · Future date">
+<title>05/11/26 · Future date</title>
+<rect x="304" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/11/26 · Future date">
+<title>06/11/26 · Future date</title>
+<rect x="304" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/11/26 · Future date">
+<title>07/11/26 · Future date</title>
+<rect x="304" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/11/26 · Future date">
+<title>08/11/26 · Future date</title>
+<rect x="318" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/11/26 · Future date">
+<title>09/11/26 · Future date</title>
+<rect x="318" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/11/26 · Future date">
+<title>10/11/26 · Future date</title>
+<rect x="318" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/11/26 · Future date">
+<title>11/11/26 · Future date</title>
+<rect x="318" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/11/26 · Future date">
+<title>12/11/26 · Future date</title>
+<rect x="318" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/11/26 · Future date">
+<title>13/11/26 · Future date</title>
+<rect x="318" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/11/26 · Future date">
+<title>14/11/26 · Future date</title>
+<rect x="318" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/11/26 · Future date">
+<title>15/11/26 · Future date</title>
+<rect x="332" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/11/26 · Future date">
+<title>16/11/26 · Future date</title>
+<rect x="332" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/11/26 · Future date">
+<title>17/11/26 · Future date</title>
+<rect x="332" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/11/26 · Future date">
+<title>18/11/26 · Future date</title>
+<rect x="332" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/11/26 · Future date">
+<title>19/11/26 · Future date</title>
+<rect x="332" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/11/26 · Future date">
+<title>20/11/26 · Future date</title>
+<rect x="332" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/11/26 · Future date">
+<title>21/11/26 · Future date</title>
+<rect x="332" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/11/26 · Future date">
+<title>22/11/26 · Future date</title>
+<rect x="346" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/11/26 · Future date">
+<title>23/11/26 · Future date</title>
+<rect x="346" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/11/26 · Future date">
+<title>24/11/26 · Future date</title>
+<rect x="346" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/11/26 · Future date">
+<title>25/11/26 · Future date</title>
+<rect x="346" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/11/26 · Future date">
+<title>26/11/26 · Future date</title>
+<rect x="346" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/11/26 · Future date">
+<title>27/11/26 · Future date</title>
+<rect x="346" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/11/26 · Future date">
+<title>28/11/26 · Future date</title>
+<rect x="346" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/11/26 · Future date">
+<title>29/11/26 · Future date</title>
+<rect x="360" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/11/26 · Future date">
+<title>30/11/26 · Future date</title>
+<rect x="360" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/12/26 · Future date">
+<title>01/12/26 · Future date</title>
+<rect x="360" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/12/26 · Future date">
+<title>02/12/26 · Future date</title>
+<rect x="360" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/12/26 · Future date">
+<title>03/12/26 · Future date</title>
+<rect x="360" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/12/26 · Future date">
+<title>04/12/26 · Future date</title>
+<rect x="360" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/12/26 · Future date">
+<title>05/12/26 · Future date</title>
+<rect x="360" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/12/26 · Future date">
+<title>06/12/26 · Future date</title>
+<rect x="374" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/12/26 · Future date">
+<title>07/12/26 · Future date</title>
+<rect x="374" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/12/26 · Future date">
+<title>08/12/26 · Future date</title>
+<rect x="374" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/12/26 · Future date">
+<title>09/12/26 · Future date</title>
+<rect x="374" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/12/26 · Future date">
+<title>10/12/26 · Future date</title>
+<rect x="374" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/12/26 · Future date">
+<title>11/12/26 · Future date</title>
+<rect x="374" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/12/26 · Future date">
+<title>12/12/26 · Future date</title>
+<rect x="374" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/12/26 · Future date">
+<title>13/12/26 · Future date</title>
+<rect x="388" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/12/26 · Future date">
+<title>14/12/26 · Future date</title>
+<rect x="388" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/12/26 · Future date">
+<title>15/12/26 · Future date</title>
+<rect x="388" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/12/26 · Future date">
+<title>16/12/26 · Future date</title>
+<rect x="388" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/12/26 · Future date">
+<title>17/12/26 · Future date</title>
+<rect x="388" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/12/26 · Future date">
+<title>18/12/26 · Future date</title>
+<rect x="388" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/12/26 · Future date">
+<title>19/12/26 · Future date</title>
+<rect x="388" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/12/26 · Future date">
+<title>20/12/26 · Future date</title>
+<rect x="402" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/12/26 · Future date">
+<title>21/12/26 · Future date</title>
+<rect x="402" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/12/26 · Future date">
+<title>22/12/26 · Future date</title>
+<rect x="402" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/12/26 · Future date">
+<title>23/12/26 · Future date</title>
+<rect x="402" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/12/26 · Future date">
+<title>24/12/26 · Future date</title>
+<rect x="402" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/12/26 · Future date">
+<title>25/12/26 · Future date</title>
+<rect x="402" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/12/26 · Future date">
+<title>26/12/26 · Future date</title>
+<rect x="402" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/12/26 · Future date">
+<title>27/12/26 · Future date</title>
+<rect x="416" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/12/26 · Future date">
+<title>28/12/26 · Future date</title>
+<rect x="416" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/12/26 · Future date">
+<title>29/12/26 · Future date</title>
+<rect x="416" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/12/26 · Future date">
+<title>30/12/26 · Future date</title>
+<rect x="416" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/12/26 · Future date">
+<title>31/12/26 · Future date</title>
+<rect x="416" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/01/27 · Future date">
+<title>01/01/27 · Future date</title>
+<rect x="416" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/01/27 · Future date">
+<title>02/01/27 · Future date</title>
+<rect x="416" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/01/27 · Future date">
+<title>03/01/27 · Future date</title>
+<rect x="430" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/01/27 · Future date">
+<title>04/01/27 · Future date</title>
+<rect x="430" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/01/27 · Future date">
+<title>05/01/27 · Future date</title>
+<rect x="430" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/01/27 · Future date">
+<title>06/01/27 · Future date</title>
+<rect x="430" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/01/27 · Future date">
+<title>07/01/27 · Future date</title>
+<rect x="430" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/01/27 · Future date">
+<title>08/01/27 · Future date</title>
+<rect x="430" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/01/27 · Future date">
+<title>09/01/27 · Future date</title>
+<rect x="430" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/01/27 · Future date">
+<title>10/01/27 · Future date</title>
+<rect x="444" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/01/27 · Future date">
+<title>11/01/27 · Future date</title>
+<rect x="444" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/01/27 · Future date">
+<title>12/01/27 · Future date</title>
+<rect x="444" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/01/27 · Future date">
+<title>13/01/27 · Future date</title>
+<rect x="444" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/01/27 · Future date">
+<title>14/01/27 · Future date</title>
+<rect x="444" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/01/27 · Future date">
+<title>15/01/27 · Future date</title>
+<rect x="444" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/01/27 · Future date">
+<title>16/01/27 · Future date</title>
+<rect x="444" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/01/27 · Future date">
+<title>17/01/27 · Future date</title>
+<rect x="458" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/01/27 · Future date">
+<title>18/01/27 · Future date</title>
+<rect x="458" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/01/27 · Future date">
+<title>19/01/27 · Future date</title>
+<rect x="458" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/01/27 · Future date">
+<title>20/01/27 · Future date</title>
+<rect x="458" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/01/27 · Future date">
+<title>21/01/27 · Future date</title>
+<rect x="458" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/01/27 · Future date">
+<title>22/01/27 · Future date</title>
+<rect x="458" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/01/27 · Future date">
+<title>23/01/27 · Future date</title>
+<rect x="458" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/01/27 · Future date">
+<title>24/01/27 · Future date</title>
+<rect x="472" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/01/27 · Future date">
+<title>25/01/27 · Future date</title>
+<rect x="472" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/01/27 · Future date">
+<title>26/01/27 · Future date</title>
+<rect x="472" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/01/27 · Future date">
+<title>27/01/27 · Future date</title>
+<rect x="472" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/01/27 · Future date">
+<title>28/01/27 · Future date</title>
+<rect x="472" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/01/27 · Future date">
+<title>29/01/27 · Future date</title>
+<rect x="472" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/01/27 · Future date">
+<title>30/01/27 · Future date</title>
+<rect x="472" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/01/27 · Future date">
+<title>31/01/27 · Future date</title>
+<rect x="486" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/02/27 · Future date">
+<title>01/02/27 · Future date</title>
+<rect x="486" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/02/27 · Future date">
+<title>02/02/27 · Future date</title>
+<rect x="486" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/02/27 · Future date">
+<title>03/02/27 · Future date</title>
+<rect x="486" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/02/27 · Future date">
+<title>04/02/27 · Future date</title>
+<rect x="486" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/02/27 · Future date">
+<title>05/02/27 · Future date</title>
+<rect x="486" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/02/27 · Future date">
+<title>06/02/27 · Future date</title>
+<rect x="486" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/02/27 · Future date">
+<title>07/02/27 · Future date</title>
+<rect x="500" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/02/27 · Future date">
+<title>08/02/27 · Future date</title>
+<rect x="500" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/02/27 · Future date">
+<title>09/02/27 · Future date</title>
+<rect x="500" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/02/27 · Future date">
+<title>10/02/27 · Future date</title>
+<rect x="500" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/02/27 · Future date">
+<title>11/02/27 · Future date</title>
+<rect x="500" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/02/27 · Future date">
+<title>12/02/27 · Future date</title>
+<rect x="500" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/02/27 · Future date">
+<title>13/02/27 · Future date</title>
+<rect x="500" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/02/27 · Future date">
+<title>14/02/27 · Future date</title>
+<rect x="514" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/02/27 · Future date">
+<title>15/02/27 · Future date</title>
+<rect x="514" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/02/27 · Future date">
+<title>16/02/27 · Future date</title>
+<rect x="514" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/02/27 · Future date">
+<title>17/02/27 · Future date</title>
+<rect x="514" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/02/27 · Future date">
+<title>18/02/27 · Future date</title>
+<rect x="514" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/02/27 · Future date">
+<title>19/02/27 · Future date</title>
+<rect x="514" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/02/27 · Future date">
+<title>20/02/27 · Future date</title>
+<rect x="514" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/02/27 · Future date">
+<title>21/02/27 · Future date</title>
+<rect x="528" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/02/27 · Future date">
+<title>22/02/27 · Future date</title>
+<rect x="528" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/02/27 · Future date">
+<title>23/02/27 · Future date</title>
+<rect x="528" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/02/27 · Future date">
+<title>24/02/27 · Future date</title>
+<rect x="528" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/02/27 · Future date">
+<title>25/02/27 · Future date</title>
+<rect x="528" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/02/27 · Future date">
+<title>26/02/27 · Future date</title>
+<rect x="528" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/02/27 · Future date">
+<title>27/02/27 · Future date</title>
+<rect x="528" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/02/27 · Future date">
+<title>28/02/27 · Future date</title>
+<rect x="542" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/03/27 · Future date">
+<title>01/03/27 · Future date</title>
+<rect x="542" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/03/27 · Future date">
+<title>02/03/27 · Future date</title>
+<rect x="542" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/03/27 · Future date">
+<title>03/03/27 · Future date</title>
+<rect x="542" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/03/27 · Future date">
+<title>04/03/27 · Future date</title>
+<rect x="542" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/03/27 · Future date">
+<title>05/03/27 · Future date</title>
+<rect x="542" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/03/27 · Future date">
+<title>06/03/27 · Future date</title>
+<rect x="542" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/03/27 · Future date">
+<title>07/03/27 · Future date</title>
+<rect x="556" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/03/27 · Future date">
+<title>08/03/27 · Future date</title>
+<rect x="556" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/03/27 · Future date">
+<title>09/03/27 · Future date</title>
+<rect x="556" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/03/27 · Future date">
+<title>10/03/27 · Future date</title>
+<rect x="556" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/03/27 · Future date">
+<title>11/03/27 · Future date</title>
+<rect x="556" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/03/27 · Future date">
+<title>12/03/27 · Future date</title>
+<rect x="556" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/03/27 · Future date">
+<title>13/03/27 · Future date</title>
+<rect x="556" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/03/27 · Future date">
+<title>14/03/27 · Future date</title>
+<rect x="570" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/03/27 · Future date">
+<title>15/03/27 · Future date</title>
+<rect x="570" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/03/27 · Future date">
+<title>16/03/27 · Future date</title>
+<rect x="570" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/03/27 · Future date">
+<title>17/03/27 · Future date</title>
+<rect x="570" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/03/27 · Future date">
+<title>18/03/27 · Future date</title>
+<rect x="570" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/03/27 · Future date">
+<title>19/03/27 · Future date</title>
+<rect x="570" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/03/27 · Future date">
+<title>20/03/27 · Future date</title>
+<rect x="570" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/03/27 · Future date">
+<title>21/03/27 · Future date</title>
+<rect x="584" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/03/27 · Future date">
+<title>22/03/27 · Future date</title>
+<rect x="584" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/03/27 · Future date">
+<title>23/03/27 · Future date</title>
+<rect x="584" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/03/27 · Future date">
+<title>24/03/27 · Future date</title>
+<rect x="584" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/03/27 · Future date">
+<title>25/03/27 · Future date</title>
+<rect x="584" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/03/27 · Future date">
+<title>26/03/27 · Future date</title>
+<rect x="584" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/03/27 · Future date">
+<title>27/03/27 · Future date</title>
+<rect x="584" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/03/27 · Future date">
+<title>28/03/27 · Future date</title>
+<rect x="598" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/03/27 · Future date">
+<title>29/03/27 · Future date</title>
+<rect x="598" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/03/27 · Future date">
+<title>30/03/27 · Future date</title>
+<rect x="598" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/03/27 · Future date">
+<title>31/03/27 · Future date</title>
+<rect x="598" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/04/27 · Future date">
+<title>01/04/27 · Future date</title>
+<rect x="598" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/04/27 · Future date">
+<title>02/04/27 · Future date</title>
+<rect x="598" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/04/27 · Future date">
+<title>03/04/27 · Future date</title>
+<rect x="598" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/04/27 · Future date">
+<title>04/04/27 · Future date</title>
+<rect x="612" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/04/27 · Future date">
+<title>05/04/27 · Future date</title>
+<rect x="612" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/04/27 · Future date">
+<title>06/04/27 · Future date</title>
+<rect x="612" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/04/27 · Future date">
+<title>07/04/27 · Future date</title>
+<rect x="612" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/04/27 · Future date">
+<title>08/04/27 · Future date</title>
+<rect x="612" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/04/27 · Future date">
+<title>09/04/27 · Future date</title>
+<rect x="612" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/04/27 · Future date">
+<title>10/04/27 · Future date</title>
+<rect x="612" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/04/27 · Future date">
+<title>11/04/27 · Future date</title>
+<rect x="626" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/04/27 · Future date">
+<title>12/04/27 · Future date</title>
+<rect x="626" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/04/27 · Future date">
+<title>13/04/27 · Future date</title>
+<rect x="626" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/04/27 · Future date">
+<title>14/04/27 · Future date</title>
+<rect x="626" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/04/27 · Future date">
+<title>15/04/27 · Future date</title>
+<rect x="626" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/04/27 · Future date">
+<title>16/04/27 · Future date</title>
+<rect x="626" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/04/27 · Future date">
+<title>17/04/27 · Future date</title>
+<rect x="626" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/04/27 · Future date">
+<title>18/04/27 · Future date</title>
+<rect x="640" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/04/27 · Future date">
+<title>19/04/27 · Future date</title>
+<rect x="640" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/04/27 · Future date">
+<title>20/04/27 · Future date</title>
+<rect x="640" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/04/27 · Future date">
+<title>21/04/27 · Future date</title>
+<rect x="640" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/04/27 · Future date">
+<title>22/04/27 · Future date</title>
+<rect x="640" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/04/27 · Future date">
+<title>23/04/27 · Future date</title>
+<rect x="640" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/04/27 · Future date">
+<title>24/04/27 · Future date</title>
+<rect x="640" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/04/27 · Future date">
+<title>25/04/27 · Future date</title>
+<rect x="654" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/04/27 · Future date">
+<title>26/04/27 · Future date</title>
+<rect x="654" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/04/27 · Future date">
+<title>27/04/27 · Future date</title>
+<rect x="654" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/04/27 · Future date">
+<title>28/04/27 · Future date</title>
+<rect x="654" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/04/27 · Future date">
+<title>29/04/27 · Future date</title>
+<rect x="654" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/04/27 · Future date">
+<title>30/04/27 · Future date</title>
+<rect x="654" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/05/27 · Future date">
+<title>01/05/27 · Future date</title>
+<rect x="654" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/05/27 · Future date">
+<title>02/05/27 · Future date</title>
+<rect x="668" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/05/27 · Future date">
+<title>03/05/27 · Future date</title>
+<rect x="668" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/05/27 · Future date">
+<title>04/05/27 · Future date</title>
+<rect x="668" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/05/27 · Future date">
+<title>05/05/27 · Future date</title>
+<rect x="668" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/05/27 · Future date">
+<title>06/05/27 · Future date</title>
+<rect x="668" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/05/27 · Future date">
+<title>07/05/27 · Future date</title>
+<rect x="668" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/05/27 · Future date">
+<title>08/05/27 · Future date</title>
+<rect x="668" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/05/27 · Future date">
+<title>09/05/27 · Future date</title>
+<rect x="682" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/05/27 · Future date">
+<title>10/05/27 · Future date</title>
+<rect x="682" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/05/27 · Future date">
+<title>11/05/27 · Future date</title>
+<rect x="682" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/05/27 · Future date">
+<title>12/05/27 · Future date</title>
+<rect x="682" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/05/27 · Future date">
+<title>13/05/27 · Future date</title>
+<rect x="682" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/05/27 · Future date">
+<title>14/05/27 · Future date</title>
+<rect x="682" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/05/27 · Future date">
+<title>15/05/27 · Future date</title>
+<rect x="682" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/05/27 · Future date">
+<title>16/05/27 · Future date</title>
+<rect x="696" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/05/27 · Future date">
+<title>17/05/27 · Future date</title>
+<rect x="696" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/05/27 · Future date">
+<title>18/05/27 · Future date</title>
+<rect x="696" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/05/27 · Future date">
+<title>19/05/27 · Future date</title>
+<rect x="696" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/05/27 · Future date">
+<title>20/05/27 · Future date</title>
+<rect x="696" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/05/27 · Future date">
+<title>21/05/27 · Future date</title>
+<rect x="696" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/05/27 · Future date">
+<title>22/05/27 · Future date</title>
+<rect x="696" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/05/27 · Future date">
+<title>23/05/27 · Future date</title>
+<rect x="710" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/05/27 · Future date">
+<title>24/05/27 · Future date</title>
+<rect x="710" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/05/27 · Future date">
+<title>25/05/27 · Future date</title>
+<rect x="710" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/05/27 · Future date">
+<title>26/05/27 · Future date</title>
+<rect x="710" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/05/27 · Future date">
+<title>27/05/27 · Future date</title>
+<rect x="710" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/05/27 · Future date">
+<title>28/05/27 · Future date</title>
+<rect x="710" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/05/27 · Future date">
+<title>29/05/27 · Future date</title>
+<rect x="710" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/05/27 · Future date">
+<title>30/05/27 · Future date</title>
+<rect x="724" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/05/27 · Future date">
+<title>31/05/27 · Future date</title>
+<rect x="724" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/06/27 · Future date">
+<title>01/06/27 · Future date</title>
+<rect x="724" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/06/27 · Future date">
+<title>02/06/27 · Future date</title>
+<rect x="724" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/06/27 · Future date">
+<title>03/06/27 · Future date</title>
+<rect x="724" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/06/27 · Future date">
+<title>04/06/27 · Future date</title>
+<rect x="724" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/06/27 · Future date">
+<title>05/06/27 · Future date</title>
+<rect x="724" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/06/27 · Future date">
+<title>06/06/27 · Future date</title>
+<rect x="738" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/06/27 · Future date">
+<title>07/06/27 · Future date</title>
+<rect x="738" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/06/27 · Future date">
+<title>08/06/27 · Future date</title>
+<rect x="738" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/06/27 · Future date">
+<title>09/06/27 · Future date</title>
+<rect x="738" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/06/27 · Future date">
+<title>10/06/27 · Future date</title>
+<rect x="738" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/06/27 · Future date">
+<title>11/06/27 · Future date</title>
+<rect x="738" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/06/27 · Future date">
+<title>12/06/27 · Future date</title>
+<rect x="738" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/06/27 · Future date">
+<title>13/06/27 · Future date</title>
+<rect x="752" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/06/27 · Future date">
+<title>14/06/27 · Future date</title>
+<rect x="752" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/06/27 · Future date">
+<title>15/06/27 · Future date</title>
+<rect x="752" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/06/27 · Future date">
+<title>16/06/27 · Future date</title>
+<rect x="752" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/06/27 · Future date">
+<title>17/06/27 · Future date</title>
+<rect x="752" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/06/27 · Future date">
+<title>18/06/27 · Future date</title>
+<rect x="752" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/06/27 · Future date">
+<title>19/06/27 · Future date</title>
+<rect x="752" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/06/27 · Future date">
+<title>20/06/27 · Future date</title>
+<rect x="766" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/06/27 · Future date">
+<title>21/06/27 · Future date</title>
+<rect x="766" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/06/27 · Future date">
+<title>22/06/27 · Future date</title>
+<rect x="766" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/06/27 · Future date">
+<title>23/06/27 · Future date</title>
+<rect x="766" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/06/27 · Future date">
+<title>24/06/27 · Future date</title>
+<rect x="766" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/06/27 · Future date">
+<title>25/06/27 · Future date</title>
+<rect x="766" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/06/27 · Future date">
+<title>26/06/27 · Future date</title>
+<rect x="766" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/06/27 · Future date">
+<title>27/06/27 · Future date</title>
+<rect x="780" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/06/27 · Future date">
+<title>28/06/27 · Future date</title>
+<rect x="780" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/06/27 · Future date">
+<title>29/06/27 · Future date</title>
+<rect x="780" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/06/27 · Future date">
+<title>30/06/27 · Future date</title>
+<rect x="780" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="01/07/27 · Future date">
+<title>01/07/27 · Future date</title>
+<rect x="780" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="02/07/27 · Future date">
+<title>02/07/27 · Future date</title>
+<rect x="780" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="03/07/27 · Future date">
+<title>03/07/27 · Future date</title>
+<rect x="780" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="04/07/27 · Future date">
+<title>04/07/27 · Future date</title>
+<rect x="794" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="05/07/27 · Future date">
+<title>05/07/27 · Future date</title>
+<rect x="794" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="06/07/27 · Future date">
+<title>06/07/27 · Future date</title>
+<rect x="794" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="07/07/27 · Future date">
+<title>07/07/27 · Future date</title>
+<rect x="794" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="08/07/27 · Future date">
+<title>08/07/27 · Future date</title>
+<rect x="794" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="09/07/27 · Future date">
+<title>09/07/27 · Future date</title>
+<rect x="794" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="10/07/27 · Future date">
+<title>10/07/27 · Future date</title>
+<rect x="794" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="11/07/27 · Future date">
+<title>11/07/27 · Future date</title>
+<rect x="808" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="12/07/27 · Future date">
+<title>12/07/27 · Future date</title>
+<rect x="808" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="13/07/27 · Future date">
+<title>13/07/27 · Future date</title>
+<rect x="808" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="14/07/27 · Future date">
+<title>14/07/27 · Future date</title>
+<rect x="808" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="15/07/27 · Future date">
+<title>15/07/27 · Future date</title>
+<rect x="808" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="16/07/27 · Future date">
+<title>16/07/27 · Future date</title>
+<rect x="808" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="17/07/27 · Future date">
+<title>17/07/27 · Future date</title>
+<rect x="808" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="18/07/27 · Future date">
+<title>18/07/27 · Future date</title>
+<rect x="822" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="19/07/27 · Future date">
+<title>19/07/27 · Future date</title>
+<rect x="822" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="20/07/27 · Future date">
+<title>20/07/27 · Future date</title>
+<rect x="822" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="21/07/27 · Future date">
+<title>21/07/27 · Future date</title>
+<rect x="822" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="22/07/27 · Future date">
+<title>22/07/27 · Future date</title>
+<rect x="822" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="23/07/27 · Future date">
+<title>23/07/27 · Future date</title>
+<rect x="822" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="24/07/27 · Future date">
+<title>24/07/27 · Future date</title>
+<rect x="822" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="25/07/27 · Future date">
+<title>25/07/27 · Future date</title>
+<rect x="836" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="26/07/27 · Future date">
+<title>26/07/27 · Future date</title>
+<rect x="836" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="27/07/27 · Future date">
+<title>27/07/27 · Future date</title>
+<rect x="836" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="28/07/27 · Future date">
+<title>28/07/27 · Future date</title>
+<rect x="836" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="29/07/27 · Future date">
+<title>29/07/27 · Future date</title>
+<rect x="836" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="30/07/27 · Future date">
+<title>30/07/27 · Future date</title>
+<rect x="836" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<g class="cell" tabindex="0" role="img" aria-label="31/07/27 · Future date">
+<title>31/07/27 · Future date</title>
+<rect x="836" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+</g>
+<text x="32" y="216" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · July 2026 – July 2027</text>
+<text x="651" y="216" fill="#748398" font-size="11.5" text-anchor="end">Less</text>
+<rect x="661" y="206" width="11" height="11" rx="2.5" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="676" y="206" width="11" height="11" rx="2.5" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="691" y="206" width="11" height="11" rx="2.5" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="706" y="206" width="11" height="11" rx="2.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="721" y="206" width="11" height="11" rx="2.5" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<text x="737" y="216" fill="#748398" font-size="11.5">More</text>
 </svg>
