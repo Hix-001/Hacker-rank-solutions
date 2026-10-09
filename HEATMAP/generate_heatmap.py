@@ -180,18 +180,17 @@ def generate_svg(data, output_path, quiet=False):
     ]
 
     badges = [
-        (f"{total_solved} Solved", "#60a5fa", "#17263b"),
-        (f"{active_days} Active Days", "#34d399", "#132b25"),
-        (f"{current_streak} Day Streak", "#c084fc", "#282036"),
-        (f"Max {max_daily}/Day", "#fbbf24", "#302719"),
+        (f"{total_solved} Solved", "#60a5fa"),
+        (f"{active_days} Active Days", "#34d399"),
+        (f"{current_streak} Day Streak", "#c084fc"),
     ]
-    badge_widths = [max(84, len(label) * 6.5 + 22) for label, _, _ in badges]
+    badge_widths = [max(84, len(label) * 6.5 + 22) for label, _ in badges]
     badge_gap = 7
     badge_x = width - 31 - sum(badge_widths) - badge_gap * (len(badges) - 1)
-    for (label, color, background), badge_width in zip(badges, badge_widths):
+    for (label, color), badge_width in zip(badges, badge_widths):
         svg.extend([
             f'<g transform="translate({badge_x:.1f},23)">',
-            f'<rect width="{badge_width:.1f}" height="25" rx="12.5" fill="{background}" stroke="{color}" stroke-opacity=".48" stroke-width=".8"/>',
+            f'<rect width="{badge_width:.1f}" height="25" rx="12.5" fill="none" stroke="{color}" stroke-opacity=".48" stroke-width=".8"/>',
             f'<text x="{badge_width/2:.1f}" y="16.5" text-anchor="middle" fill="{color}" font-size="11.5" font-weight="650">{escape(label)}</text>',
             '</g>',
         ])
