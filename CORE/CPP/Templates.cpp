@@ -18,6 +18,11 @@
  * 6.  [TMP-06] Generic Vector / Array Pretty-Printer (Templates)
  * 7.  [TMP-07] Hierarchical Tag / Scope Attribute Database Template
  * 8.  [TMP-08] Static Lookup Dispatch Helper (Branchless Table)
+ * 9.  [TMP-09] Binary Search STL Helpers (Lower Bound & Upper Bound Range)
+ * 10. [TMP-10] Universal Stream Output Overload Boilerplate (operator<<)
+ * 11. [TMP-11] Lexicographical Tuple Comparison Helper (std::tie)
+ * 12. [TMP-12] Fast Erase-Remove Idiom Template
+ * 13. [TMP-13] Full Class Template Specialization Skeleton
  * ================================================================================
  */
 
@@ -29,6 +34,7 @@
 #include <memory>
 #include <exception>
 #include <algorithm>
+#include <tuple>
 #include <cassert>
 
 // ==============================================================================
@@ -285,6 +291,139 @@ public:
 
 
 // ==============================================================================
+// [TMP-09] Binary Search STL Helpers (Lower Bound & Upper Bound Range)
+// ==============================================================================
+/**
+ * Usage:
+ *     Quickly query whether target exists in sorted range, its 0-based and 1-based index,
+ *     and range [firstIdx, lastIdx) of occurrences.
+ * 
+ * Repository Reference:
+ *     - CPP/0022_Lower-Bound-STL.cpp (Q22)
+ */
+
+template <typename T>
+struct BinarySearchResult {
+    bool found;
+    int index0Based;
+    int index1Based;
+    int count;
+};
+
+template <typename T>
+BinarySearchResult<T> querySortedRange(const std::vector<T>& v, const T& target) {
+    auto low = std::lower_bound(v.begin(), v.end(), target);
+    auto high = std::upper_bound(v.begin(), v.end(), target);
+    int idx0 = static_cast<int>(low - v.begin());
+    int cnt = static_cast<int>(high - low);
+    bool exists = (low != v.end() && *low == target);
+    return {exists, idx0, idx0 + 1, cnt};
+}
+
+
+// ==============================================================================
+// [TMP-10] Universal Stream Output Overload Boilerplate (operator<<)
+// ==============================================================================
+/**
+ * Usage:
+ *     Standard copy-paste boilerplate for overloading operator<< on any class or struct.
+ * 
+ * Repository Reference:
+ *     - CPP/0027_Overloading-Ostream-Operator.cpp (Q27)
+ *     - CPP/0020_Box-It.cpp (Q20)
+ */
+
+struct PrintableRecord {
+    std::string key;
+    int value;
+
+    friend std::ostream& operator<<(std::ostream& os, const PrintableRecord& rec) {
+        os << "[" << rec.key << ": " << rec.value << "]";
+        return os;
+    }
+};
+
+
+// ==============================================================================
+// [TMP-11] Lexicographical Tuple Comparison Helper (std::tie)
+// ==============================================================================
+/**
+ * Usage:
+ *     Copy-pasteable struct skeleton implementing strict weak ordering via std::tie.
+ * 
+ * Repository Reference:
+ *     - CPP/0020_Box-It.cpp (Q20)
+ */
+
+struct TripletSortable {
+    int a, b, c;
+
+    bool operator<(const TripletSortable& other) const {
+        return std::tie(a, b, c) < std::tie(other.a, other.b, other.c);
+    }
+    bool operator==(const TripletSortable& other) const {
+        return std::tie(a, b, c) == std::tie(other.a, other.b, other.c);
+    }
+};
+
+
+// ==============================================================================
+// [TMP-12] Fast Erase-Remove Idiom Template
+// ==============================================================================
+/**
+ * Usage:
+ *     Filters and removes all elements matching a target value or predicate
+ *     in linear O(N) time with zero element re-shifting penalty.
+ * 
+ * Repository Reference:
+ *     - CPP/0021_Vector-Erase.cpp (Q21)
+ */
+
+template <typename T>
+void eraseAllMatches(std::vector<T>& v, const T& target) {
+    v.erase(std::remove(v.begin(), v.end(), target), v.end());
+}
+
+template <typename T, typename Predicate>
+void eraseIfMatches(std::vector<T>& v, Predicate pred) {
+    v.erase(std::remove_if(v.begin(), v.end(), pred), v.end());
+}
+
+
+// ==============================================================================
+// [TMP-13] Full Class Template Specialization Skeleton
+// ==============================================================================
+/**
+ * Usage:
+ *     Template skeleton providing general arithmetic operations, with full
+ *     specialization for std::string concatenation.
+ * 
+ * Repository Reference:
+ *     - CPP/0029_Cpp-Class-Templates.cpp (Q29)
+ */
+
+template <typename T>
+class Accumulator {
+private:
+    T total;
+public:
+    Accumulator(T initial = T()) : total(initial) {}
+    void add(T val) { total += val; }
+    T get() const { return total; }
+};
+
+template <>
+class Accumulator<std::string> {
+private:
+    std::string total;
+public:
+    Accumulator(std::string initial = "") : total(initial) {}
+    void add(const std::string& val) { total += val; }
+    std::string get() const { return total; }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -353,6 +492,38 @@ int main() {
     assert(std::string(cardinal.lookup(0)) == "NORTH");
     assert(std::string(cardinal.lookup(3)) == "WEST");
     assert(std::string(cardinal.lookup(10)) == "UNKNOWN");
+
+    // Test TMP-09: Binary Search Range Queries
+    std::vector<int> sNums = {5, 10, 10, 10, 20, 25};
+    auto bRes1 = querySortedRange(sNums, 10);
+    assert(bRes1.found == true && bRes1.index0Based == 1 && bRes1.index1Based == 2 && bRes1.count == 3);
+    auto bRes2 = querySortedRange(sNums, 15);
+    assert(bRes2.found == false && bRes2.index0Based == 4 && bRes2.count == 0);
+
+    // Test TMP-10: Printable Record
+    PrintableRecord prec = {"Status", 200};
+    std::stringstream pss;
+    pss << prec;
+    assert(pss.str() == "[Status: 200]");
+
+    // Test TMP-11: Triplet Sortable
+    TripletSortable t1 = {1, 2, 3};
+    TripletSortable t2 = {1, 2, 4};
+    assert(t1 < t2);
+    assert(!(t2 < t1));
+
+    // Test TMP-12: Erase All Matches
+    std::vector<int> matchVec = {1, 2, 3, 2, 4, 2};
+    eraseAllMatches(matchVec, 2);
+    assert((matchVec == std::vector<int>{1, 3, 4}));
+
+    // Test TMP-13: Accumulator Specialization
+    Accumulator<int> accInt(10);
+    accInt.add(15);
+    assert(accInt.get() == 25);
+    Accumulator<std::string> accStr("Hello");
+    accStr.add(" World");
+    assert(accStr.get() == "Hello World");
 
     std::cout << "[SUCCESS] ALL Templates.cpp tests passed cleanly!\n";
     return 0;
