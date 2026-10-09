@@ -19,6 +19,11 @@
  * 6.  [PAT-06] In-Place Pointer Splicing & Node Removal (Linked List Pattern)
  * 7.  [PAT-07] Static Dispatch Table & Branchless Predicate Lookup
  * 8.  [PAT-08] Two-Pointer Bidirectional Scanning & In-Place Swap
+ * 9.  [PAT-09] Logarithmic STL Bounding Filter (std::lower_bound)
+ * 10. [PAT-10] Polymorphic Factory & Heterogeneous Container Pattern
+ * 11. [PAT-11] Unique Existence Probing & Streaming Filter (std::set)
+ * 12. [PAT-12] Multi-Tier Lexicographical Tie-Breaking Pattern (std::tie)
+ * 13. [PAT-13] Scope-Resolved Multiple Inheritance Delegation Pattern
  * ================================================================================
  */
 
@@ -27,8 +32,11 @@
 #include <string>
 #include <sstream>
 #include <map>
+#include <set>
 #include <queue>
 #include <algorithm>
+#include <tuple>
+#include <memory>
 #include <cassert>
 
 // ==============================================================================
@@ -383,6 +391,179 @@ bool isPalindrome(const std::string& str) {
 
 
 // ==============================================================================
+// [PAT-09] Logarithmic STL Bounding Filter (std::lower_bound)
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Sorted STL Bound Querying
+ * 
+ * Recognition Cues:
+ *     - Looking up positions, insertion points, or checking existence across many queries in sorted data.
+ *     - Bypasses linear scanning O(N) with logarithmic O(log N) bisection.
+ * 
+ * Repository References:
+ *     - CPP/0022_Lower-Bound-STL.cpp (Q22)
+ */
+
+struct BoundQueryResult {
+    bool exactMatch;
+    int index1Based;
+    int valueFound;
+};
+
+BoundQueryResult binarySearchBounds(const std::vector<int>& sortedVec, int queryVal) {
+    auto it = std::lower_bound(sortedVec.begin(), sortedVec.end(), queryVal);
+    int idx = static_cast<int>(it - sortedVec.begin()) + 1;
+    if (it != sortedVec.end()) {
+        return {*it == queryVal, idx, *it};
+    }
+    return {false, idx, -1};
+}
+
+
+// ==============================================================================
+// [PAT-10] Polymorphic Factory & Heterogeneous Container Pattern
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Polymorphic Factory & Heterogeneous Processing
+ * 
+ * Recognition Cues:
+ *     - Problem processes heterogeneous entities (e.g. Students vs Professors)
+ *       via a unified interface using base class pointers.
+ * 
+ * Mental Model:
+ *     - Base class defines virtual interface.
+ *     - Factory instantiates concrete derived objects based on type tags.
+ *     - Container stores std::unique_ptr<Base> or pointers, processing in a single uniform loop.
+ * 
+ * Repository References:
+ *     - CPP/0018_Virtual-Functions.cpp (Q18)
+ */
+
+class AbstractWorker {
+public:
+    virtual ~AbstractWorker() {}
+    virtual std::string getTitle() const = 0;
+    virtual int getProductivity() const = 0;
+};
+
+class Researcher : public AbstractWorker {
+private:
+    int papers;
+public:
+    Researcher(int p) : papers(p) {}
+    std::string getTitle() const override { return "Researcher"; }
+    int getProductivity() const override { return papers * 10; }
+};
+
+class Developer : public AbstractWorker {
+private:
+    int commits;
+public:
+    Developer(int c) : commits(c) {}
+    std::string getTitle() const override { return "Developer"; }
+    int getProductivity() const override { return commits * 2; }
+};
+
+std::unique_ptr<AbstractWorker> createWorker(int type, int metric) {
+    if (type == 1) return std::unique_ptr<AbstractWorker>(new Researcher(metric));
+    return std::unique_ptr<AbstractWorker>(new Developer(metric));
+}
+
+
+// ==============================================================================
+// [PAT-11] Unique Existence Probing & Streaming Filter (std::set)
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Balanced Tree State Filter
+ * 
+ * Recognition Cues:
+ *     - Stream of commands: insert element, delete element, query presence.
+ *     - Requires unique storage and guaranteed O(log N) worst-case performance.
+ * 
+ * Repository References:
+ *     - CPP/0024_Sets-STL.cpp (Q24)
+ */
+
+class StreamingSetFilter {
+private:
+    std::set<int> liveSet;
+public:
+    void executeCommand(int cmdType, int val, std::string& outResult) {
+        if (cmdType == 1) {
+            liveSet.insert(val);
+        } else if (cmdType == 2) {
+            liveSet.erase(val);
+        } else if (cmdType == 3) {
+            outResult = (liveSet.find(val) != liveSet.end()) ? "Yes" : "No";
+        }
+    }
+    size_t activeCount() const { return liveSet.size(); }
+};
+
+
+// ==============================================================================
+// [PAT-12] Multi-Tier Lexicographical Tie-Breaking Pattern (std::tie)
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Tuple-Driven Multi-Tier Comparison
+ * 
+ * Recognition Cues:
+ *     - Ordering objects by primary key, breaking ties with secondary key, then tertiary key.
+ *     - Eliminates nested if-else ladders with zero runtime overhead using std::tie.
+ * 
+ * Repository References:
+ *     - CPP/0020_Box-It.cpp (Q20)
+ */
+
+struct PriorityItem {
+    int priority;
+    int timestamp;
+    std::string name;
+
+    bool operator<(const PriorityItem& other) const {
+        return std::tie(other.priority, timestamp, name) <
+               std::tie(priority, other.timestamp, other.name);
+    }
+};
+
+
+// ==============================================================================
+// [PAT-13] Scope-Resolved Multiple Inheritance Delegation Pattern
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Scope-Resolved Multi-Base Delegation
+ * 
+ * Recognition Cues:
+ *     - Class combines capabilities of multiple independent base classes.
+ *     - Resolves method name collisions explicitly by qualifying base namespaces.
+ * 
+ * Repository References:
+ *     - CPP/0026_Accessing-Inherited-Functions.cpp (Q26)
+ */
+
+class EngineSubsystem {
+public:
+    int status() const { return 1; }
+};
+
+class SensorSubsystem {
+public:
+    int status() const { return 2; }
+};
+
+class IntegratedDrone : public EngineSubsystem, public SensorSubsystem {
+public:
+    int getEngineStatus() const { return EngineSubsystem::status(); }
+    int getSensorStatus() const { return SensorSubsystem::status(); }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -479,6 +660,42 @@ int main() {
     assert(isPalindrome("racecar") == true);
     assert(isPalindrome("hacker") == false);
     assert(isPalindrome("") == true);
+
+    // Test PAT-09: Logarithmic Bounding Filter
+    std::vector<int> sortedArr = {10, 20, 30, 40, 50};
+    auto r1 = binarySearchBounds(sortedArr, 30);
+    assert(r1.exactMatch == true && r1.index1Based == 3);
+    auto r2 = binarySearchBounds(sortedArr, 25);
+    assert(r2.exactMatch == false && r2.index1Based == 3 && r2.valueFound == 30);
+
+    // Test PAT-10: Polymorphic Factory
+    auto w1 = createWorker(1, 5); // Researcher with 5 papers
+    auto w2 = createWorker(2, 40); // Developer with 40 commits
+    assert(w1->getTitle() == "Researcher" && w1->getProductivity() == 50);
+    assert(w2->getTitle() == "Developer" && w2->getProductivity() == 80);
+
+    // Test PAT-11: Streaming Set Filter
+    StreamingSetFilter sf;
+    std::string ans;
+    sf.executeCommand(1, 100, ans);
+    sf.executeCommand(1, 200, ans);
+    sf.executeCommand(3, 100, ans);
+    assert(ans == "Yes");
+    sf.executeCommand(2, 100, ans);
+    sf.executeCommand(3, 100, ans);
+    assert(ans == "No");
+
+    // Test PAT-12: Multi-Tier Tuple Tie Breaking
+    PriorityItem taskA = {10, 100, "HighPriOld"};
+    PriorityItem taskB = {10, 200, "HighPriNew"};
+    PriorityItem taskC = {5, 50, "LowPri"};
+    assert(taskA < taskB); // Same priority, earlier timestamp wins
+    assert(taskA < taskC); // Higher priority wins
+
+    // Test PAT-13: Multiple Inheritance Scope Resolution
+    IntegratedDrone drone;
+    assert(drone.getEngineStatus() == 1);
+    assert(drone.getSensorStatus() == 2);
 
     std::cout << "[SUCCESS] ALL Patterns.cpp tests passed cleanly!\n";
     return 0;
