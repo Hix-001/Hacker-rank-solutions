@@ -19,6 +19,11 @@
  * 6.  [PIT-06] Signed vs Unsigned Integer Comparison (size_t vs int)
  * 7.  [PIT-07] Reusing std::stringstream Without Calling .clear()
  * 8.  [PIT-08] Buffer Desynchronization Hazard (Mixing cin with scanf)
+ * 9.  [PIT-09] Non-Virtual Destructor Memory Leaks in Base Classes (UB / MLE)
+ * 10. [PIT-10] The Inefficient vector::erase in Loops Trap (O(N^2) TLE)
+ * 11. [PIT-11] 32-bit Integer Overflow in Intermediate Arithmetic (WA)
+ * 12. [PIT-12] Preprocessor Macro Side Effects & Operator Precedence Gotchas (WA)
+ * 13. [PIT-13] std::endl vs '\n' Flush Penalty (TLE on High Volume I/O)
  * ================================================================================
  */
 
@@ -304,6 +309,144 @@ bool demonstrateStringStreamReset() {
 
 
 // ==============================================================================
+// [PIT-09] Non-Virtual Destructor Memory Leaks in Base Classes (UB / MLE)
+// ==============================================================================
+/**
+ * Trap:
+ *     Deleting an object through a pointer to its base class:
+ *         `Base* ptr = new Derived(); delete ptr;`
+ *     when `Base` does NOT have a virtual destructor: `virtual ~Base() {}`.
+ * 
+ * Why It Happens:
+ *     Without a virtual destructor, the delete operator performs static binding,
+ *     calling only `Base::~Base()`. The `Derived::~Derived()` destructor is completely skipped!
+ *     Any dynamic memory, open handles, or vectors held by `Derived` will leak silently.
+ * 
+ * How To Fix It:
+ *     Always declare `virtual ~Base() {}` in any class intended for polymorphism.
+ * 
+ * Repository Reference:
+ *     - CPP/0018_Virtual-Functions.cpp (Line 18: virtual ~Person() {})
+ */
+
+class SafeBase {
+public:
+    static int destructorCalls;
+    virtual ~SafeBase() { destructorCalls++; }
+};
+int SafeBase::destructorCalls = 0;
+
+class SafeDerived : public SafeBase {
+public:
+    ~SafeDerived() override { destructorCalls++; }
+};
+
+
+// ==============================================================================
+// [PIT-10] The Inefficient vector::erase in Loops Trap (O(N^2) TLE)
+// ==============================================================================
+/**
+ * Trap:
+ *     Removing matching elements from a vector in a loop using `v.erase(it)`.
+ * 
+ * Why It Happens:
+ *     `std::vector` is contiguous. Every call to `erase()` shifts all subsequent elements
+ *     leftward by 1 slot ($O(N)$). Calling this inside a loop for $K$ removals results
+ *     in $O(N \cdot K) = O(N^2)$ execution time, causing instant TLE on $N \ge 10^5$.
+ * 
+ * How To Fix It:
+ *     1. If order does NOT matter: Swap with `v.back()` and call `v.pop_back()` (O(1)).
+ *     2. If order MUST be preserved: Use the standard Erase-Remove idiom:
+ *        `v.erase(std::remove(v.begin(), v.end(), val), v.end());` (O(N) single-pass!).
+ * 
+ * Repository Reference:
+ *     - CPP/0021_Vector-Erase.cpp (Q21)
+ */
+
+#include <algorithm>
+
+void efficientEraseValue(std::vector<int>& vec, int valueToRemove) {
+    vec.erase(std::remove(vec.begin(), vec.end(), valueToRemove), vec.end());
+}
+
+
+// ==============================================================================
+// [PIT-11] 32-bit Integer Overflow in Intermediate Arithmetic (WA)
+// ==============================================================================
+/**
+ * Trap:
+ *     Writing `long long volume = l * b * h;` when `l, b, h` are 32-bit `int`.
+ * 
+ * Why It Happens:
+ *     In C++, the type of an arithmetic expression is determined SOLELY by its operands,
+ *     NOT by the target variable receiving the assignment.
+ *     If `l = 10^5, b = 10^5, h = 10^5`, `l * b * h` evaluates to $10^{15}$, which exceeds
+ *     the maximum signed 32-bit integer ($2.14 \times 10^9$). The expression overflows in
+ *     32-bit registers, and only the corrupted truncated value is converted to `long long`.
+ * 
+ * How To Fix It:
+ *     Cast at least one factor to `long long` before multiplication:
+ *     `long long volume = static_cast<long long>(l) * b * h;`
+ * 
+ * Repository Reference:
+ *     - CPP/0020_Box-It.cpp (Line 47: return (long long)l * b * h;)
+ */
+
+long long safeVolumeCalculation(int l, int b, int h) {
+    return static_cast<long long>(l) * b * h;
+}
+
+
+// ==============================================================================
+// [PIT-12] Preprocessor Macro Side Effects & Operator Precedence Gotchas (WA)
+// ==============================================================================
+/**
+ * Trap:
+ *     Defining functional macros without enclosing parameters and bodies in parentheses:
+ *     `#define MULT(a, b) a * b`
+ *     Calling `MULT(2 + 3, 4 + 5)` expands to `2 + 3 * 4 + 5 = 2 + 12 + 5 = 19`!
+ * 
+ * Why It Happens:
+ *     The preprocessor performs blind textual replacement without understanding syntax
+ *     trees or mathematical operator precedence.
+ * 
+ * How To Fix It:
+ *     Always parenthesize both every argument AND the entire macro body:
+ *     `#define MULT(a, b) ((a) * (b))`
+ *     Or better yet, use C++ `inline` or `constexpr` template functions.
+ * 
+ * Repository Reference:
+ *     - CPP/0030_Preprocessor-Solution.cpp (Q30)
+ */
+
+#define SAFE_MULT(a, b) ((a) * (b))
+
+
+// ==============================================================================
+// [PIT-13] std::endl vs '\n' Flush Penalty (TLE on High Volume I/O)
+// ==============================================================================
+/**
+ * Trap:
+ *     Writing `std::cout << result << std::endl;` inside high-frequency loops.
+ * 
+ * Why It Happens:
+ *     `std::endl` does TWO distinct actions:
+ *     1. Writes the newline character `\n`.
+ *     2. Calls `std::cout.flush()`, forcing a hardware/OS system call.
+ *     For $10^5$ outputs, this causes $10^5$ distinct system calls instead of batching
+ *     in memory buffers, degrading throughput by 20x–100x and causing TLE.
+ * 
+ * How To Fix It:
+ *     Always output `'\n'` instead of `std::endl`:
+ *     `std::cout << result << '\n';`
+ * 
+ * Repository Reference:
+ *     - CPP/0029_Cpp-Class-Templates.cpp (Line 50: cout << myint.add(element2) << '\n';)
+ *     - CPP/0030_Preprocessor-Solution.cpp (Line 37: cout << ... << '\n';)
+ */
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -337,6 +480,25 @@ int main() {
 
     // Test PIT-07: StringStream Reset
     assert(demonstrateStringStreamReset() == true);
+
+    // Test PIT-09: Virtual Destructor Execution
+    SafeBase::destructorCalls = 0;
+    SafeBase* polymorphicPtr = new SafeDerived();
+    delete polymorphicPtr;
+    assert(SafeBase::destructorCalls == 2); // Both SafeDerived and SafeBase destructors called!
+
+    // Test PIT-10: Efficient Erase-Remove Idiom
+    std::vector<int> numbers = {1, 2, 3, 2, 4, 2, 5};
+    efficientEraseValue(numbers, 2);
+    assert((numbers == std::vector<int>{1, 3, 4, 5}));
+
+    // Test PIT-11: Intermediate Overflow Prevention
+    long long safeVol = safeVolumeCalculation(100000, 100000, 100000);
+    assert(safeVol == 1000000000000000LL);
+
+    // Test PIT-12: Macro Parenthesization
+    int calc = SAFE_MULT(2 + 3, 4 + 5);
+    assert(calc == 45); // (5) * (9) == 45, NOT 19
 
     std::cout << "[SUCCESS] ALL PitfallsAndErrors.cpp tests passed cleanly!\n";
     return 0;
