@@ -19,6 +19,10 @@
  * 6.  [ALG-06] Symmetrical Two-Pointer In-Place Sequence Reversal
  * 7.  [ALG-07] Multi-Variable Extrema Reduction & Branchless Comparison
  * 8.  [ALG-08] Linear Multi-Criteria Aggregation & Outlier Scoring
+ * 9.  [ALG-09] Binary Search Range Bounding via lower_bound & upper_bound
+ * 10. [ALG-10] Contiguous Vector Range Removal & O(1) Swap-and-Pop
+ * 11. [ALG-11] Prime-Factorization Driven Operational Decomposition
+ * 12. [ALG-12] Multi-Tier Lexicographical Ordering via std::tie
  * ================================================================================
  */
 
@@ -29,6 +33,7 @@
 #include <map>
 #include <queue>
 #include <algorithm>
+#include <tuple>
 #include <cassert>
 #include <cmath>
 
@@ -368,6 +373,154 @@ int countExceedingBenchmark(const std::vector<StudentRecord>& students, size_t b
 
 
 // ==============================================================================
+// [ALG-09] Binary Search Range Bounding via lower_bound & upper_bound
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Logarithmic Bound Search & Frequency Counting on Sorted Ranges
+ * 
+ * What It Does:
+ *     1. Queries whether an exact target exists in sorted vector and finds its 1-based index in O(log N).
+ *     2. Computes the count of occurrences of target in O(log N) via (upper_bound - lower_bound).
+ * 
+ * When To Recognize / Use:
+ *     - Array is sorted (or can be sorted once in O(N log N) for Q queries).
+ *     - Point existence queries, floor/ceiling queries, or frequency interval queries.
+ * 
+ * Core Idea:
+ *     - `std::lower_bound`: Points to the FIRST element that is >= target.
+ *     - `std::upper_bound`: Points to the FIRST element that is > target.
+ *     - Element exists if `it != v.end() && *it == target`.
+ * 
+ * Repository References:
+ *     - CPP/0022_Lower-Bound-STL.cpp (Q22)
+ */
+
+std::pair<bool, int> querySortedBound(const std::vector<int>& v, int target) {
+    auto it = std::lower_bound(v.begin(), v.end(), target);
+    int index1Based = static_cast<int>(it - v.begin()) + 1;
+    bool exists = (it != v.end() && *it == target);
+    return {exists, index1Based};
+}
+
+int countOccurrencesSorted(const std::vector<int>& v, int target) {
+    auto low = std::lower_bound(v.begin(), v.end(), target);
+    auto high = std::upper_bound(v.begin(), v.end(), target);
+    return static_cast<int>(high - low);
+}
+
+
+// ==============================================================================
+// [ALG-10] Contiguous Vector Range Removal & O(1) Swap-and-Pop
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Vector Single/Range Erase & Fast Unordered Removal
+ * 
+ * What It Does:
+ *     Removes single elements or continuous index slices [a, b) from a vector.
+ *     Provides an O(1) swap-and-pop alternative when element order does not matter.
+ * 
+ * When To Recognize / Use:
+ *     - Deleting specific indices or intervals from dynamic lists.
+ *     - Beware: std::vector::erase shifts all elements to the right of the deleted
+ *       segment, taking O(N) time. If element order does not matter, use swap-and-pop O(1).
+ * 
+ * Repository References:
+ *     - CPP/0021_Vector-Erase.cpp (Q21)
+ */
+
+void eraseRange1Based(std::vector<int>& v, int start1Based, int end1Based) {
+    if (start1Based > 0 && end1Based <= static_cast<int>(v.size()) + 1 && start1Based <= end1Based) {
+        v.erase(v.begin() + (start1Based - 1), v.begin() + (end1Based - 1));
+    }
+}
+
+template <typename T>
+void swapAndPop(std::vector<T>& v, size_t index) {
+    if (index < v.size()) {
+        std::swap(v[index], v.back());
+        v.pop_back();
+    }
+}
+
+
+// ==============================================================================
+// [ALG-11] Prime-Factorization Driven Operational Decomposition
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Prime-Factorization State Decomposition
+ * 
+ * What It Does:
+ *     Decomposes a composite positive integer into powers of prime bases (e.g. 2, 3, 5)
+ *     and triggers corresponding transformations or inherited function invocations.
+ * 
+ * When To Recognize / Use:
+ *     - Deconstructing integer operation codes into modular execution sequences.
+ *     - State reduction problems where actions multiply a state by fixed primes.
+ * 
+ * Repository References:
+ *     - CPP/0026_Accessing-Inherited-Functions.cpp (Q26)
+ */
+
+std::map<int, int> factorizeByBases(int num, const std::vector<int>& primeBases) {
+    std::map<int, int> powerCounts;
+    int temp = num;
+    for (int base : primeBases) {
+        if (base <= 1) continue;
+        int count = 0;
+        while (temp % base == 0) {
+            count++;
+            temp /= base;
+        }
+        powerCounts[base] = count;
+    }
+    return powerCounts;
+}
+
+
+// ==============================================================================
+// [ALG-12] Multi-Tier Lexicographical Ordering via std::tie
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Multi-Tier Lexicographical Comparison with 64-Bit Arithmetic
+ * 
+ * What It Does:
+ *     Implements strict weak ordering across composite multi-attribute objects
+ *     (e.g., length, breadth, height) without sprawling if-else ladders, while
+ *     safely calculating 64-bit volume metrics to prevent 32-bit overflow.
+ * 
+ * When To Recognize / Use:
+ *     - Implementing operator< for custom structs stored in std::set, std::map, or std::sort.
+ *     - Replacing repetitive if-else chains with modern, idiomatic std::tie.
+ * 
+ * Repository References:
+ *     - CPP/0020_Box-It.cpp (Q20)
+ */
+
+struct BoundingBox {
+    int l, b, h;
+
+    BoundingBox(int length = 0, int breadth = 0, int height = 0)
+        : l(length), b(breadth), h(height) {}
+
+    long long calculateVolume() const {
+        return static_cast<long long>(l) * b * h;
+    }
+
+    bool operator<(const BoundingBox& other) const {
+        return std::tie(l, b, h) < std::tie(other.l, other.b, other.h);
+    }
+
+    bool operator==(const BoundingBox& other) const {
+        return std::tie(l, b, h) == std::tie(other.l, other.b, other.h);
+    }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -460,6 +613,45 @@ int main() {
         {"Charlie", {85, 85, 85, 85, 85}}  // Total = 425 (> 400)
     };
     assert(countExceedingBenchmark(students, 0) == 2);
+
+    // Test ALG-09: Lower Bound & Upper Bound Range Queries
+    std::vector<int> sortedVals = {1, 2, 4, 4, 4, 7, 9};
+    auto q1 = querySortedBound(sortedVals, 4);
+    assert(q1.first == true && q1.second == 3); // 1-based index 3
+    auto q2 = querySortedBound(sortedVals, 5);
+    assert(q2.first == false && q2.second == 6); // Points to 7 at index 6
+    assert(countOccurrencesSorted(sortedVals, 4) == 3);
+    assert(countOccurrencesSorted(sortedVals, 5) == 0);
+
+    // Test ALG-10: Vector Range Erase & Swap-and-Pop
+    std::vector<int> vErase = {1, 4, 6, 2, 8, 9};
+    // Erase 1-based index 2 (val 4)
+    vErase.erase(vErase.begin() + 1);
+    assert((vErase == std::vector<int>{1, 6, 2, 8, 9}));
+    // Erase 1-based [2, 4) -> removes elements at indices 1 and 2 (6 and 2)
+    eraseRange1Based(vErase, 2, 4);
+    assert((vErase == std::vector<int>{1, 8, 9}));
+    // Swap and pop element at index 0 (val 1)
+    swapAndPop(vErase, 0);
+    assert((vErase == std::vector<int>{9, 8}));
+
+    // Test ALG-11: Prime-Factorization State Decomposition
+    // 360 = 2^3 * 3^2 * 5^1
+    auto factors = factorizeByBases(360, {2, 3, 5});
+    assert(factors[2] == 3);
+    assert(factors[3] == 2);
+    assert(factors[5] == 1);
+
+    // Test ALG-12: Multi-Tier Lexicographical Box Ordering & Volume
+    BoundingBox b1(10, 20, 30);
+    BoundingBox b2(10, 20, 35);
+    BoundingBox b3(10, 25, 5);
+    assert(b1 < b2);
+    assert(b2 < b3);
+    assert(b1.calculateVolume() == 6000LL);
+    // Test 64-bit volume without overflow:
+    BoundingBox bLarge(100000, 100000, 100000);
+    assert(bLarge.calculateVolume() == 1000000000000000LL);
 
     std::cout << "[SUCCESS] ALL Algorithms.cpp tests passed cleanly!\n";
     return 0;
