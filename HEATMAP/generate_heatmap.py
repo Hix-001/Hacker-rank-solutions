@@ -211,9 +211,6 @@ def get_level(count):
 
 
 def generate_svg(data, output_path, quiet=False):
-    """
-    Builds the Samsung One UI 8 inspired, LeetCode-styled SVG heatmap card.
-    """
     date_counts = data["date_counts"]
     total_solved = data["total_files"]
     active_days = len(date_counts)
@@ -237,76 +234,138 @@ def generate_svg(data, output_path, quiet=False):
     width = 880
     height = 260
 
+    FONT_FAMILY = "'Libre Caslon Condensed', 'Times New Roman', Georgia, serif"
+
     svg = []
     svg.append('<?xml version="1.0" encoding="UTF-8"?>')
     svg.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
         f'width="100%" height="{height}" '
-        'style="background-color: transparent; font-family: \'Helvetica\', Arial, sans-serif;">'
+        f'style="background-color: transparent; font-family: {FONT_FAMILY};">'
     )
 
-    # SVG Definitions: One UI 8 Card Gradient, Ambient Glow, & Helvetica Typography
+    # SVG Definitions: Google Font (Libre Caslon Condensed), Frosted Glass & Ambient Glow
     svg.append("  <defs>")
     svg.append(
-        '    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
-        '<stop offset="0%" stop-color="#0c0f17"/>'
-        '<stop offset="100%" stop-color="#141824"/>'
-        "</linearGradient>"
+        "    <style>\n"
+        "      @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&amp;display=swap');\n"
+        "      * { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }\n"
+        "      text { font-family: 'Libre Caslon Condensed', 'Times New Roman', Georgia, serif; }\n"
+        "      .cell { cursor: pointer; }\n"
+        "      .cell rect { transition: all 0.15s ease-in-out; }\n"
+        "      .cell:hover rect { stroke: #ffffff !important; stroke-width: 1.4px !important; filter: drop-shadow(0 0 4px rgba(255,255,255,0.7)); }\n"
+        "    </style>"
     )
+
+    # Ambient backlight blur filter for frosted glass diffusion
+    svg.append(
+        '    <filter id="ambientBlur" x="-30%" y="-30%" width="160%" height="160%">'
+        '<feGaussianBlur stdDeviation="45"/>'
+        '</filter>'
+    )
+
+    # Elevation drop shadow for the glass panel
+    svg.append(
+        '    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">'
+        '<feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.55"/>'
+        '</filter>'
+    )
+
+    # Luminous glow for Level 4 tiles
     svg.append(
         '    <filter id="tileGlow" x="-20%" y="-20%" width="140%" height="140%">'
-        '<feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#39d353" flood-opacity="0.45"/>'
-        "</filter>"
+        '<feDropShadow dx="0" dy="0" stdDeviation="2.0" flood-color="#39d353" flood-opacity="0.55"/>'
+        '</filter>'
     )
+
+    # Frosted Glass panel linear gradient
     svg.append(
-        "    <style>"
-        "      * { font-family: 'Helvetica', Arial, sans-serif; }"
-        "      text { font-family: 'Helvetica', Arial, sans-serif; }"
-        "      .cell { cursor: pointer; }"
-        "      .cell rect { transition: all 0.15s ease-in-out; }"
-        "      .cell:hover rect { stroke: #ffffff !important; stroke-width: 1.4px !important; filter: drop-shadow(0 0 3px rgba(255,255,255,0.6)); }"
-        "    </style>"
+        '    <linearGradient id="glassCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
+        '<stop offset="0%" stop-color="#0e1626" stop-opacity="0.75"/>'
+        '<stop offset="45%" stop-color="#090f1b" stop-opacity="0.82"/>'
+        '<stop offset="100%" stop-color="#050811" stop-opacity="0.88"/>'
+        '</linearGradient>'
+    )
+
+    # Frosted Glass specular bevel border (prismatic highlight)
+    svg.append(
+        '    <linearGradient id="glassBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">'
+        '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.38"/>'
+        '<stop offset="20%" stop-color="#38bdf8" stop-opacity="0.25"/>'
+        '<stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>'
+        '<stop offset="80%" stop-color="#a78bfa" stop-opacity="0.22"/>'
+        '<stop offset="100%" stop-color="#ffffff" stop-opacity="0.14"/>'
+        '</linearGradient>'
+    )
+
+    # Specular top reflection sheen
+    svg.append(
+        '    <linearGradient id="glassSheenGrad" x1="0%" y1="0%" x2="0%" y2="100%">'
+        '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>'
+        '<stop offset="35%" stop-color="#ffffff" stop-opacity="0.03"/>'
+        '<stop offset="100%" stop-color="#ffffff" stop-opacity="0.00"/>'
+        '</linearGradient>'
     )
     svg.append("  </defs>")
 
-    # Background Card (Samsung One UI 8 Squircle Container with Soft Ambient Stroke)
+    # 1. Ambient Glow Backlight Emitters (Diffused behind the frosted glass)
+    svg.append('  <!-- Ambient Glow Backlight Emitters -->')
+    svg.append('  <g id="ambientGlowLayer">')
+    svg.append('    <ellipse cx="140" cy="65" rx="130" ry="60" fill="#0284c7" opacity="0.22" filter="url(#ambientBlur)"/>')
+    svg.append('    <ellipse cx="250" cy="140" rx="150" ry="75" fill="#059669" opacity="0.26" filter="url(#ambientBlur)"/>')
+    svg.append('    <ellipse cx="720" cy="55" rx="140" ry="55" fill="#7c3aed" opacity="0.24" filter="url(#ambientBlur)"/>')
+    svg.append('    <ellipse cx="650" cy="185" rx="160" ry="70" fill="#2563eb" opacity="0.18" filter="url(#ambientBlur)"/>')
+    svg.append('    <ellipse cx="450" cy="220" rx="120" ry="50" fill="#0d9488" opacity="0.16" filter="url(#ambientBlur)"/>')
+    svg.append('  </g>')
+
+    # 2. Frosted Glass Panel Container
+    svg.append('  <!-- Frosted Glass Surface -->')
+    svg.append('  <g filter="url(#cardShadow)">')
     svg.append(
-        f'  <rect x="0.5" y="0.5" width="{width - 1}" height="{height - 1}" rx="20" '
-        f'fill="url(#cardGrad)" stroke="{COLOR_BORDER}" stroke-width="1"/>'
+        f'    <rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="20" '
+        'fill="url(#glassCardGrad)" stroke="url(#glassBorderGrad)" stroke-width="1.2"/>'
+    )
+    svg.append('  </g>')
+
+    # 3. Specular Surface Sheen & Inset Bevel
+    svg.append(
+        f'  <rect x="2.5" y="2.5" width="{width - 5}" height="95" rx="19" '
+        'fill="url(#glassSheenGrad)" pointer-events="none"/>'
     )
     svg.append(
-        f'  <rect x="1.5" y="1.5" width="{width - 3}" height="{height - 3}" rx="19" '
-        'fill="none" stroke="#171c28" stroke-width="1"/>'
+        f'  <rect x="2.5" y="2.5" width="{width - 5}" height="{height - 5}" rx="19" '
+        'fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" pointer-events="none"/>'
     )
 
-    # Header Title
+    # Header Title in Libre Caslon Condensed
     svg.append(
-        '  <text x="32" y="38" fill="#f0f6fc" font-size="16" font-weight="600">'
+        '  <text x="32" y="38" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="0.3px">'
         "HackerRank Contribution Activity"
         "</text>"
     )
     svg.append(
-        f'  <text x="32" y="56" fill="{COLOR_TEXT_MUTED}" font-size="12">'
+        '  <text x="32" y="56" fill="#94a3b8" font-size="13" font-weight="400" letter-spacing="0.2px">'
         "Contributions &amp; Problem Solving Calendar • July 2026 – July 2027"
         "</text>"
     )
 
-    # Samsung One UI 8 Capsule Badges
+    # Frosted Glass Capsule Badges
     badges = [
-        (f"{total_solved} Solved", "#4da3ff", "#1f6feb", "#0d1d30"),
-        (f"{active_days} Active Days", "#3ddc84", "#238636", "#0c2114"),
-        (f"{curr_streak} Day Streak", "#c084fc", "#9333ea", "#221238"),
-        (f"Max {max_in_day}/Day", "#fbbf24", "#d97706", "#261a08"),
+        (f"{total_solved} Solved", "#60a5fa", "rgba(96, 165, 250, 0.50)", "rgba(30, 58, 110, 0.45)"),
+        (f"{active_days} Active Days", "#34d399", "rgba(52, 211, 153, 0.50)", "rgba(16, 68, 42, 0.45)"),
+        (f"{curr_streak} Day Streak", "#c084fc", "rgba(192, 132, 252, 0.50)", "rgba(65, 30, 95, 0.45)"),
+        (f"Max {max_in_day}/Day", "#fbbf24", "rgba(251, 191, 36, 0.50)", "rgba(80, 50, 15, 0.45)"),
     ]
 
     badge_x = width - 32
     for label, text_color, stroke_color, bg_color in reversed(badges):
-        b_width = len(label) * 7.5 + 18
+        b_width = len(label) * 7.8 + 20
         badge_x -= b_width
         svg.append(
-            f'  <g transform="translate({badge_x}, 24)">'
-            f'<rect width="{b_width}" height="24" rx="12" fill="{bg_color}" stroke="{stroke_color}" stroke-width="0.8"/>'
-            f'<text x="{b_width / 2}" y="16" text-anchor="middle" fill="{text_color}" font-size="11" font-weight="600">{label}</text>'
+            f'  <g transform="translate({badge_x}, 23)">'
+            f'<rect width="{b_width}" height="25" rx="12.5" fill="{bg_color}" stroke="{stroke_color}" stroke-width="0.9"/>'
+            f'<rect x="1" y="1" width="{b_width - 2}" height="11" rx="5.5" fill="url(#glassSheenGrad)" pointer-events="none"/>'
+            f'<text x="{b_width / 2}" y="17" text-anchor="middle" fill="{text_color}" font-size="12" font-weight="600" letter-spacing="0.3px">{label}</text>'
             "</g>"
         )
         badge_x -= 8
@@ -326,8 +385,8 @@ def generate_svg(data, output_path, quiet=False):
                 m_label = month_names[cur_d.month - 1]
                 label_x = grid_x + col * cell_step
                 svg.append(
-                    f'  <text x="{label_x}" y="{grid_y - 10}" fill="{COLOR_TEXT_MUTED}" '
-                    f'font-size="11" font-weight="500">{m_label}</text>'
+                    f'  <text x="{label_x}" y="{grid_y - 10}" fill="#94a3b8" '
+                    f'font-size="12" font-weight="500" letter-spacing="0.2px">{m_label}</text>'
                 )
                 break
 
@@ -337,7 +396,7 @@ def generate_svg(data, output_path, quiet=False):
         label_y = grid_y + row_idx * cell_step + 10
         svg.append(
             f'  <text x="{grid_x - 12}" y="{label_y}" text-anchor="end" '
-            f'fill="{COLOR_TEXT_DIM}" font-size="10" font-weight="400">{label}</text>'
+            f'fill="#64748b" font-size="11" font-weight="400">{label}</text>'
         )
 
     # Calendar Cells (LeetCode Green intensity with One UI 8 squircles)
@@ -381,7 +440,7 @@ def generate_svg(data, output_path, quiet=False):
 
     # Left subtitle note
     svg.append(
-        f'  <text x="32" y="{legend_y + 10}" fill="{COLOR_TEXT_MUTED}" font-size="11">'
+        f'  <text x="32" y="{legend_y + 10}" fill="#94a3b8" font-size="12" font-weight="400" letter-spacing="0.2px">'
         "Daily problem solving activity • July 2026 – July 2027"
         "</text>"
     )
@@ -389,7 +448,7 @@ def generate_svg(data, output_path, quiet=False):
     # Right legend: Less [0] [1] [2] [3] [4] More
     leg_x = width - 215
     svg.append(
-        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="{COLOR_TEXT_DIM}" font-size="11" text-anchor="end">Less</text>'
+        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="#64748b" font-size="12" font-weight="400" text-anchor="end">Less</text>'
     )
     leg_x += 8
 
@@ -409,7 +468,7 @@ def generate_svg(data, output_path, quiet=False):
         leg_x += 15
 
     svg.append(
-        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="{COLOR_TEXT_DIM}" font-size="11">More</text>'
+        f'  <text x="{leg_x}" y="{legend_y + 10}" fill="#64748b" font-size="12" font-weight="400">More</text>'
     )
 
     svg.append("</svg>")
