@@ -14,7 +14,7 @@ OUTPUT_SVG = os.path.join(SCRIPT_DIR, "contribution_heatmap.svg")
 SOLUTION_DIRS = ("PYTHON", "CPP", "30 DAYS OF CODE")
 VALID_EXTENSIONS = {".py", ".cpp"}
 
-CALENDAR_START = date(2026, 6, 28)  # Sunday before July 2026
+CALENDAR_START = date(2026, 5, 31)  # Sunday before June 2026
 CALENDAR_WEEKS = 57
 
 PALETTE = {
@@ -156,7 +156,7 @@ def generate_svg(data, output_path, quiet=False):
         '<?xml version="1.0" encoding="UTF-8"?>',
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" role="img" aria-labelledby="title description">',
         '<title id="title">HackerRank contribution activity</title>',
-        '<desc id="description">Daily HackerRank solutions from July 2026 through July 2027. Brighter green cells indicate more solutions.</desc>',
+        '<desc id="description">Daily HackerRank solutions from June 2026 through July 2027. Brighter green cells indicate more solutions.</desc>',
         '<defs>',
         '<linearGradient id="card" x1="0" y1="0" x2="1" y2="1">',
         '<stop offset="0%" stop-color="#111722"/><stop offset="100%" stop-color="#0b111a"/>',
@@ -176,7 +176,7 @@ def generate_svg(data, output_path, quiet=False):
         f'<rect x="1" y="1" width="{width-2}" height="{height-2}" rx="20" fill="url(#card)" stroke="#293343" stroke-width="1.2" filter="url(#shadow)"/>',
         f'<rect x="2" y="2" width="{width-4}" height="85" rx="19" fill="url(#topSheen)"/>',
         '<text x="32" y="37" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="-.25">HackerRank Contribution Activity</text>',
-        '<text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · July 2026 – July 2027</text>',
+        '<text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · June 2026 – July 2027</text>',
     ]
 
     badges = [
@@ -236,7 +236,7 @@ def generate_svg(data, output_path, quiet=False):
             ])
 
     legend_y = grid_y + 7 * step + 17
-    svg.append(f'<text x="32" y="{legend_y+10}" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · July 2026 – July 2027</text>')
+    svg.append(f'<text x="32" y="{legend_y+10}" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · June 2026 – July 2027</text>')
     legend_x = width - 229
     svg.append(f'<text x="{legend_x}" y="{legend_y+10}" fill="#748398" font-size="11.5" text-anchor="end">Less</text>')
     legend_x += 10
