@@ -24,15 +24,15 @@ text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · June 2026 – July 2027</text>
 <g transform="translate(528.5,23)">
 <rect width="87.0" height="25" rx="12.5" fill="none" stroke="#60a5fa" stroke-opacity=".48" stroke-width=".8"/>
-<text x="43.5" y="16.5" text-anchor="middle" fill="#60a5fa" font-size="11.5" font-weight="650">180 Solved</text>
+<text x="43.5" y="16.5" text-anchor="middle" fill="#60a5fa" font-size="11.5" font-weight="650">181 Solved</text>
 </g>
 <g transform="translate(622.5,23)">
-<rect width="113.0" height="25" rx="12.5" fill="none" stroke="#34d399" stroke-opacity=".48" stroke-width=".8"/>
-<text x="56.5" y="16.5" text-anchor="middle" fill="#34d399" font-size="11.5" font-weight="650">99 Active Days</text>
+<rect width="119.5" height="25" rx="12.5" fill="none" stroke="#34d399" stroke-opacity=".48" stroke-width=".8"/>
+<text x="59.8" y="16.5" text-anchor="middle" fill="#34d399" font-size="11.5" font-weight="650">100 Active Days</text>
 </g>
-<g transform="translate(742.5,23)">
-<rect width="106.5" height="25" rx="12.5" fill="none" stroke="#c084fc" stroke-opacity=".48" stroke-width=".8"/>
-<text x="53.2" y="16.5" text-anchor="middle" fill="#c084fc" font-size="11.5" font-weight="650">55 Day Streak</text>
+<g transform="translate(749.0,23)">
+<rect width="100.0" height="25" rx="12.5" fill="none" stroke="#c084fc" stroke-opacity=".48" stroke-width=".8"/>
+<text x="50.0" y="16.5" text-anchor="middle" fill="#c084fc" font-size="11.5" font-weight="650">0 Day Streak</text>
 </g>
 <text x="52" y="80" fill="#9aa8ba" font-size="11.5">Jun</text>
 <text x="108" y="80" fill="#9aa8ba" font-size="11.5">Jul</text>
@@ -587,29 +587,29 @@ text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 <title>11/10/26 · 1 solution</title>
 <rect x="318" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="12/10/26 · Future date">
-<title>12/10/26 · Future date</title>
-<rect x="318" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="12/10/26 · 1 solution">
+<title>12/10/26 · 1 solution</title>
+<rect x="318" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="13/10/26 · Future date">
-<title>13/10/26 · Future date</title>
-<rect x="318" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="13/10/26 · No solutions recorded">
+<title>13/10/26 · No solutions recorded</title>
+<rect x="318" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="14/10/26 · Future date">
-<title>14/10/26 · Future date</title>
-<rect x="318" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="14/10/26 · No solutions recorded">
+<title>14/10/26 · No solutions recorded</title>
+<rect x="318" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="15/10/26 · Future date">
-<title>15/10/26 · Future date</title>
-<rect x="318" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="15/10/26 · No solutions recorded">
+<title>15/10/26 · No solutions recorded</title>
+<rect x="318" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="16/10/26 · Future date">
-<title>16/10/26 · Future date</title>
-<rect x="318" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="16/10/26 · No solutions recorded">
+<title>16/10/26 · No solutions recorded</title>
+<rect x="318" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
 </g>
-<g class="cell" tabindex="0" role="img" aria-label="17/10/26 · Future date">
-<title>17/10/26 · Future date</title>
-<rect x="318" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<g class="cell" tabindex="0" role="img" aria-label="17/10/26 · No solutions recorded">
+<title>17/10/26 · No solutions recorded</title>
+<rect x="318" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/10/26 · Future date">
 <title>18/10/26 · Future date</title>
