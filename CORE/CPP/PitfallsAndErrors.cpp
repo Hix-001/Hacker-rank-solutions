@@ -24,6 +24,10 @@
  * 11. [PIT-11] 32-bit Integer Overflow in Intermediate Arithmetic (WA)
  * 12. [PIT-12] Preprocessor Macro Side Effects & Operator Precedence Gotchas (WA)
  * 13. [PIT-13] std::endl vs '\n' Flush Penalty (TLE on High Volume I/O)
+ * 14. [PIT-14] std::map operator[] Unintended Default Insertion Gotcha
+ * 15. [PIT-15] dynamic_cast on Non-Polymorphic Base Class Compilation Error
+ * 16. [PIT-16] 32-bit PRNG Integer Overflow in Cycle Detection (Undefined Behavior)
+ * 17. [PIT-17] Missing Virtual Method in Base Class Causing Static Method Slicing
  * ================================================================================
  */
 
@@ -34,6 +38,8 @@
 #include <exception>
 #include <stdexcept>
 #include <cstdio>
+#include <map>
+#include <cstdint>
 #include <cassert>
 
 // ==============================================================================
@@ -447,6 +453,129 @@ long long safeVolumeCalculation(int l, int b, int h) {
 
 
 // ==============================================================================
+// [PIT-14] std::map operator[] Unintended Default Insertion Gotcha
+// ==============================================================================
+/**
+ * Trap:
+ *     Using `myMap[key]` simply to check whether a key exists or to read its value.
+ * 
+ * Why It Happens:
+ *     `std::map::operator[]` is NON-CONST. If `key` is not present, it inserts a new
+ *     key-value pair with a default-constructed value (e.g., 0, empty string, nullptr).
+ *     This silently modifies the map's size, degrades performance, and can trigger
+ *     false positives in subsequent `.size()` or empty checks!
+ * 
+ * How To Fix It:
+ *     Use `.find(key)` or `.count(key)` for read-only access / existence checks:
+ *     `if (myMap.find(key) != myMap.end()) { ... }`
+ *     Or `myMap.at(key)` if the key MUST exist (throws `std::out_of_range` on absence).
+ * 
+ * Repository Reference:
+ *     - CPP/0033_Maps-STL.cpp (Q33)
+ */
+
+inline bool safeMapContains(const std::map<std::string, int>& m, const std::string& key) {
+    return m.find(key) != m.end();
+}
+
+
+// ==============================================================================
+// [PIT-15] dynamic_cast on Non-Polymorphic Base Class Compilation Error
+// ==============================================================================
+/**
+ * Trap:
+ *     Attempting to use `dynamic_cast<Derived*>(basePtr)` when `Base` has NO virtual functions.
+ * 
+ * Why It Happens:
+ *     `dynamic_cast` relies on Run-Time Type Information (RTTI) stored inside the object's vtable.
+ *     If `Base` lacks any virtual functions, the compiler generates no vtable/vptr for it.
+ *     Compiling `dynamic_cast` on a non-polymorphic type fails with:
+ *     "error: cannot dynamic_cast 'ptr' (of type 'class Base*') to type 'class Derived*'
+ *      (source type is not polymorphic)"
+ * 
+ * How To Fix It:
+ *     Ensure the base class defines at least one virtual function, typically the virtual destructor:
+ *     `virtual ~Base() = default;`
+ * 
+ * Repository Reference:
+ *     - CPP/0036_Magic-Spells.cpp (Q36)
+ */
+
+class PolymorphicBase {
+public:
+    virtual ~PolymorphicBase() = default; // Required for dynamic_cast
+};
+
+class PolymorphicDerived : public PolymorphicBase {
+public:
+    int specializedValue() const { return 999; }
+};
+
+inline bool canCastToDerived(PolymorphicBase* ptr) {
+    return dynamic_cast<PolymorphicDerived*>(ptr) != nullptr;
+}
+
+
+// ==============================================================================
+// [PIT-16] 32-bit PRNG Integer Overflow in Cycle Detection (Undefined Behavior)
+// ==============================================================================
+/**
+ * Trap:
+ *     Using signed 32-bit `int` for PRNG congruential formulas:
+ *     `int next = (curr * p + q) % m;`
+ *     When `curr * p` exceeds $2^{31} - 1 \approx 2.14 \times 10^9$, signed integer
+ *     overflow occurs, resulting in undefined behavior (UB), negative array indices, or wrong answers.
+ * 
+ * How To Fix It:
+ *     Use `unsigned int` (which wraps safely modulo $2^{32}$) or 64-bit `uint64_t`:
+ *     `unsigned int next = (1ULL * curr * p + q) % (1ULL << 31);`
+ * 
+ * Repository Reference:
+ *     - CPP/0034_Bit-Array.cpp (Q34)
+ */
+
+inline uint32_t safePrngStep(uint32_t curr, uint32_t p, uint32_t q) {
+    // 64-bit calculation guarantees no intermediate 32-bit overflow
+    uint64_t product = static_cast<uint64_t>(curr) * p + q;
+    return static_cast<uint32_t>(product & 0x7FFFFFFF); // Modulo 2^31
+}
+
+
+// ==============================================================================
+// [PIT-17] Missing Virtual Method in Base Class Causing Static Method Slicing
+// ==============================================================================
+/**
+ * Trap:
+ *     Subclass overrides a base method `int getPrice()`, but the base class declared it
+ *     WITHOUT the `virtual` keyword.
+ * 
+ * Why It Happens:
+ *     When calling through a base pointer/reference `Base* room = new LuxurySuite();`,
+ *     C++ uses early (static) binding. Because `getPrice()` is not virtual, the compiler
+ *     binds directly to `Base::getPrice()`, completely ignoring `LuxurySuite::getPrice()`.
+ *     The room price is calculated incorrectly without emitting any warnings.
+ * 
+ * How To Fix It:
+ *     Declare `virtual int getPrice() const;` in the base class, and use the `override`
+ *     specifier in the derived class.
+ * 
+ * Repository Reference:
+ *     - CPP/0042_Hotel-Prices.cpp (Q42)
+ */
+
+class TrapRoomBase {
+public:
+    virtual ~TrapRoomBase() = default;
+    virtual int getPrice() const { return 100; } // virtual ensures late binding
+};
+
+class TrapRoomDerived : public TrapRoomBase {
+public:
+    int getPrice() const override { return 150; }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -499,6 +628,38 @@ int main() {
     // Test PIT-12: Macro Parenthesization
     int calc = SAFE_MULT(2 + 3, 4 + 5);
     assert(calc == 45); // (5) * (9) == 45, NOT 19
+
+    // Test PIT-14: std::map Safe Contains vs operator[]
+    std::map<std::string, int> myMap;
+    assert(!safeMapContains(myMap, "ghost_key"));
+    assert(myMap.size() == 0); // No accidental element inserted!
+    myMap["present"] = 42;
+    assert(safeMapContains(myMap, "present"));
+
+    // Test PIT-15: dynamic_cast on Polymorphic Type
+    PolymorphicBase* polyDerived = new PolymorphicDerived();
+    PolymorphicBase* polyBase = new PolymorphicBase();
+    assert(canCastToDerived(polyDerived) == true);
+    assert(canCastToDerived(polyBase) == false);
+    delete polyDerived;
+    delete polyBase;
+
+    // Test PIT-16: Safe PRNG Step (no 32-bit overflow)
+    // S=1, P=2, Q=3 -> (1*2 + 3) = 5
+    assert(safePrngStep(1, 2, 3) == 5);
+    // Large values that would overflow signed 32-bit int:
+    uint32_t bigNext = safePrngStep(2000000000U, 3U, 5U);
+    // (2000000000 * 3 + 5) = 6000000005
+    // 6000000005 % 2^31 = 6000000005 - 2 * 2147483648 = 1705032709
+    assert(bigNext == (6000000005ULL & 0x7FFFFFFF));
+
+    // Test PIT-17: Dynamic Late Binding
+    TrapRoomBase* r1 = new TrapRoomBase();
+    TrapRoomBase* r2 = new TrapRoomDerived();
+    assert(r1->getPrice() == 100);
+    assert(r2->getPrice() == 150); // Virtual dispatch ensures derived price is called!
+    delete r1;
+    delete r2;
 
     std::cout << "[SUCCESS] ALL PitfallsAndErrors.cpp tests passed cleanly!\n";
     return 0;
