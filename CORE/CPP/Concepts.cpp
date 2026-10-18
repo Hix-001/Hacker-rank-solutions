@@ -26,6 +26,11 @@
  * 13. [CON-13] Multiple Inheritance, Name Ambiguity & Scope Resolution
  * 14. [CON-14] Preprocessor Macro Expansions & Stringification (#x)
  * 15. [CON-15] Balanced Binary Search Trees & Logarithmic Sets (std::set)
+ * 16. [CON-16] Variadic Template Parameter Packs & Compile-Time Recursion
+ * 17. [CON-17] Runtime Type Information (RTTI) & dynamic_cast Cross-Casting
+ * 18. [CON-18] Custom Operator Overloading: Binary Arithmetic & Matrix Addition
+ * 19. [CON-19] Associative Containers: Key-Value Hash/Tree Mappings (std::map)
+ * 20. [CON-20] Dynamic vs Static Binding & Virtual Destructor Requirements
  * ================================================================================
  */
 
@@ -38,6 +43,7 @@
 #include <new>
 #include <cstring>
 #include <set>
+#include <map>
 #include <cassert>
 #include <cmath>
 
@@ -609,6 +615,224 @@ public:
 
 
 // ==============================================================================
+// [CON-16] Variadic Template Parameter Packs & Compile-Time Recursion
+// ==============================================================================
+/**
+ * Concept Name:
+ *     Variadic Templates & Parameter Pack Expansion
+ * 
+ * Mechanics:
+ *     - Introduced in C++11 (`template <typename... Args>` or `template <bool... digits>`).
+ *     - A parameter pack represents zero or more template arguments.
+ *     - Unpacked using the ellipsis operator (`...`).
+ *     - In C++11/C++14, packs are processed using recursive template instantiation
+ *       paired with a base case overload/specialization.
+ *     - In C++17, fold expressions `(... + pack)` provide direct reduction.
+ * 
+ * Example: Converting reverse-order binary digits to integer at compile-time:
+ *     `reversed_binary_value<0, 0, 1>()` -> 1 * 2^2 = 4.
+ * 
+ * Repository References:
+ *     - CPP/0037_Cpp-Variadics.cpp (Q37)
+ */
+
+template <bool... digits>
+struct BinaryValueHelper;
+
+// Base case: empty pack equals 0
+template <>
+struct BinaryValueHelper<> {
+    static const int value = 0;
+};
+
+// Recursive step: first digit + 2 * value of remaining digits
+template <bool first, bool... rest>
+struct BinaryValueHelper<first, rest...> {
+    static const int value = (first ? 1 : 0) + 2 * BinaryValueHelper<rest...>::value;
+};
+
+template <bool... digits>
+int reversedBinaryValue() {
+    return BinaryValueHelper<digits...>::value;
+}
+
+
+// ==============================================================================
+// [CON-17] Runtime Type Information (RTTI) & dynamic_cast Cross-Casting
+// ==============================================================================
+/**
+ * Concept Name:
+ *     RTTI & Safe Downcasting via dynamic_cast
+ * 
+ * Mechanics:
+ *     - `dynamic_cast<Derived*>(basePtr)` inspects the runtime type stored in
+ *       the object's vtable.
+ *     - If `basePtr` actually points to an instance of `Derived`, it returns a valid pointer.
+ *     - If `basePtr` does not match `Derived`, it safely returns `nullptr` (for pointer casts)
+ *       or throws `std::bad_cast` (for reference casts).
+ *     - Requires the base class to be POLYMORPHIC (must contain at least one virtual function,
+ *       typically a virtual destructor).
+ * 
+ * Repository References:
+ *     - CPP/0036_Magic-Spells.cpp (Q36)
+ */
+
+class SpellBase {
+public:
+    virtual ~SpellBase() = default;
+    virtual std::string getSpellName() const = 0;
+};
+
+class Fireball : public SpellBase {
+public:
+    std::string getSpellName() const override { return "Fireball"; }
+    int getBurnDamage() const { return 100; }
+};
+
+class Frostbite : public SpellBase {
+public:
+    std::string getSpellName() const override { return "Frostbite"; }
+    int getSlowDuration() const { return 5; }
+};
+
+std::string identifyAndCastSpell(SpellBase* spell) {
+    if (!spell) return "Null Spell";
+    if (Fireball* fb = dynamic_cast<Fireball*>(spell)) {
+        return "Cast Fireball: " + std::to_string(fb->getBurnDamage()) + " damage";
+    }
+    if (Frostbite* fr = dynamic_cast<Frostbite*>(spell)) {
+        return "Cast Frostbite: " + std::to_string(fr->getSlowDuration()) + "s slow";
+    }
+    return "Generic Scroll: " + spell->getSpellName();
+}
+
+
+// ==============================================================================
+// [CON-18] Custom Operator Overloading: Binary Arithmetic & Matrix Addition
+// ==============================================================================
+/**
+ * Concept Name:
+ *     Binary Arithmetic Operator Overloading (operator+)
+ * 
+ * Mechanics:
+ *     - Overloading allows user-defined types (like Vector, Matrix, Complex) to use
+ *       natural mathematical notation (`C = A + B`).
+ *     - Member function syntax: `Type operator+(const Type& rhs) const;`
+ *     - Best practice: Const-correctness on both parameter and member function
+ *       to prevent unexpected mutations of the operand.
+ * 
+ * Repository References:
+ *     - CPP/0032_Overload-Operators.cpp (Q32)
+ *     - CPP/0040_Operator-Overloading.cpp (Q40)
+ */
+
+class IntMatrix {
+public:
+    std::vector<std::vector<int>> mat;
+
+    IntMatrix() = default;
+    IntMatrix(int rows, int cols, int initVal = 0)
+        : mat(rows, std::vector<int>(cols, initVal)) {}
+
+    IntMatrix operator+(const IntMatrix& other) const {
+        if (mat.empty() || other.mat.empty()) return IntMatrix();
+        int r = static_cast<int>(mat.size());
+        int c = static_cast<int>(mat[0].size());
+        IntMatrix sum(r, c, 0);
+        for (int i = 0; i < r; ++i) {
+            for (int j = 0; j < c; ++j) {
+                sum.mat[i][j] = mat[i][j] + other.mat[i][j];
+            }
+        }
+        return sum;
+    }
+};
+
+
+// ==============================================================================
+// [CON-19] Associative Containers: Key-Value Hash/Tree Mappings (std::map)
+// ==============================================================================
+/**
+ * Concept Name:
+ *     Associative Key-Value Storage & Logarithmic Retrieval (std::map)
+ * 
+ * Mechanics:
+ *     - `std::map<K, V>` stores pairs in a balanced binary search tree ordered by `K`.
+ *     - `m[key]` inserts a default-constructed `V` if `key` does not exist (side effect!).
+ *     - To check existence without insertion, always use `m.find(key) != m.end()`.
+ *     - `m.erase(key)` removes the pair in O(log N) time.
+ * 
+ * Repository References:
+ *     - CPP/0033_Maps-STL.cpp (Q33)
+ */
+
+class ScoreBook {
+private:
+    std::map<std::string, int> scores;
+public:
+    void addScore(const std::string& name, int score) {
+        scores[name] += score; // Default constructs to 0 if not present, then adds
+    }
+
+    void eraseStudent(const std::string& name) {
+        scores.erase(name);
+    }
+
+    int getScore(const std::string& name) const {
+        auto it = scores.find(name);
+        return (it != scores.end()) ? it->second : 0;
+    }
+
+    bool hasRecord(const std::string& name) const {
+        return scores.find(name) != scores.end();
+    }
+};
+
+
+// ==============================================================================
+// [CON-20] Dynamic vs Static Binding & Virtual Destructor Requirements
+// ==============================================================================
+/**
+ * Concept Name:
+ *     Late (Dynamic) Binding vs Early (Static) Binding & Virtual Destructors
+ * 
+ * Mechanics:
+ *     - By default, C++ binds member function calls statically at compile-time
+ *       based on the declared pointer/reference type, NOT the runtime object type.
+ *     - Prefixing with `virtual` enables late binding via the virtual method table (vptr/vtable).
+ *     - Without `virtual`, calling basePtr->calculatePrice() invokes Base::calculatePrice(),
+ *       ignoring any Derived overrides (silent logic bug).
+ *     - Polymorphic base classes MUST have a virtual destructor: `virtual ~Base() = default;`
+ *       Otherwise, `delete basePtr` invokes only the Base destructor, leaking Derived resources!
+ * 
+ * Repository References:
+ *     - CPP/0042_Hotel-Prices.cpp (Q42)
+ */
+
+class BaseRoom {
+protected:
+    int bedrooms;
+    int bathrooms;
+public:
+    BaseRoom(int bed, int bath) : bedrooms(bed), bathrooms(bath) {}
+    virtual ~BaseRoom() = default; // Essential virtual destructor
+
+    virtual int getPrice() const {
+        return 50 * bedrooms + 100 * bathrooms;
+    }
+};
+
+class LuxuryApartment : public BaseRoom {
+public:
+    LuxuryApartment(int bed, int bath) : BaseRoom(bed, bath) {}
+
+    int getPrice() const override {
+        return BaseRoom::getPrice() + 200; // Surcharge for luxury amenities
+    }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -712,6 +936,43 @@ int main() {
     assert(tracker.contains(10) == true);
     assert(tracker.remove(10) == true);
     assert(tracker.contains(10) == false);
+
+    // Test CON-16: Variadic Template Parameter Packs
+    // reversedBinaryValue<0, 0, 1>() == 0*1 + 0*2 + 1*4 = 4
+    assert((reversedBinaryValue<0, 0, 1>() == 4));
+    // reversedBinaryValue<1, 1, 0, 1>() == 1*1 + 1*2 + 0*4 + 1*8 = 11
+    assert((reversedBinaryValue<1, 1, 0, 1>() == 11));
+    assert((reversedBinaryValue<>() == 0));
+
+    // Test CON-17: RTTI & dynamic_cast
+    Fireball fb;
+    Frostbite fr;
+    assert(identifyAndCastSpell(&fb) == "Cast Fireball: 100 damage");
+    assert(identifyAndCastSpell(&fr) == "Cast Frostbite: 5s slow");
+    assert(identifyAndCastSpell(nullptr) == "Null Spell");
+
+    // Test CON-18: Custom Matrix Overloading (operator+)
+    IntMatrix m1(2, 2, 5);
+    IntMatrix m2(2, 2, 10);
+    IntMatrix mSum = m1 + m2;
+    assert(mSum.mat[0][0] == 15 && mSum.mat[1][1] == 15);
+
+    // Test CON-19: std::map Key-Value Storage
+    ScoreBook sb;
+    sb.addScore("Alice", 50);
+    sb.addScore("Alice", 25);
+    assert(sb.getScore("Alice") == 75);
+    assert(!sb.hasRecord("Bob"));
+    sb.eraseStudent("Alice");
+    assert(!sb.hasRecord("Alice"));
+
+    // Test CON-20: Dynamic Binding & Virtual Methods
+    BaseRoom* stdRoom = new BaseRoom(2, 1);
+    BaseRoom* luxRoom = new LuxuryApartment(2, 1);
+    assert(stdRoom->getPrice() == 200); // 50*2 + 100*1
+    assert(luxRoom->getPrice() == 400); // 200 + 200 luxury surcharge
+    delete stdRoom;
+    delete luxRoom;
 
     std::cout << "[SUCCESS] ALL Concepts.cpp tests passed cleanly!\n";
     return 0;
