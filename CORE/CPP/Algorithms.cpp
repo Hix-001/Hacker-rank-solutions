@@ -23,6 +23,11 @@
  * 10. [ALG-10] Contiguous Vector Range Removal & O(1) Swap-and-Pop
  * 11. [ALG-11] Prime-Factorization Driven Operational Decomposition
  * 12. [ALG-12] Multi-Tier Lexicographical Ordering via std::tie
+ * 13. [ALG-13] Sliding Window Extrema via Monotonic Deque (O(N) Window Maximum)
+ * 14. [ALG-14] 2D Dynamic Programming: Longest Common Subsequence (LCS)
+ * 15. [ALG-15] Interval Scheduling Maximization (Greedy Activity Selection)
+ * 16. [ALG-16] Floyd's Cycle-Finding Algorithm (Tortoise and Hare)
+ * 17. [ALG-17] Number Theory: Largest Proper Divisor & Optimized Primality
  * ================================================================================
  */
 
@@ -32,10 +37,12 @@
 #include <sstream>
 #include <map>
 #include <queue>
+#include <deque>
 #include <algorithm>
 #include <tuple>
 #include <cassert>
 #include <cmath>
+#include <stdexcept>
 
 // ==============================================================================
 // [ALG-01] Delimited String Tokenization & Integer Extraction (StringStream)
@@ -519,6 +526,250 @@ struct BoundingBox {
     }
 };
 
+// ==============================================================================
+// [ALG-13] Sliding Window Extrema via Monotonic Deque (O(N) Window Maximum)
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Monotonic Deque Sliding Window Maximum
+ * 
+ * What It Does:
+ *     Finds the maximum value in every contiguous sliding window of size K
+ *     across an array of size N in strict O(N) total time and O(K) space.
+ * 
+ * When To Recognize / Use:
+ *     - Sliding window minimum / maximum problems where K <= N <= 10^5.
+ *     - A naive nested loop takes O(N * K) resulting in TLE.
+ *     - A multiset or priority_queue takes O(N log K), which may also TLE on tight limits.
+ *     - Monotonic deque maintains elements in non-increasing order: front is always max.
+ * 
+ * Core Invariant:
+ *     1. Outdated indices (index <= i - k) are evicted from the front.
+ *     2. Elements smaller than or equal to current element are evicted from the back
+ *        (they can never be the maximum of any current or future window).
+ * 
+ * Repository References:
+ *     - CPP/0041_Deque-STL.cpp (Q41)
+ */
+
+std::vector<int> slidingWindowMaximum(const std::vector<int>& arr, int k) {
+    std::vector<int> result;
+    if (arr.empty() || k <= 0 || k > static_cast<int>(arr.size())) return result;
+
+    std::deque<int> dq; // Stores indices of elements in descending value order
+
+    for (int i = 0; i < static_cast<int>(arr.size()); ++i) {
+        // 1. Evict elements that fell outside the sliding window
+        while (!dq.empty() && dq.front() <= i - k) {
+            dq.pop_front();
+        }
+
+        // 2. Maintain monotonicity: evict smaller elements from back
+        while (!dq.empty() && arr[dq.back()] <= arr[i]) {
+            dq.pop_back();
+        }
+
+        // 3. Push current element index
+        dq.push_back(i);
+
+        // 4. Record window maximum once initial window of size k is formed
+        if (i >= k - 1) {
+            result.push_back(arr[dq.front()]);
+        }
+    }
+    return result;
+}
+
+
+// ==============================================================================
+// [ALG-14] 2D Dynamic Programming: Longest Common Subsequence (LCS)
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Longest Common Subsequence (LCS) via 2D Dynamic Programming
+ * 
+ * What It Does:
+ *     Computes the length of the longest subsequence present in both strings X and Y
+ *     in O(|X| * |Y|) time and space.
+ * 
+ * When To Recognize / Use:
+ *     - Comparing string / spell similarity, genomic sequence alignment, diff engines.
+ *     - Subsequence means characters appear in the same relative order, not necessarily contiguous.
+ * 
+ * Recurrence:
+ *     dp[i][j] = dp[i-1][j-1] + 1                     if X[i-1] == Y[j-1]
+ *     dp[i][j] = max(dp[i-1][j], dp[i][j-1])          if X[i-1] != Y[j-1]
+ * 
+ * Repository References:
+ *     - CPP/0036_Magic-Spells.cpp (Q36)
+ */
+
+int longestCommonSubsequence(const std::string& text1, const std::string& text2) {
+    int m = static_cast<int>(text1.size());
+    int n = static_cast<int>(text2.size());
+    std::vector<std::vector<int>> dp(m + 1, std::vector<int>(n + 1, 0));
+
+    for (int i = 1; i <= m; ++i) {
+        for (int j = 1; j <= n; ++j) {
+            if (text1[i - 1] == text2[j - 1]) {
+                dp[i][j] = dp[i - 1][j - 1] + 1;
+            } else {
+                dp[i][j] = std::max(dp[i - 1][j], dp[i][j - 1]);
+            }
+        }
+    }
+    return dp[m][n];
+}
+
+
+// ==============================================================================
+// [ALG-15] Interval Scheduling Maximization (Greedy Activity Selection)
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Greedy Activity Selection / Interval Scheduling
+ * 
+ * What It Does:
+ *     Finds the maximum number of mutually non-overlapping intervals (workshops / meetings)
+ *     that a single person can attend.
+ * 
+ * Optimal Strategy:
+ *     Sort intervals by EARLIEST END TIME (finish time). Always pick the next compatible
+ *     interval that finishes first, leaving maximum time available for remaining intervals.
+ *     Time Complexity: O(N log N) dominated by sorting.
+ * 
+ * Repository References:
+ *     - CPP/0038_Attending-Workshops.cpp (Q38)
+ */
+
+struct Interval {
+    int start_time;
+    int end_time;
+
+    bool operator<(const Interval& other) const {
+        return end_time < other.end_time;
+    }
+};
+
+int maxNonOverlappingIntervals(std::vector<Interval>& intervals) {
+    if (intervals.empty()) return 0;
+    std::sort(intervals.begin(), intervals.end());
+
+    int count = 1;
+    int last_end = intervals[0].end_time;
+
+    for (size_t i = 1; i < intervals.size(); ++i) {
+        if (intervals[i].start_time >= last_end) {
+            count++;
+            last_end = intervals[i].end_time;
+        }
+    }
+    return count;
+}
+
+
+// ==============================================================================
+// [ALG-16] Floyd's Cycle-Finding Algorithm (Tortoise and Hare)
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Floyd's Cycle-Finding Algorithm (Tortoise and Hare)
+ * 
+ * What It Does:
+ *     Detects cycle existence, finds cycle start, and computes cycle period (mu and lambda)
+ *     for any pseudo-random number generator or linked list in O(N) time and O(1) space.
+ * 
+ * Key Recurrence:
+ *     a[0] = S
+ *     a[i] = (a[i-1] * P + Q) % 2^31
+ * 
+ * Advantage over Hashing:
+ *     A hash set / map requires O(N) memory, which throws MLE when N = 10^8.
+ *     Floyd's algorithm uses strictly two integer pointers (O(1) memory).
+ * 
+ * Repository References:
+ *     - CPP/0034_Bit-Array.cpp (Q34)
+ */
+
+template <typename Func>
+int countUniqueInSequence(long long start_val, long long n, Func f) {
+    if (n <= 1) return static_cast<int>(n);
+
+    long long tortoise = f(start_val);
+    long long hare = f(f(start_val));
+    long long steps = 1;
+
+    // Phase 1: Detect cycle
+    while (steps < n && tortoise != hare) {
+        tortoise = f(tortoise);
+        hare = f(f(hare));
+        steps++;
+    }
+
+    if (tortoise != hare) {
+        // No cycle detected within n steps
+        return static_cast<int>(n);
+    }
+
+    // Phase 2: Find cycle start (mu)
+    long long mu = 0;
+    tortoise = start_val;
+    while (tortoise != hare) {
+        tortoise = f(tortoise);
+        hare = f(hare);
+        mu++;
+    }
+
+    // Phase 3: Find cycle length (lambda)
+    long long lambda = 1;
+    hare = f(tortoise);
+    while (tortoise != hare) {
+        hare = f(hare);
+        lambda++;
+    }
+
+    if (mu >= n) return static_cast<int>(n);
+    long long unique_count = mu + std::min(lambda, n - mu);
+    return static_cast<int>(unique_count);
+}
+
+
+// ==============================================================================
+// [ALG-17] Number Theory: Largest Proper Divisor & Optimized Primality
+// ==============================================================================
+/**
+ * Algorithm Name:
+ *     Largest Proper Divisor via O(sqrt(N)) Smallest Factor Search
+ * 
+ * What It Does:
+ *     Returns the largest integer strictly less than N that evenly divides N.
+ * 
+ * Mathematical Identity:
+ *     If d_min is the smallest non-trivial divisor (> 1) of N, then
+ *     largest_proper_divisor(N) = N / d_min.
+ *     If N is prime, d_min does not exist up to sqrt(N), so largest proper divisor is 1.
+ *     Throws std::invalid_argument for n <= 1.
+ * 
+ * Repository References:
+ *     - CPP/0044_Cpp-Exception-Handling.cpp (Q44)
+ */
+
+int largestProperDivisor(int n) {
+    if (n == 0) {
+        throw std::invalid_argument("largest_proper_divisor is not defined for n=0");
+    }
+    if (n == 1) {
+        throw std::invalid_argument("largest_proper_divisor is not defined for n=1");
+    }
+    // Check trial division up to sqrt(n)
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) {
+            return n / i; // i is the smallest divisor > 1, so n/i is the largest proper divisor
+        }
+    }
+    return 1; // n is prime, only proper divisor is 1
+}
+
 
 // ==============================================================================
 // SELF-TEST VERIFICATION SUITE
@@ -652,6 +903,41 @@ int main() {
     // Test 64-bit volume without overflow:
     BoundingBox bLarge(100000, 100000, 100000);
     assert(bLarge.calculateVolume() == 1000000000000000LL);
+
+    // Test ALG-13: Sliding Window Maximum (Monotonic Deque)
+    std::vector<int> windowArr = {3, 4, 6, 3, 4};
+    std::vector<int> maxK2 = slidingWindowMaximum(windowArr, 2);
+    std::vector<int> expectedK2 = {4, 6, 6, 4};
+    assert(maxK2 == expectedK2);
+
+    std::vector<int> windowArr2 = {3, 4, 5, 8, 1, 4, 10};
+    std::vector<int> maxK4 = slidingWindowMaximum(windowArr2, 4);
+    std::vector<int> expectedK4 = {8, 8, 8, 10};
+    assert(maxK4 == expectedK4);
+
+    // Test ALG-14: Longest Common Subsequence (LCS)
+    assert(longestCommonSubsequence("AGGTAB", "GXTXAYB") == 4); // "GTAB"
+    assert(longestCommonSubsequence("WATER", "WASTELAND") == 4); // "WATE"
+    assert(longestCommonSubsequence("ABC", "DEF") == 0);
+
+    // Test ALG-15: Greedy Interval Scheduling
+    std::vector<Interval> workshops = {{1, 3}, {2, 5}, {3, 7}, {6, 8}, {7, 9}};
+    assert(maxNonOverlappingIntervals(workshops) == 3); // {1,3}, {3,7} or {6,8}, {7,9}
+
+    // Test ALG-16: Floyd's Cycle-Finding Algorithm
+    // Generator: next = (curr * 2 + 1) % 16
+    auto prng = [](long long x) { return (x * 2 + 1) % 16; };
+    // 0 -> 1 -> 3 -> 7 -> 15 -> 15 (fixed point cycle of length 1)
+    assert(countUniqueInSequence(0, 10, prng) == 5); // 0, 1, 3, 7, 15
+
+    // Test ALG-17: Largest Proper Divisor & Exceptions
+    assert(largestProperDivisor(100) == 50);
+    assert(largestProperDivisor(97) == 1); // prime
+    assert(largestProperDivisor(35) == 7);
+    bool caught0 = false, caught1 = false;
+    try { largestProperDivisor(0); } catch (const std::invalid_argument&) { caught0 = true; }
+    try { largestProperDivisor(1); } catch (const std::invalid_argument&) { caught1 = true; }
+    assert(caught0 && caught1);
 
     std::cout << "[SUCCESS] ALL Algorithms.cpp tests passed cleanly!\n";
     return 0;
