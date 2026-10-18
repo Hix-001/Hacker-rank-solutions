@@ -24,6 +24,10 @@
  * 11. [PAT-11] Unique Existence Probing & Streaming Filter (std::set)
  * 12. [PAT-12] Multi-Tier Lexicographical Tie-Breaking Pattern (std::tie)
  * 13. [PAT-13] Scope-Resolved Multiple Inheritance Delegation Pattern
+ * 14. [PAT-14] Least Recently Used (LRU) Cache Pattern (Hash Map + Doubly Linked List)
+ * 15. [PAT-15] Monotonic Sliding Window Extrema Queue Pattern
+ * 16. [PAT-16] Sequence Factory & Packet Message Ordering Pattern
+ * 17. [PAT-17] Double-Ended Priority Monotonic Queue Pattern
  * ================================================================================
  */
 
@@ -34,6 +38,7 @@
 #include <map>
 #include <set>
 #include <queue>
+#include <deque>
 #include <algorithm>
 #include <tuple>
 #include <memory>
@@ -564,6 +569,229 @@ public:
 
 
 // ==============================================================================
+// [PAT-14] Least Recently Used (LRU) Cache Pattern (Hash Map + Doubly Linked List)
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     LRU Cache Archetype via Hash Map & Doubly Linked List
+ * 
+ * Recognition Cues:
+ *     - Fixed-capacity key-value cache where `get(key)` and `set(key, value)`
+ *       must execute in strict O(1) average time.
+ *     - When cache exceeds capacity, evict the least recently accessed item.
+ * 
+ * Architecture:
+ *     - Doubly Linked List: Most recently used (MRU) node moved to head; least
+ *       recently used (LRU) node evicted from tail in O(1).
+ *     - Hash Map / Map: Maps key -> Doubly Linked Node Pointer for O(1) lookup.
+ * 
+ * Repository References:
+ *     - CPP/0035_Abstract-Classes-Polymorphism.cpp (Q35)
+ */
+
+struct CacheNode {
+    int key;
+    int value;
+    CacheNode* prev;
+    CacheNode* next;
+    CacheNode(int k, int v) : key(k), value(v), prev(nullptr), next(nullptr) {}
+};
+
+class LRUCache {
+private:
+    int capacity;
+    CacheNode* head;
+    CacheNode* tail;
+    std::map<int, CacheNode*> nodeMap;
+
+    void detach(CacheNode* node) {
+        if (!node) return;
+        if (node->prev) node->prev->next = node->next;
+        else head = node->next;
+
+        if (node->next) node->next->prev = node->prev;
+        else tail = node->prev;
+
+        node->prev = nullptr;
+        node->next = nullptr;
+    }
+
+    void insertHead(CacheNode* node) {
+        if (!node) return;
+        node->next = head;
+        node->prev = nullptr;
+        if (head) head->prev = node;
+        head = node;
+        if (!tail) tail = head;
+    }
+
+public:
+    explicit LRUCache(int cap) : capacity(cap), head(nullptr), tail(nullptr) {}
+
+    ~LRUCache() {
+        CacheNode* curr = head;
+        while (curr) {
+            CacheNode* nxt = curr->next;
+            delete curr;
+            curr = nxt;
+        }
+    }
+
+    int get(int key) {
+        auto it = nodeMap.find(key);
+        if (it == nodeMap.end()) return -1;
+        CacheNode* node = it->second;
+        detach(node);
+        insertHead(node);
+        return node->value;
+    }
+
+    void set(int key, int value) {
+        auto it = nodeMap.find(key);
+        if (it != nodeMap.end()) {
+            CacheNode* node = it->second;
+            node->value = value;
+            detach(node);
+            insertHead(node);
+        } else {
+            if (static_cast<int>(nodeMap.size()) >= capacity && tail) {
+                CacheNode* toEvict = tail;
+                nodeMap.erase(toEvict->key);
+                detach(toEvict);
+                delete toEvict;
+            }
+            CacheNode* newNode = new CacheNode(key, value);
+            insertHead(newNode);
+            nodeMap[key] = newNode;
+        }
+    }
+};
+
+
+// ==============================================================================
+// [PAT-15] Monotonic Sliding Window Extrema Queue Pattern
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Sliding Window Monotonic Double-Ended Queue Pattern
+ * 
+ * Recognition Cues:
+ *     - Finding the local optimum (min/max) within a continuous fixed-length sub-segment.
+ *     - Naive scans take O(N*K) -> TLE.
+ *     - Deque maintains indices in decreasing value order. Front is always max.
+ * 
+ * Repository References:
+ *     - CPP/0041_Deque-STL.cpp (Q41)
+ */
+
+class WindowMaxTracker {
+private:
+    std::deque<int> dq; // Stores indices
+    std::vector<int> arr;
+    int k;
+public:
+    WindowMaxTracker(const std::vector<int>& data, int windowSize)
+        : arr(data), k(windowSize) {}
+
+    std::vector<int> computeMaxima() {
+        std::vector<int> res;
+        for (int i = 0; i < static_cast<int>(arr.size()); ++i) {
+            while (!dq.empty() && dq.front() <= i - k) dq.pop_front();
+            while (!dq.empty() && arr[dq.back()] <= arr[i]) dq.pop_back();
+            dq.push_back(i);
+            if (i >= k - 1) res.push_back(arr[dq.front()]);
+        }
+        return res;
+    }
+};
+
+
+// ==============================================================================
+// [PAT-16] Sequence Factory & Packet Message Ordering Pattern
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Monotonic Packet Sequencer & Factory Ingestion Pattern
+ * 
+ * Recognition Cues:
+ *     - Ingesting network packets or messages arriving out-of-order.
+ *     - A factory assigns a strictly monotonic ascending sequence identifier upon receipt.
+ *     - Overloaded `operator<` on the Message class sorts objects naturally for reassembly.
+ * 
+ * Repository References:
+ *     - CPP/0043_Messages-Order.cpp (Q43)
+ */
+
+class SequencedMessage {
+private:
+    std::string text;
+    int sequence_id;
+public:
+    SequencedMessage(const std::string& t = "", int seq = 0)
+        : text(t), sequence_id(seq) {}
+
+    const std::string& getText() const { return text; }
+    int getSeqId() const { return sequence_id; }
+
+    bool operator<(const SequencedMessage& other) const {
+        return sequence_id < other.sequence_id;
+    }
+};
+
+class MessageSequencerFactory {
+private:
+    int current_id;
+public:
+    MessageSequencerFactory() : current_id(0) {}
+
+    SequencedMessage createMessage(const std::string& text) {
+        return SequencedMessage(text, current_id++);
+    }
+};
+
+
+// ==============================================================================
+// [PAT-17] Double-Ended Priority Monotonic Queue Pattern
+// ==============================================================================
+/**
+ * Pattern Name:
+ *     Greedy Earliest Deadline / Earliest Finish Matching
+ * 
+ * Recognition Cues:
+ *     - Set of intervals/tasks with [start, duration] or [start, end].
+ *     - Choose maximum compatible tasks without conflicts.
+ *     - Sort by ascending end time: always pick the first task that finishes!
+ * 
+ * Repository References:
+ *     - CPP/0038_Attending-Workshops.cpp (Q38)
+ */
+
+struct ScheduledTask {
+    int id;
+    int start;
+    int end;
+
+    bool operator<(const ScheduledTask& other) const {
+        return end < other.end;
+    }
+};
+
+inline int scheduleMaxTasks(std::vector<ScheduledTask>& tasks) {
+    if (tasks.empty()) return 0;
+    std::sort(tasks.begin(), tasks.end());
+    int count = 1;
+    int lastEnd = tasks[0].end;
+    for (size_t i = 1; i < tasks.size(); ++i) {
+        if (tasks[i].start >= lastEnd) {
+            count++;
+            lastEnd = tasks[i].end;
+        }
+    }
+    return count;
+}
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -696,6 +924,36 @@ int main() {
     IntegratedDrone drone;
     assert(drone.getEngineStatus() == 1);
     assert(drone.getSensorStatus() == 2);
+
+    // Test PAT-14: LRU Cache
+    LRUCache cache(2);
+    cache.set(1, 100);
+    cache.set(2, 200);
+    assert(cache.get(1) == 100); // 1 becomes MRU
+    cache.set(3, 300);           // 2 evicted
+    assert(cache.get(2) == -1);  // Evicted
+    assert(cache.get(3) == 300);
+    assert(cache.get(1) == 100);
+
+    // Test PAT-15: Monotonic Sliding Window Tracker
+    WindowMaxTracker winTracker({2, 1, 4, 5, 3, 4}, 3);
+    std::vector<int> expectedWin = {4, 5, 5, 5};
+    assert(winTracker.computeMaxima() == expectedWin);
+
+    // Test PAT-16: Sequenced Message Factory & Sorting
+    MessageSequencerFactory msgFactory;
+    SequencedMessage m1 = msgFactory.createMessage("First");
+    SequencedMessage m2 = msgFactory.createMessage("Second");
+    SequencedMessage m3 = msgFactory.createMessage("Third");
+    std::vector<SequencedMessage> scrambled = {m3, m1, m2};
+    std::sort(scrambled.begin(), scrambled.end());
+    assert(scrambled[0].getText() == "First");
+    assert(scrambled[1].getText() == "Second");
+    assert(scrambled[2].getText() == "Third");
+
+    // Test PAT-17: Greedy Earliest Finish Matching
+    std::vector<ScheduledTask> tasks = {{1, 1, 4}, {2, 3, 5}, {3, 0, 6}, {4, 5, 7}, {5, 8, 9}};
+    assert(scheduleMaxTasks(tasks) == 3); // {1,4}, {5,7}, {8,9}
 
     std::cout << "[SUCCESS] ALL Patterns.cpp tests passed cleanly!\n";
     return 0;
