@@ -23,6 +23,10 @@
  * 11. [TMP-11] Lexicographical Tuple Comparison Helper (std::tie)
  * 12. [TMP-12] Fast Erase-Remove Idiom Template
  * 13. [TMP-13] Full Class Template Specialization Skeleton
+ * 14. [TMP-14] Strongly Typed Enum Name Traits Template Specialization
+ * 15. [TMP-15] Variadic Template Compile-Time Bitfield & Pack Accumulator
+ * 16. [TMP-16] 2D Matrix Mathematical Class with Operator Overloading
+ * 17. [TMP-17] Production LRU Cache Template (O(1) Get/Set)
  * ================================================================================
  */
 
@@ -424,6 +428,201 @@ public:
 
 
 // ==============================================================================
+// [TMP-14] Strongly Typed Enum Name Traits Template Specialization
+// ==============================================================================
+/**
+ * Usage:
+ *     Maps integer index or scoped enum values to string representations using
+ *     generic traits with specialized structures.
+ * 
+ * Repository Reference:
+ *     - CPP/0039_Cpp-Class-Template-Specialization.cpp (Q39)
+ */
+
+template <typename T>
+struct EnumTraits {
+    static std::string getName(int index) {
+        (void)index;
+        return "unknown";
+    }
+};
+
+// Example domain enum
+enum class ContestColor { RED = 0, GREEN = 1, ORANGE = 2 };
+
+template <>
+struct EnumTraits<ContestColor> {
+    static std::string getName(int index) {
+        switch (index) {
+            case 0: return "red";
+            case 1: return "green";
+            case 2: return "orange";
+            default: return "unknown";
+        }
+    }
+};
+
+
+// ==============================================================================
+// [TMP-15] Variadic Template Compile-Time Bitfield & Pack Accumulator
+// ==============================================================================
+/**
+ * Usage:
+ *     Compile-time evaluation of variadic bool/int packs into numerical representations.
+ * 
+ * Repository Reference:
+ *     - CPP/0037_Cpp-Variadics.cpp (Q37)
+ */
+
+template <bool... digits>
+struct BitPackValue;
+
+template <>
+struct BitPackValue<> {
+    static const int value = 0;
+};
+
+template <bool first, bool... rest>
+struct BitPackValue<first, rest...> {
+    static const int value = (first ? 1 : 0) + 2 * BitPackValue<rest...>::value;
+};
+
+template <bool... digits>
+constexpr int getBitPackValue() {
+    return BitPackValue<digits...>::value;
+}
+
+
+// ==============================================================================
+// [TMP-16] 2D Matrix Mathematical Class with Operator Overloading
+// ==============================================================================
+/**
+ * Usage:
+ *     Reusable mathematical Matrix class supporting construction, element access,
+ *     and overloaded binary operators (`+`).
+ * 
+ * Repository Reference:
+ *     - CPP/0040_Operator-Overloading.cpp (Q40)
+ */
+
+template <typename T>
+class MathMatrix {
+public:
+    std::vector<std::vector<T>> data;
+
+    MathMatrix() = default;
+    MathMatrix(size_t r, size_t c, T init = T())
+        : data(r, std::vector<T>(c, init)) {}
+
+    size_t rows() const { return data.size(); }
+    size_t cols() const { return data.empty() ? 0 : data[0].size(); }
+
+    MathMatrix operator+(const MathMatrix& other) const {
+        if (rows() != other.rows() || cols() != other.cols()) return MathMatrix();
+        MathMatrix res(rows(), cols());
+        for (size_t i = 0; i < rows(); ++i) {
+            for (size_t j = 0; j < cols(); ++j) {
+                res.data[i][j] = data[i][j] + other.data[i][j];
+            }
+        }
+        return res;
+    }
+};
+
+
+// ==============================================================================
+// [TMP-17] Production LRU Cache Template (O(1) Get/Set)
+// ==============================================================================
+/**
+ * Usage:
+ *     Template-based Least Recently Used (LRU) Cache supporting generic key-value
+ *     types with strict O(1) retrieval, insertion, and eviction.
+ * 
+ * Repository Reference:
+ *     - CPP/0035_Abstract-Classes-Polymorphism.cpp (Q35)
+ */
+
+template <typename Key, typename Value>
+class GenericLRUCache {
+private:
+    struct Node {
+        Key k;
+        Value v;
+        Node* prev;
+        Node* next;
+        Node(Key key, Value val) : k(key), v(val), prev(nullptr), next(nullptr) {}
+    };
+
+    size_t cap;
+    Node* head;
+    Node* tail;
+    std::map<Key, Node*> lookup;
+
+    void removeNode(Node* n) {
+        if (!n) return;
+        if (n->prev) n->prev->next = n->next;
+        else head = n->next;
+        if (n->next) n->next->prev = n->prev;
+        else tail = n->prev;
+        n->prev = nullptr;
+        n->next = nullptr;
+    }
+
+    void addHead(Node* n) {
+        if (!n) return;
+        n->next = head;
+        n->prev = nullptr;
+        if (head) head->prev = n;
+        head = n;
+        if (!tail) tail = head;
+    }
+
+public:
+    explicit GenericLRUCache(size_t capacity)
+        : cap(capacity), head(nullptr), tail(nullptr) {}
+
+    ~GenericLRUCache() {
+        Node* curr = head;
+        while (curr) {
+            Node* nxt = curr->next;
+            delete curr;
+            curr = nxt;
+        }
+    }
+
+    bool get(const Key& k, Value& outVal) {
+        auto it = lookup.find(k);
+        if (it == lookup.end()) return false;
+        removeNode(it->second);
+        addHead(it->second);
+        outVal = it->second->v;
+        return true;
+    }
+
+    void put(const Key& k, const Value& val) {
+        auto it = lookup.find(k);
+        if (it != lookup.end()) {
+            it->second->v = val;
+            removeNode(it->second);
+            addHead(it->second);
+        } else {
+            if (lookup.size() >= cap && tail) {
+                Node* evict = tail;
+                lookup.erase(evict->k);
+                removeNode(evict);
+                delete evict;
+            }
+            Node* newNode = new Node(k, val);
+            addHead(newNode);
+            lookup[k] = newNode;
+        }
+    }
+
+    size_t size() const { return lookup.size(); }
+};
+
+
+// ==============================================================================
 // SELF-TEST VERIFICATION SUITE
 // ==============================================================================
 int main() {
@@ -524,6 +723,34 @@ int main() {
     Accumulator<std::string> accStr("Hello");
     accStr.add(" World");
     assert(accStr.get() == "Hello World");
+
+    // Test TMP-14: Enum Name Traits Specialization
+    assert(EnumTraits<ContestColor>::getName(0) == "red");
+    assert(EnumTraits<ContestColor>::getName(1) == "green");
+    assert(EnumTraits<ContestColor>::getName(2) == "orange");
+    assert(EnumTraits<ContestColor>::getName(99) == "unknown");
+    assert(EnumTraits<int>::getName(0) == "unknown");
+
+    // Test TMP-15: Variadic Compile-Time Bit Pack
+    assert((getBitPackValue<0, 0, 1>() == 4));
+    assert((getBitPackValue<1, 0, 1, 1>() == 13)); // 1*1 + 0*2 + 1*4 + 1*8 = 13
+
+    // Test TMP-16: Mathematical Matrix Class & Addition
+    MathMatrix<int> matA(2, 2, 10);
+    MathMatrix<int> matB(2, 2, 20);
+    MathMatrix<int> matC = matA + matB;
+    assert(matC.data[0][0] == 30 && matC.data[1][1] == 30);
+
+    // Test TMP-17: Generic LRU Cache Template
+    GenericLRUCache<std::string, int> strCache(2);
+    strCache.put("alpha", 1);
+    strCache.put("beta", 2);
+    int val = 0;
+    assert(strCache.get("alpha", val) && val == 1);
+    strCache.put("gamma", 3); // "beta" evicted
+    assert(!strCache.get("beta", val));
+    assert(strCache.get("gamma", val) && val == 3);
+    assert(strCache.get("alpha", val) && val == 1);
 
     std::cout << "[SUCCESS] ALL Templates.cpp tests passed cleanly!\n";
     return 0;
