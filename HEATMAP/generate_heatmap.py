@@ -142,15 +142,15 @@ def generate_svg(data, output_path, quiet=False):
     current_streak, longest_streak, max_daily = compute_streaks(counts)
     today = date.today()
 
-    cell_size = 23
-    gap = 5
-    step = cell_size + gap
-    grid_x = 55
+    cell_size = 29
+    gap = 6
+    step = cell_size + gap  # 35
+    grid_x = 58
     grid_y = 96
-    width = 720
-    height = 345
-    radius = 4.5
-    grid_right = grid_x + CALENDAR_WEEKS * step - gap  # 55 + 22*28 - 5 = 666
+    width = 880
+    height = 385
+    radius = 5.5
+    grid_right = grid_x + CALENDAR_WEEKS * step - gap  # 58 + 22*35 - 6 = 822 (symmetrical: 880-822 = 58)
     month_names = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
     svg = [
@@ -206,12 +206,12 @@ def generate_svg(data, output_path, quiet=False):
             if current_date.day == 1 and key not in rendered_months:
                 rendered_months.add(key)
                 x = grid_x + col * step
-                svg.append(f'<text x="{x}" y="{grid_y-12}" fill="#9aa8ba" font-size="12">{month_names[current_date.month-1]}</text>')
+                svg.append(f'<text x="{x}" y="{grid_y-13}" fill="#9aa8ba" font-size="12">{month_names[current_date.month-1]}</text>')
                 break
 
     for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        y = grid_y + row * step + 16
-        svg.append(f'<text x="{grid_x-12}" y="{y}" fill="#748398" font-size="11" text-anchor="end">{label}</text>')
+        y = grid_y + row * step + 18
+        svg.append(f'<text x="{grid_x-14}" y="{y}" fill="#748398" font-size="11" text-anchor="end">{label}</text>')
 
     for col in range(CALENDAR_WEEKS):
         for row in range(7):
