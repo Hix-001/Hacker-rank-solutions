@@ -142,14 +142,15 @@ def generate_svg(data, output_path, quiet=False):
     current_streak, longest_streak, max_daily = compute_streaks(counts)
     today = date.today()
 
-    cell_size = 11
-    gap = 3
+    cell_size = 23
+    gap = 5
     step = cell_size + gap
-    grid_x = 48
-    grid_y = 91
+    grid_x = 55
+    grid_y = 96
     width = 720
-    height = 260
-    radius = 3
+    height = 345
+    radius = 4.5
+    grid_right = grid_x + CALENDAR_WEEKS * step - gap  # 55 + 22*28 - 5 = 666
     month_names = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
     svg = [
@@ -186,7 +187,7 @@ def generate_svg(data, output_path, quiet=False):
     ]
     badge_widths = [max(84, len(label) * 6.5 + 22) for label, _ in badges]
     badge_gap = 7
-    badge_x = width - 31 - sum(badge_widths) - badge_gap * (len(badges) - 1)
+    badge_x = grid_right - sum(badge_widths) - badge_gap * (len(badges) - 1)
     for (label, color), badge_width in zip(badges, badge_widths):
         svg.extend([
             f'<g transform="translate({badge_x:.1f},23)">',
@@ -205,12 +206,12 @@ def generate_svg(data, output_path, quiet=False):
             if current_date.day == 1 and key not in rendered_months:
                 rendered_months.add(key)
                 x = grid_x + col * step
-                svg.append(f'<text x="{x}" y="{grid_y-11}" fill="#9aa8ba" font-size="11.5">{month_names[current_date.month-1]}</text>')
+                svg.append(f'<text x="{x}" y="{grid_y-12}" fill="#9aa8ba" font-size="12">{month_names[current_date.month-1]}</text>')
                 break
 
     for row, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        y = grid_y + row * step + 9
-        svg.append(f'<text x="{grid_x-12}" y="{y}" fill="#748398" font-size="10.5" text-anchor="end">{label}</text>')
+        y = grid_y + row * step + 16
+        svg.append(f'<text x="{grid_x-12}" y="{y}" fill="#748398" font-size="11" text-anchor="end">{label}</text>')
 
     for col in range(CALENDAR_WEEKS):
         for row in range(7):
@@ -231,20 +232,29 @@ def generate_svg(data, output_path, quiet=False):
             svg.extend([
                 f'<g class="cell" tabindex="0" role="img" aria-label="{escape(tooltip)}">',
                 f'<title>{escape(tooltip)}</title>',
-                f'<rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>',
+                f'<rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width=".8"/>',
                 '</g>',
             ])
 
-    legend_y = grid_y + 7 * step + 17
+    grid_bottom = grid_y + 7 * step - gap
+    legend_y = grid_bottom + 22
     svg.append(f'<text x="32" y="{legend_y+10}" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · June 2026 – October 2026</text>')
-    legend_x = width - 215
-    svg.append(f'<text x="{legend_x}" y="{legend_y+10}" fill="#748398" font-size="11.5" text-anchor="end">Less</text>')
-    legend_x += 10
+
+    # Perfectly align the legend right edge with grid_right
+    legend_right = grid_right
+    legend_more_w = 28
+    legend_squares_w = 5 * 11 + 4 * 4  # 71
+    legend_gap = 8
+    # Squares start:
+    squares_start = legend_right - legend_more_w - legend_gap - legend_squares_w
+    less_x = squares_start - legend_gap
+    svg.append(f'<text x="{less_x}" y="{legend_y+10}" fill="#748398" font-size="11.5" text-anchor="end">Less</text>')
+    sq_x = squares_start
     for level in range(5):
         fill, stroke = PALETTE[level]
-        svg.append(f'<rect x="{legend_x}" y="{legend_y}" width="11" height="11" rx="2.5" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>')
-        legend_x += 15
-    svg.append(f'<text x="{legend_x+1}" y="{legend_y+10}" fill="#748398" font-size="11.5">More</text>')
+        svg.append(f'<rect x="{sq_x}" y="{legend_y}" width="11" height="11" rx="2.5" fill="{fill}" stroke="{stroke}" stroke-width=".65"/>')
+        sq_x += 15
+    svg.append(f'<text x="{legend_right}" y="{legend_y+10}" fill="#748398" font-size="11.5" text-anchor="end">More</text>')
     svg.append('</svg>')
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

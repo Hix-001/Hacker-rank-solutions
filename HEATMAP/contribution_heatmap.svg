@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="100%" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 345" width="100%" role="img" aria-labelledby="title description">
 <title id="title">HackerRank contribution activity</title>
 <desc id="description">Daily HackerRank solutions from June 2026 through October 2026. Brighter green cells indicate more solutions.</desc>
 <defs>
@@ -18,652 +18,652 @@ text{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-se
 .cell:hover rect,.cell:focus rect{stroke:#f8fafc;stroke-width:1.2;filter:drop-shadow(0 0 2px #ffffff66)}
 </style>
 </defs>
-<rect x="1" y="1" width="718" height="258" rx="20" fill="url(#card)" stroke="#293343" stroke-width="1.2" filter="url(#shadow)"/>
+<rect x="1" y="1" width="718" height="343" rx="20" fill="url(#card)" stroke="#293343" stroke-width="1.2" filter="url(#shadow)"/>
 <rect x="2" y="2" width="716" height="85" rx="19" fill="url(#topSheen)"/>
 <text x="32" y="37" fill="#f8fafc" font-size="18" font-weight="700" letter-spacing="-.25">HackerRank Contribution Activity</text>
 <text x="32" y="56" fill="#9aa8ba" font-size="12.5">Contributions &amp; Problem Solving Calendar · June 2026 – October 2026</text>
-<g transform="translate(368.5,23)">
+<g transform="translate(345.5,23)">
 <rect width="87.0" height="25" rx="12.5" fill="none" stroke="#60a5fa" stroke-opacity=".48" stroke-width=".8"/>
 <text x="43.5" y="16.5" text-anchor="middle" fill="#60a5fa" font-size="11.5" font-weight="650">191 Solved</text>
 </g>
-<g transform="translate(462.5,23)">
+<g transform="translate(439.5,23)">
 <rect width="119.5" height="25" rx="12.5" fill="none" stroke="#34d399" stroke-opacity=".48" stroke-width=".8"/>
 <text x="59.8" y="16.5" text-anchor="middle" fill="#34d399" font-size="11.5" font-weight="650">102 Active Days</text>
 </g>
-<g transform="translate(589.0,23)">
+<g transform="translate(566.0,23)">
 <rect width="100.0" height="25" rx="12.5" fill="none" stroke="#c084fc" stroke-opacity=".48" stroke-width=".8"/>
 <text x="50.0" y="16.5" text-anchor="middle" fill="#c084fc" font-size="11.5" font-weight="650">2 Day Streak</text>
 </g>
-<text x="48" y="80" fill="#9aa8ba" font-size="11.5">Jun</text>
-<text x="104" y="80" fill="#9aa8ba" font-size="11.5">Jul</text>
-<text x="160" y="80" fill="#9aa8ba" font-size="11.5">Aug</text>
-<text x="230" y="80" fill="#9aa8ba" font-size="11.5">Sep</text>
-<text x="286" y="80" fill="#9aa8ba" font-size="11.5">Oct</text>
-<text x="36" y="114" fill="#748398" font-size="10.5" text-anchor="end">Mon</text>
-<text x="36" y="142" fill="#748398" font-size="10.5" text-anchor="end">Wed</text>
-<text x="36" y="170" fill="#748398" font-size="10.5" text-anchor="end">Fri</text>
+<text x="55" y="84" fill="#9aa8ba" font-size="12">Jun</text>
+<text x="167" y="84" fill="#9aa8ba" font-size="12">Jul</text>
+<text x="279" y="84" fill="#9aa8ba" font-size="12">Aug</text>
+<text x="419" y="84" fill="#9aa8ba" font-size="12">Sep</text>
+<text x="531" y="84" fill="#9aa8ba" font-size="12">Oct</text>
+<text x="43" y="140" fill="#748398" font-size="11" text-anchor="end">Mon</text>
+<text x="43" y="196" fill="#748398" font-size="11" text-anchor="end">Wed</text>
+<text x="43" y="252" fill="#748398" font-size="11" text-anchor="end">Fri</text>
 <g class="cell" tabindex="0" role="img" aria-label="31/05/26 · No solutions recorded">
 <title>31/05/26 · No solutions recorded</title>
-<rect x="48" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="96" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="01/06/26 · No solutions recorded">
 <title>01/06/26 · No solutions recorded</title>
-<rect x="48" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="02/06/26 · No solutions recorded">
 <title>02/06/26 · No solutions recorded</title>
-<rect x="48" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="03/06/26 · No solutions recorded">
 <title>03/06/26 · No solutions recorded</title>
-<rect x="48" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="04/06/26 · No solutions recorded">
 <title>04/06/26 · No solutions recorded</title>
-<rect x="48" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="208" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="05/06/26 · No solutions recorded">
 <title>05/06/26 · No solutions recorded</title>
-<rect x="48" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="06/06/26 · No solutions recorded">
 <title>06/06/26 · No solutions recorded</title>
-<rect x="48" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="55" y="264" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="07/06/26 · No solutions recorded">
 <title>07/06/26 · No solutions recorded</title>
-<rect x="62" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="96" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="08/06/26 · No solutions recorded">
 <title>08/06/26 · No solutions recorded</title>
-<rect x="62" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="09/06/26 · No solutions recorded">
 <title>09/06/26 · No solutions recorded</title>
-<rect x="62" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="10/06/26 · No solutions recorded">
 <title>10/06/26 · No solutions recorded</title>
-<rect x="62" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="11/06/26 · No solutions recorded">
 <title>11/06/26 · No solutions recorded</title>
-<rect x="62" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="208" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="12/06/26 · No solutions recorded">
 <title>12/06/26 · No solutions recorded</title>
-<rect x="62" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="13/06/26 · No solutions recorded">
 <title>13/06/26 · No solutions recorded</title>
-<rect x="62" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="83" y="264" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="14/06/26 · No solutions recorded">
 <title>14/06/26 · No solutions recorded</title>
-<rect x="76" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="96" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="15/06/26 · No solutions recorded">
 <title>15/06/26 · No solutions recorded</title>
-<rect x="76" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="16/06/26 · No solutions recorded">
 <title>16/06/26 · No solutions recorded</title>
-<rect x="76" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="17/06/26 · No solutions recorded">
 <title>17/06/26 · No solutions recorded</title>
-<rect x="76" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/06/26 · No solutions recorded">
 <title>18/06/26 · No solutions recorded</title>
-<rect x="76" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="208" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="19/06/26 · No solutions recorded">
 <title>19/06/26 · No solutions recorded</title>
-<rect x="76" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="20/06/26 · No solutions recorded">
 <title>20/06/26 · No solutions recorded</title>
-<rect x="76" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="111" y="264" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="21/06/26 · No solutions recorded">
 <title>21/06/26 · No solutions recorded</title>
-<rect x="90" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="96" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="22/06/26 · No solutions recorded">
 <title>22/06/26 · No solutions recorded</title>
-<rect x="90" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="23/06/26 · No solutions recorded">
 <title>23/06/26 · No solutions recorded</title>
-<rect x="90" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="24/06/26 · No solutions recorded">
 <title>24/06/26 · No solutions recorded</title>
-<rect x="90" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="25/06/26 · No solutions recorded">
 <title>25/06/26 · No solutions recorded</title>
-<rect x="90" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="208" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="26/06/26 · No solutions recorded">
 <title>26/06/26 · No solutions recorded</title>
-<rect x="90" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="27/06/26 · No solutions recorded">
 <title>27/06/26 · No solutions recorded</title>
-<rect x="90" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="139" y="264" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="28/06/26 · No solutions recorded">
 <title>28/06/26 · No solutions recorded</title>
-<rect x="104" y="91" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="167" y="96" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="29/06/26 · No solutions recorded">
 <title>29/06/26 · No solutions recorded</title>
-<rect x="104" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="167" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="30/06/26 · No solutions recorded">
 <title>30/06/26 · No solutions recorded</title>
-<rect x="104" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="167" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="01/07/26 · No solutions recorded">
 <title>01/07/26 · No solutions recorded</title>
-<rect x="104" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="167" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="02/07/26 · 1 solution">
 <title>02/07/26 · 1 solution</title>
-<rect x="104" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="167" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="03/07/26 · No solutions recorded">
 <title>03/07/26 · No solutions recorded</title>
-<rect x="104" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="167" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="04/07/26 · 1 solution">
 <title>04/07/26 · 1 solution</title>
-<rect x="104" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="167" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="05/07/26 · 27 solutions">
 <title>05/07/26 · 27 solutions</title>
-<rect x="118" y="91" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="195" y="96" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="06/07/26 · 1 solution">
 <title>06/07/26 · 1 solution</title>
-<rect x="118" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="195" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="07/07/26 · 7 solutions">
 <title>07/07/26 · 7 solutions</title>
-<rect x="118" y="119" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="195" y="152" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="08/07/26 · 3 solutions">
 <title>08/07/26 · 3 solutions</title>
-<rect x="118" y="133" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="195" y="180" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="09/07/26 · 1 solution">
 <title>09/07/26 · 1 solution</title>
-<rect x="118" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="195" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="10/07/26 · 1 solution">
 <title>10/07/26 · 1 solution</title>
-<rect x="118" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="195" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="11/07/26 · 1 solution">
 <title>11/07/26 · 1 solution</title>
-<rect x="118" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="195" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="12/07/26 · 1 solution">
 <title>12/07/26 · 1 solution</title>
-<rect x="132" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="13/07/26 · 2 solutions">
 <title>13/07/26 · 2 solutions</title>
-<rect x="132" y="105" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="223" y="124" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="14/07/26 · 1 solution">
 <title>14/07/26 · 1 solution</title>
-<rect x="132" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="15/07/26 · 1 solution">
 <title>15/07/26 · 1 solution</title>
-<rect x="132" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="16/07/26 · 1 solution">
 <title>16/07/26 · 1 solution</title>
-<rect x="132" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="17/07/26 · 1 solution">
 <title>17/07/26 · 1 solution</title>
-<rect x="132" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/07/26 · 1 solution">
 <title>18/07/26 · 1 solution</title>
-<rect x="132" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="223" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="19/07/26 · 4 solutions">
 <title>19/07/26 · 4 solutions</title>
-<rect x="146" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="251" y="96" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="20/07/26 · 1 solution">
 <title>20/07/26 · 1 solution</title>
-<rect x="146" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="251" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="21/07/26 · 2 solutions">
 <title>21/07/26 · 2 solutions</title>
-<rect x="146" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="251" y="152" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="22/07/26 · 2 solutions">
 <title>22/07/26 · 2 solutions</title>
-<rect x="146" y="133" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="251" y="180" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="23/07/26 · 2 solutions">
 <title>23/07/26 · 2 solutions</title>
-<rect x="146" y="147" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="251" y="208" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="24/07/26 · 2 solutions">
 <title>24/07/26 · 2 solutions</title>
-<rect x="146" y="161" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="251" y="236" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="25/07/26 · No solutions recorded">
 <title>25/07/26 · No solutions recorded</title>
-<rect x="146" y="175" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="251" y="264" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="26/07/26 · 3 solutions">
 <title>26/07/26 · 3 solutions</title>
-<rect x="160" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="279" y="96" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="27/07/26 · 1 solution">
 <title>27/07/26 · 1 solution</title>
-<rect x="160" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="279" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="28/07/26 · 2 solutions">
 <title>28/07/26 · 2 solutions</title>
-<rect x="160" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="279" y="152" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="29/07/26 · 1 solution">
 <title>29/07/26 · 1 solution</title>
-<rect x="160" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="279" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="30/07/26 · 1 solution">
 <title>30/07/26 · 1 solution</title>
-<rect x="160" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="279" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="31/07/26 · 1 solution">
 <title>31/07/26 · 1 solution</title>
-<rect x="160" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="279" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="01/08/26 · 1 solution">
 <title>01/08/26 · 1 solution</title>
-<rect x="160" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="279" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="02/08/26 · 6 solutions">
 <title>02/08/26 · 6 solutions</title>
-<rect x="174" y="91" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="307" y="96" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="03/08/26 · 1 solution">
 <title>03/08/26 · 1 solution</title>
-<rect x="174" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="04/08/26 · 1 solution">
 <title>04/08/26 · 1 solution</title>
-<rect x="174" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="05/08/26 · 1 solution">
 <title>05/08/26 · 1 solution</title>
-<rect x="174" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="06/08/26 · 1 solution">
 <title>06/08/26 · 1 solution</title>
-<rect x="174" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="07/08/26 · 1 solution">
 <title>07/08/26 · 1 solution</title>
-<rect x="174" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="08/08/26 · 1 solution">
 <title>08/08/26 · 1 solution</title>
-<rect x="174" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="307" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="09/08/26 · 3 solutions">
 <title>09/08/26 · 3 solutions</title>
-<rect x="188" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="335" y="96" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="10/08/26 · 1 solution">
 <title>10/08/26 · 1 solution</title>
-<rect x="188" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="335" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="11/08/26 · 1 solution">
 <title>11/08/26 · 1 solution</title>
-<rect x="188" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="335" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="12/08/26 · 1 solution">
 <title>12/08/26 · 1 solution</title>
-<rect x="188" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="335" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="13/08/26 · 1 solution">
 <title>13/08/26 · 1 solution</title>
-<rect x="188" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="335" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="14/08/26 · 1 solution">
 <title>14/08/26 · 1 solution</title>
-<rect x="188" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="335" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="15/08/26 · 2 solutions">
 <title>15/08/26 · 2 solutions</title>
-<rect x="188" y="175" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="335" y="264" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="16/08/26 · 1 solution">
 <title>16/08/26 · 1 solution</title>
-<rect x="202" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="363" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="17/08/26 · No solutions recorded">
 <title>17/08/26 · No solutions recorded</title>
-<rect x="202" y="105" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="363" y="124" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/08/26 · 2 solutions">
 <title>18/08/26 · 2 solutions</title>
-<rect x="202" y="119" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="363" y="152" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="19/08/26 · 1 solution">
 <title>19/08/26 · 1 solution</title>
-<rect x="202" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="363" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="20/08/26 · 1 solution">
 <title>20/08/26 · 1 solution</title>
-<rect x="202" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="363" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="21/08/26 · 1 solution">
 <title>21/08/26 · 1 solution</title>
-<rect x="202" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="363" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="22/08/26 · 2 solutions">
 <title>22/08/26 · 2 solutions</title>
-<rect x="202" y="175" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="363" y="264" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="23/08/26 · 3 solutions">
 <title>23/08/26 · 3 solutions</title>
-<rect x="216" y="91" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="391" y="96" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="24/08/26 · 1 solution">
 <title>24/08/26 · 1 solution</title>
-<rect x="216" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="25/08/26 · 1 solution">
 <title>25/08/26 · 1 solution</title>
-<rect x="216" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="26/08/26 · 1 solution">
 <title>26/08/26 · 1 solution</title>
-<rect x="216" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="27/08/26 · 1 solution">
 <title>27/08/26 · 1 solution</title>
-<rect x="216" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="28/08/26 · 1 solution">
 <title>28/08/26 · 1 solution</title>
-<rect x="216" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="29/08/26 · 1 solution">
 <title>29/08/26 · 1 solution</title>
-<rect x="216" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="391" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="30/08/26 · 2 solutions">
 <title>30/08/26 · 2 solutions</title>
-<rect x="230" y="91" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="419" y="96" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="31/08/26 · 1 solution">
 <title>31/08/26 · 1 solution</title>
-<rect x="230" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="419" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="01/09/26 · 1 solution">
 <title>01/09/26 · 1 solution</title>
-<rect x="230" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="419" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="02/09/26 · 1 solution">
 <title>02/09/26 · 1 solution</title>
-<rect x="230" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="419" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="03/09/26 · 1 solution">
 <title>03/09/26 · 1 solution</title>
-<rect x="230" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="419" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="04/09/26 · 1 solution">
 <title>04/09/26 · 1 solution</title>
-<rect x="230" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="419" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="05/09/26 · 3 solutions">
 <title>05/09/26 · 3 solutions</title>
-<rect x="230" y="175" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="419" y="264" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="06/09/26 · 2 solutions">
 <title>06/09/26 · 2 solutions</title>
-<rect x="244" y="91" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="447" y="96" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="07/09/26 · 1 solution">
 <title>07/09/26 · 1 solution</title>
-<rect x="244" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="447" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="08/09/26 · 6 solutions">
 <title>08/09/26 · 6 solutions</title>
-<rect x="244" y="119" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="447" y="152" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="09/09/26 · 11 solutions">
 <title>09/09/26 · 11 solutions</title>
-<rect x="244" y="133" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="447" y="180" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="10/09/26 · 4 solutions">
 <title>10/09/26 · 4 solutions</title>
-<rect x="244" y="147" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="447" y="208" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="11/09/26 · 2 solutions">
 <title>11/09/26 · 2 solutions</title>
-<rect x="244" y="161" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="447" y="236" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="12/09/26 · 1 solution">
 <title>12/09/26 · 1 solution</title>
-<rect x="244" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="447" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="13/09/26 · 1 solution">
 <title>13/09/26 · 1 solution</title>
-<rect x="258" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="14/09/26 · 1 solution">
 <title>14/09/26 · 1 solution</title>
-<rect x="258" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="15/09/26 · 1 solution">
 <title>15/09/26 · 1 solution</title>
-<rect x="258" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="16/09/26 · 1 solution">
 <title>16/09/26 · 1 solution</title>
-<rect x="258" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="17/09/26 · 1 solution">
 <title>17/09/26 · 1 solution</title>
-<rect x="258" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/09/26 · 1 solution">
 <title>18/09/26 · 1 solution</title>
-<rect x="258" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="19/09/26 · 1 solution">
 <title>19/09/26 · 1 solution</title>
-<rect x="258" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="475" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="20/09/26 · 1 solution">
 <title>20/09/26 · 1 solution</title>
-<rect x="272" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="21/09/26 · 1 solution">
 <title>21/09/26 · 1 solution</title>
-<rect x="272" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="22/09/26 · 1 solution">
 <title>22/09/26 · 1 solution</title>
-<rect x="272" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="23/09/26 · 1 solution">
 <title>23/09/26 · 1 solution</title>
-<rect x="272" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="24/09/26 · 2 solutions">
 <title>24/09/26 · 2 solutions</title>
-<rect x="272" y="147" width="11" height="11" rx="3" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="503" y="208" width="23" height="23" rx="4.5" fill="#12643a" stroke="#1b7946" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="25/09/26 · 1 solution">
 <title>25/09/26 · 1 solution</title>
-<rect x="272" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="26/09/26 · 1 solution">
 <title>26/09/26 · 1 solution</title>
-<rect x="272" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="503" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="27/09/26 · 1 solution">
 <title>27/09/26 · 1 solution</title>
-<rect x="286" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="28/09/26 · 1 solution">
 <title>28/09/26 · 1 solution</title>
-<rect x="286" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="29/09/26 · 1 solution">
 <title>29/09/26 · 1 solution</title>
-<rect x="286" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="30/09/26 · 1 solution">
 <title>30/09/26 · 1 solution</title>
-<rect x="286" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="01/10/26 · 1 solution">
 <title>01/10/26 · 1 solution</title>
-<rect x="286" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="02/10/26 · 1 solution">
 <title>02/10/26 · 1 solution</title>
-<rect x="286" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="03/10/26 · 1 solution">
 <title>03/10/26 · 1 solution</title>
-<rect x="286" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="531" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="04/10/26 · 1 solution">
 <title>04/10/26 · 1 solution</title>
-<rect x="300" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="05/10/26 · 1 solution">
 <title>05/10/26 · 1 solution</title>
-<rect x="300" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="06/10/26 · 1 solution">
 <title>06/10/26 · 1 solution</title>
-<rect x="300" y="119" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="152" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="07/10/26 · 1 solution">
 <title>07/10/26 · 1 solution</title>
-<rect x="300" y="133" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="180" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="08/10/26 · 1 solution">
 <title>08/10/26 · 1 solution</title>
-<rect x="300" y="147" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="208" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="09/10/26 · 1 solution">
 <title>09/10/26 · 1 solution</title>
-<rect x="300" y="161" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="236" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="10/10/26 · 1 solution">
 <title>10/10/26 · 1 solution</title>
-<rect x="300" y="175" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="559" y="264" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="11/10/26 · 1 solution">
 <title>11/10/26 · 1 solution</title>
-<rect x="314" y="91" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="587" y="96" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="12/10/26 · 1 solution">
 <title>12/10/26 · 1 solution</title>
-<rect x="314" y="105" width="11" height="11" rx="3" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="587" y="124" width="23" height="23" rx="4.5" fill="#123b2b" stroke="#1b5138" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="13/10/26 · No solutions recorded">
 <title>13/10/26 · No solutions recorded</title>
-<rect x="314" y="119" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="587" y="152" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="14/10/26 · No solutions recorded">
 <title>14/10/26 · No solutions recorded</title>
-<rect x="314" y="133" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="587" y="180" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="15/10/26 · No solutions recorded">
 <title>15/10/26 · No solutions recorded</title>
-<rect x="314" y="147" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="587" y="208" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="16/10/26 · No solutions recorded">
 <title>16/10/26 · No solutions recorded</title>
-<rect x="314" y="161" width="11" height="11" rx="3" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="587" y="236" width="23" height="23" rx="4.5" fill="#171d27" stroke="#242d3a" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="17/10/26 · 3 solutions">
 <title>17/10/26 · 3 solutions</title>
-<rect x="314" y="175" width="11" height="11" rx="3" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="587" y="264" width="23" height="23" rx="4.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="18/10/26 · 7 solutions">
 <title>18/10/26 · 7 solutions</title>
-<rect x="328" y="91" width="11" height="11" rx="3" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<rect x="615" y="96" width="23" height="23" rx="4.5" fill="#39d353" stroke="#69ed7d" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="19/10/26 · Future date">
 <title>19/10/26 · Future date</title>
-<rect x="328" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="124" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="20/10/26 · Future date">
 <title>20/10/26 · Future date</title>
-<rect x="328" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="152" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="21/10/26 · Future date">
 <title>21/10/26 · Future date</title>
-<rect x="328" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="180" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="22/10/26 · Future date">
 <title>22/10/26 · Future date</title>
-<rect x="328" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="208" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="23/10/26 · Future date">
 <title>23/10/26 · Future date</title>
-<rect x="328" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="236" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="24/10/26 · Future date">
 <title>24/10/26 · Future date</title>
-<rect x="328" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="615" y="264" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="25/10/26 · Future date">
 <title>25/10/26 · Future date</title>
-<rect x="342" y="91" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="96" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="26/10/26 · Future date">
 <title>26/10/26 · Future date</title>
-<rect x="342" y="105" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="124" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="27/10/26 · Future date">
 <title>27/10/26 · Future date</title>
-<rect x="342" y="119" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="152" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="28/10/26 · Future date">
 <title>28/10/26 · Future date</title>
-<rect x="342" y="133" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="180" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="29/10/26 · Future date">
 <title>29/10/26 · Future date</title>
-<rect x="342" y="147" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="208" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="30/10/26 · Future date">
 <title>30/10/26 · Future date</title>
-<rect x="342" y="161" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="236" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
 <g class="cell" tabindex="0" role="img" aria-label="31/10/26 · Future date">
 <title>31/10/26 · Future date</title>
-<rect x="342" y="175" width="11" height="11" rx="3" fill="#101722" stroke="#1b2431" stroke-width=".65"/>
+<rect x="643" y="264" width="23" height="23" rx="4.5" fill="#101722" stroke="#1b2431" stroke-width=".8"/>
 </g>
-<text x="32" y="216" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · June 2026 – October 2026</text>
-<text x="505" y="216" fill="#748398" font-size="11.5" text-anchor="end">Less</text>
-<rect x="515" y="206" width="11" height="11" rx="2.5" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
-<rect x="530" y="206" width="11" height="11" rx="2.5" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
-<rect x="545" y="206" width="11" height="11" rx="2.5" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
-<rect x="560" y="206" width="11" height="11" rx="2.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
-<rect x="575" y="206" width="11" height="11" rx="2.5" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
-<text x="591" y="216" fill="#748398" font-size="11.5">More</text>
+<text x="32" y="319" fill="#9aa8ba" font-size="11.5">Daily problem-solving activity · June 2026 – October 2026</text>
+<text x="551" y="319" fill="#748398" font-size="11.5" text-anchor="end">Less</text>
+<rect x="559" y="309" width="11" height="11" rx="2.5" fill="#171d27" stroke="#242d3a" stroke-width=".65"/>
+<rect x="574" y="309" width="11" height="11" rx="2.5" fill="#123b2b" stroke="#1b5138" stroke-width=".65"/>
+<rect x="589" y="309" width="11" height="11" rx="2.5" fill="#12643a" stroke="#1b7946" stroke-width=".65"/>
+<rect x="604" y="309" width="11" height="11" rx="2.5" fill="#20a34a" stroke="#2dbd59" stroke-width=".65"/>
+<rect x="619" y="309" width="11" height="11" rx="2.5" fill="#39d353" stroke="#69ed7d" stroke-width=".65"/>
+<text x="666" y="319" fill="#748398" font-size="11.5" text-anchor="end">More</text>
 </svg>
